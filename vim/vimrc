@@ -1,0 +1,68 @@
+set nocompatible
+set encoding=utf-8
+set background=dark
+set mouse=a
+
+set nobackup
+set nowritebackup
+set noswapfile
+"set nowrap
+set history=50
+
+set number
+set numberwidth=5
+
+set autoindent
+set smartindent
+
+set ruler
+set incsearch
+set autoread
+set visualbell
+
+set showmatch
+set showcmd
+
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set expandtab
+set nosmarttab
+"set textwidth=80
+
+set ignorecase
+set smartcase
+
+set splitright
+
+syntax on
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'gmarik/Vundle.vim'
+Plugin 'ctrlp.vim'
+Plugin 'verilog_systemverilog_fix'
+
+call vundle#end()
+filetype plugin indent on
+
+autocmd BufWritePre * :%s/\s\+$//e
+
+call matchadd('Todo', '\s\+$')
+call matchadd('Todo', 'TODO')
+call matchadd('Todo', 'TODO:')
+call matchadd('Todo', 'FIXME')
+call matchadd('Todo', 'FIXME:')
+
+let g:netrw_liststyle=1
+
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+colorscheme molokai
+
+imap ii <Esc>

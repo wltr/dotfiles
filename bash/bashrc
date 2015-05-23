@@ -1,0 +1,29 @@
+# Color terminal
+if [[ $TERM == xterm ]]; then
+  TERM=xterm-256color
+fi
+
+# Git helper functions
+git_parse_branch() {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+
+git_check_changes() {
+    git status -s 2> /dev/null | tail -n 1 | sed -e 's/.*/\x1b[0;35m/'
+}
+
+# Aliases
+alias ls='ls -h --color=auto'
+alias ll='LC_COLLATE=C ls -l'
+alias la='ls -Al'
+alias grep='grep --color=auto'
+
+# Shell
+export PS1='\[\e[0;32m\]\u\[\e[0m\]@\[\e[0;33m\]\h\[\e[0m\]: \[\e[0;34m\]\w\[\e[0m\] (\j jobs) $(git_check_changes)$(git_parse_branch)\[\e[0m\]\n\#\$ '
+
+# Editor
+export EDITOR='vim'
+
+# Paths
+export PATH=/usr/lib/ccache:~/bin:$PATH
+export MANPATH=$MANPATH:~/man/

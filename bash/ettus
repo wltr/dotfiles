@@ -1,0 +1,36 @@
+# ZPU compiler
+ZPUPREFIX=~/.usrlocal-zpu
+export PATH=$PATH:$ZPUPREFIX/bin
+export LD_LOAD_LIBRARY=$LD_LOAD_LIBRARY:$ZPUPREFIX/lib
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$ZPUPREFIX/lib
+export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$ZPUPREFIX/lib/pkgconfig
+
+# UHD
+UHDPREFIX=~/.usrlocal-uhd
+export PATH=$PATH:$UHDPREFIX/bin
+export LD_LOAD_LIBRARY=$LD_LOAD_LIBRARY:$UHDPREFIX/lib
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$UHDPREFIX/lib
+export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$UHDPREFIX/lib/pkgconfig
+export CPATH=~/.usrlocal-uhd/include
+
+export UHD_LOG_LEVEL=regularly
+export UHD_TEMP_PATH=/home/johannes/tmp
+
+# GNU Radio
+GRPREFIX=~/.usrlocal-gnuradio
+export PATH=$PATH:$GRPREFIX/bin
+export LD_LOAD_LIBRARY=$LD_LOAD_LIBRARY:$GRPREFIX/lib
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$GRPREFIX/lib
+export PYTHONPATH=$PYTHONPATH:$GRPREFIX/lib/python2.7/dist-packages
+export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$GRPREFIX/lib/pkgconfig
+export GRC_BLOCKS_PATH=$GRC_BLOCKS_PATH:$GRPREFIX/share/gnuradio/grc/blocks
+
+# Modelsim
+export LM_LICENSE_FILE=7330@us-aus-pcbflex
+export PATH=/opt/Mentor/modeltech/linux_x86_64:$PATH
+
+# Xilinx
+export XILINXD_LICENSE_FILE=2100@us-aus-pcbflex.amer.corp.natinst.com
+alias vivado15_env='export PATH=/opt/Xilinx/Vivado/2015.1/bin:$PATH'
+alias vivado14_env='export PATH=/opt/Xilinx/Vivado/2014.4/bin:$PATH'
+alias ise_env='source /opt/Xilinx/14.7/ISE_DS/settings64.sh'
