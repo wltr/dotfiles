@@ -5,11 +5,11 @@ fi
 
 # Git helper functions
 git_parse_branch() {
-    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 
 git_check_changes() {
-    git status -s 2> /dev/null | tail -n 1 | sed -e 's/.*/\x1b[0;35m/'
+  git status -s 2> /dev/null | tail -n 1 | sed -e 's/.*/\x1b[0;35m/'
 }
 
 # Aliases
