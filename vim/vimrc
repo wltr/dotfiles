@@ -40,11 +40,15 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
+Plugin 'tpope/vim-sensible'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-fugitive'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'mileszs/ack.vim'
+Plugin 'rking/ag.vim'
+"Plugin 'mileszs/ack.vim'
 Plugin 'fholgado/minibufexpl.vim'
 Plugin 'vim-scripts/verilog_systemverilog_fix'
 
@@ -77,6 +81,11 @@ colorscheme molokai
 " Use ii instead of ESC
 imap ii <Esc>
 
+" Status line
+set statusline=%<\ %n:%f\ %m%r
+set statusline+=%{fugitive#statusline()}%#warningmsg#%{SyntasticStatuslineFlag()}%*
+set statusline+=%=line:\ %l\/%L,\ col:\ %c%V\ (%P)\ 0x%B
+
 " NerdTree
 map <C-n> :NERDTreeToggle<CR>
 autocmd StdinReadPre * let s:std_in=1
@@ -84,10 +93,6 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
