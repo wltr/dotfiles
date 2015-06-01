@@ -1,68 +1,94 @@
+" Options
 set nocompatible
 set encoding=utf-8
 set background=dark
 set mouse=a
-
+set cursorline
+set modelines=0
 set nobackup
 set nowritebackup
 set noswapfile
 "set nowrap
 set history=50
-
 set number
 set numberwidth=5
-
 set autoindent
 set smartindent
-
 set ruler
 set incsearch
+set hlsearch
 set autoread
 set visualbell
-
 set showmatch
 set showcmd
-
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 set expandtab
 set nosmarttab
 "set textwidth=80
-
 set ignorecase
 set smartcase
-
 set splitright
 
 syntax on
+
+" Vundle
 filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
-Plugin 'ctrlp.vim'
-Plugin 'verilog_systemverilog_fix'
+Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'mileszs/ack.vim'
+Plugin 'fholgado/minibufexpl.vim'
+Plugin 'vim-scripts/verilog_systemverilog_fix'
 
 call vundle#end()
+
 filetype plugin indent on
 
+" Trim whitespace
 autocmd BufWritePre * :%s/\s\+$//e
 
+" Highlight todos
 call matchadd('Todo', '\s\+$')
 call matchadd('Todo', 'TODO')
 call matchadd('Todo', 'TODO:')
 call matchadd('Todo', 'FIXME')
 call matchadd('Todo', 'FIXME:')
 
+" File explorer style
 let g:netrw_liststyle=1
 
+" Buffer navigation
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+" Colors
 colorscheme molokai
 
+" Use ii instead of ESC
 imap ii <Esc>
+
+" NerdTree
+map <C-n> :NERDTreeToggle<CR>
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+" Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
