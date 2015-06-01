@@ -75,6 +75,12 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+" Buffer resizing
+nnoremap <C-W><C-K> :exe "resize +5"<CR>
+nnoremap <C-W><C-J> :exe "resize -5"<CR>
+nnoremap <C-W><C-L> :exe "vertical resize +5"<CR>
+nnoremap <C-W><C-H> :exe "vertical resize -5"<CR>
+
 " Colors
 colorscheme molokai
 
