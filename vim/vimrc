@@ -27,6 +27,7 @@ set shiftwidth=2
 set expandtab
 set nosmarttab
 "set textwidth=80
+set colorcolumn=80
 set ignorecase
 set smartcase
 set splitright
