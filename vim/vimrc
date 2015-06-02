@@ -70,10 +70,8 @@ call matchadd('Todo', 'FIXME:')
 let g:netrw_liststyle=1
 
 " Buffer navigation
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+nnoremap <C-L> :bnext<CR>
+nnoremap <C-H> :bprevious<CR>
 
 " Buffer resizing
 nnoremap <C-W><C-K> :exe "resize +5"<CR>
@@ -103,3 +101,11 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+" MiniBufExpl colors
+hi MBENormal               ctermfg=248
+hi MBEChanged              ctermfg=208
+hi MBEVisibleNormal        ctermfg=81
+hi MBEVisibleChanged       ctermfg=201
+hi MBEVisibleActiveNormal  ctermfg=226
+hi MBEVisibleActiveChanged ctermfg=201
