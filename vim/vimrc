@@ -46,7 +46,6 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
 Plugin 'kien/ctrlp.vim'
 Plugin 'fholgado/minibufexpl.vim'
-Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'rking/ag.vim'
@@ -91,7 +90,7 @@ imap ii <Esc>
 
 " Status line
 set statusline=%<\ %n:%f\ %m%r
-set statusline+=%{fugitive#statusline()}%#warningmsg#%{SyntasticStatuslineFlag()}%*
+set statusline+=%#warningmsg#%{fugitive#statusline()}%*
 set statusline+=%=line:\ %l\/%L,\ col:\ %c%V\ (%P)\ 0x%B
 
 " NerdTree
