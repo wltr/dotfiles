@@ -45,9 +45,6 @@ Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
 Plugin 'kien/ctrlp.vim'
-Plugin 'fholgado/minibufexpl.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'rking/ag.vim'
 Plugin 'moll/vim-bbye'
 Plugin 'vim-scripts/verilog_systemverilog_fix'
@@ -92,17 +89,3 @@ imap ii <Esc>
 set statusline=%<\ %n:%f\ %m%r
 set statusline+=%#warningmsg#%{fugitive#statusline()}%*
 set statusline+=%=line:\ %l\/%L,\ col:\ %c%V\ (%P)\ 0x%B
-
-" NerdTree
-nnoremap <C-N> :NERDTreeToggle<CR>
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-
-" MiniBufExpl colors
-hi MBENormal               ctermfg=248
-hi MBEChanged              ctermfg=208
-hi MBEVisibleNormal        ctermfg=81
-hi MBEVisibleChanged       ctermfg=201
-hi MBEVisibleActiveNormal  ctermfg=226
-hi MBEVisibleActiveChanged ctermfg=201
