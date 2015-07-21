@@ -34,6 +34,15 @@ export PYTHONPATH=$PYTHONPATH:$OSMOSDRPREFIX/lib/python2.7/dist-packages
 export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$OSMOSDRPREFIX/lib/pkgconfig
 export GRC_BLOCKS_PATH=$GRC_BLOCKS_PATH:$OSMOSDRPREFIX/share/gnuradio/grc/blocks
 
+# GNU Radio Ettus
+ETTUSPREFIX=~/opt/gr-ettus
+export PATH=$PATH:$ETTUSPREFIX/bin
+export LD_LOAD_LIBRARY=$LD_LOAD_LIBRARY:$ETTUSPREFIX/lib
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$ETTUSPREFIX/lib
+export PYTHONPATH=$PYTHONPATH:$ETTUSPREFIX/lib/python2.7/dist-packages
+export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$ETTUSPREFIX/lib/pkgconfig
+export GRC_BLOCKS_PATH=$GRC_BLOCKS_PATH:$ETTUSPREFIX/share/gnuradio/grc/blocks
+
 # Modelsim
 export LM_LICENSE_FILE=7330@us-aus-pcbflex
 export PATH=/opt/mentor/modelsim/modeltech/linux_x86_64:$PATH
