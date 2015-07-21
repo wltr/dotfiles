@@ -45,6 +45,7 @@ Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
 Plugin 'kien/ctrlp.vim'
+Plugin 'ivalkeen/vim-ctrlp-tjump'
 Plugin 'rking/ag.vim'
 Plugin 'moll/vim-bbye'
 Plugin 'vim-scripts/verilog_systemverilog_fix'
@@ -55,6 +56,9 @@ filetype plugin indent on
 
 " Trim whitespace
 autocmd BufWritePre * :%s/\s\+$//e
+
+" Use tabs with Makefiles
+autocmd FileType make setlocal noexpandtab
 
 " Highlight todos
 call matchadd('Todo', '\s\+$')
