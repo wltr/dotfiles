@@ -13,10 +13,12 @@ git_check_changes() {
 }
 
 # Aliases
-alias ls='ls -h --color=auto'
-alias ll='LC_COLLATE=C ls -l'
+alias ls='LC_COLLATE=C ls -h --color=auto'
+alias ll='ls -l'
 alias la='ls -Al'
 alias grep='grep --color=auto'
+
+alias make='make -j$(grep MHz /proc/cpuinfo | wc -l)'
 
 # Shell
 export PS1='\[\e[0;32m\]\u\[\e[0m\]@\[\e[0;33m\]\h\[\e[0m\]: \[\e[0;34m\]\w\[\e[0m\] (\j jobs) $(git_check_changes)$(git_parse_branch)\[\e[0m\]\n\#\$ '
