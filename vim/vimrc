@@ -60,6 +60,7 @@ Plugin 'ivalkeen/vim-ctrlp-tjump'
 Plugin 'rking/ag.vim'
 Plugin 'moll/vim-bbye'
 Plugin 'vim-scripts/verilog_systemverilog_fix'
+Plugin 'nelstrom/vim-visual-star-search'
 
 call vundle#end()
 
