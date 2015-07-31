@@ -13,7 +13,7 @@ git_check_changes() {
 }
 
 # Aliases
-alias ls='LC_COLLATE=C ls -h --color=auto'
+alias ls='LC_COLLATE=C ls -h --color=auto --group-directories-first'
 alias ll='ls -l'
 alias la='ls -Al'
 alias grep='grep --color=auto'
