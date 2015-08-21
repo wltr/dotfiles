@@ -9,7 +9,7 @@ git_parse_branch() {
 }
 
 git_check_changes() {
-  git status -s 2> /dev/null | tail -n 1 | sed -e 's/.*/\x1b[0;35m/'
+  git status -s 2> /dev/null | tail -n 1 | sed -e 's/.*/\x1b[0;95m/'
 }
 
 # Aliases
@@ -21,7 +21,7 @@ alias grep='grep --color=auto'
 alias make='make -j$(grep MHz /proc/cpuinfo | wc -l)'
 
 # Shell
-export PS1='\[\e[0;32m\]\u\[\e[0m\]@\[\e[0;33m\]\h\[\e[0m\]: \[\e[0;34m\]\w\[\e[0m\] (\j jobs) $(git_check_changes)$(git_parse_branch)\[\e[0m\]\n\#\$ '
+export PS1='\[\e[0;92m\]\u\[\e[0m\]@\[\e[0;93m\]\h\[\e[0m\]: \[\e[0;94m\]\w\[\e[0m\] (\j jobs) $(git_check_changes)$(git_parse_branch)\[\e[0m\]\n\#\$ '
 
 # Editor
 export EDITOR='vim'
