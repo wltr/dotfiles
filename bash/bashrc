@@ -12,6 +12,18 @@ git_check_changes() {
   git status -s 2> /dev/null | tail -n 1 | sed -e 's/.*/\x1b[0;95m/'
 }
 
+git_user_email() {
+  if [ -n "$(git branch 2> /dev/null)" ]; then
+    echo "<$(git config -l 2> /dev/null | grep user.email | tail -n 1 | sed -e 's/.*=\(.*\)$/\1/')>"
+  fi
+}
+
+git_user_name() {
+  if [ -n "$(git branch 2> /dev/null)" ]; then
+    git config -l 2> /dev/null | grep user.name | tail -n 1 | sed -e 's/.*=\(.*\)$/\1/'
+  fi
+}
+
 # Aliases
 alias ls='LC_COLLATE=C ls -h --color=auto --group-directories-first'
 alias ll='ls -l'
@@ -21,7 +33,7 @@ alias grep='grep --color=auto'
 alias make='make -j$(grep MHz /proc/cpuinfo | wc -l)'
 
 # Shell
-export PS1='\[\e[0;92m\]\u\[\e[0m\]@\[\e[0;93m\]\h\[\e[0m\]: \[\e[0;94m\]\w\[\e[0m\] (\j jobs) $(git_check_changes)$(git_parse_branch)\[\e[0m\]\n\#\$ '
+export PS1='\[\e[0;92m\]\u\[\e[0m\]@\[\e[0;93m\]\h\[\e[0m\]: \[\e[0;94m\]\w\[\e[0m\] $(git_check_changes)$(git_parse_branch)\[\e[0m\] $(git_user_email)\n\#\$ '
 
 # Editor
 export EDITOR='vim'
