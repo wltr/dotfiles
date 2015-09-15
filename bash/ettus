@@ -48,7 +48,7 @@ export LM_LICENSE_FILE=7330@us-aus-pcbflex2.ni.corp.natinst.com
 export PATH=/opt/mentor/modelsim/modeltech/linux_x86_64:$PATH
 
 # Xilinx
-export XILINXD_LICENSE_FILE=2101@simfarm-license1;2100@us-aus-pcbflex2.ni.corp.natinst.com
+export XILINXD_LICENSE_FILE=2101@simfarm-license1
 alias vivado15_env='source /opt/Xilinx/Vivado/2015.1/settings64.sh'
 alias vivado14_env='source /opt/Xilinx/Vivado/2014.4/settings64.sh'
 alias ise_env='source /opt/Xilinx/14.7/ISE_DS/settings64.sh'
