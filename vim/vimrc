@@ -9,7 +9,7 @@ set modelines=0
 set nobackup
 set nowritebackup
 set noswapfile
-set nowrap
+"set nowrap
 set history=1000
 set undolevels=1000
 set number

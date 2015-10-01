@@ -9,7 +9,7 @@ git_parse_branch() {
 }
 
 git_check_changes() {
-  git status -s 2> /dev/null | tail -n 1 | sed -e 's/.*/\x1b[0;95m/'
+  git status -s 2> /dev/null | tail -n 1 | sed -e 's/.*/\x1b[1;95m/'
 }
 
 git_user_email() {
@@ -33,10 +33,11 @@ alias grep='grep --color=auto'
 alias make='make -j$(nproc)'
 
 # Shell
-export PS1='\[\e[0;92m\]\u\[\e[0m\]@\[\e[0;93m\]\h\[\e[0m\]: \[\e[0;94m\]\w\[\e[0m\] $(git_check_changes)$(git_parse_branch)\[\e[0m\] $(git_user_email)\n\#\$ '
+export PS1='\[\e[1;92m\]\u\[\e[1;37m\]@\[\e[1;93m\]\h\[\e[0m\]: \[\e[0;94m\]\w\[\e[1;37m\] $(git_check_changes)$(git_parse_branch)\[\e[0m\] $(git_user_email)\n\#\$ '
 
 # Editor
-export EDITOR='vim'
+export EDITOR='nvim'
+alias v='nvim'
 
 # Paths
 export PATH=/usr/lib/ccache:~/bin:$PATH
