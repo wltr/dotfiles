@@ -41,4 +41,3 @@ alias v='nvim'
 
 # Paths
 export PATH=/usr/lib/ccache:~/bin:$PATH
-export MANPATH=$MANPATH:~/man/
