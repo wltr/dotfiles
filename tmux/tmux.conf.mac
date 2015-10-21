@@ -29,7 +29,7 @@ set -g status-left-length 70
 set -g status-left "#[fg=green][#[fg=yellow]#h#[fg=green]]["
 
 set -g status-right-length 60
-set -g status-right "#[fg=green]][#[fg=blue]#(uptime | sed -e 's/^.*[a-z]: //')#[fg=green]][#[fg=blue]%Y-%m-%d %I:%M%P#[fg=green]][#[fg=blue]#(power-status)#[fg=green]]"
+set -g status-right "#[fg=green]][#[fg=blue]#(uptime | sed -e 's/^.*[a-z]: //')#[fg=green]][#[fg=blue]%Y-%m-%d %I:%M%P#[fg=green]][#[fg=blue]#(battery-status)#[fg=green]]"
 
 set -g visual-activity on
 
