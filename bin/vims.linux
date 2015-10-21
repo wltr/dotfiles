@@ -1,0 +1,9 @@
+#!/bin/bash
+
+running=`vim --serverlist`
+
+if [ -n "$running" ]; then
+  /usr/bin/vim --servername main --remote $@
+else
+  /usr/bin/vim --servername main $@
+fi

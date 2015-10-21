@@ -1,0 +1,3 @@
+#!/bin/bash
+
+lmstat -a | grep 'Users of msim' | sed -e 's/Users of //' -e 's/  (Total of \([0-9]\+\) licenses\? issued;  Total of \([0-9]\+\) licenses\? in use)/\t\2 of \1/'
