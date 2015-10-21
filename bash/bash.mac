@@ -40,4 +40,4 @@ export EDITOR='nvim'
 alias v='nvim'
 
 # Paths
-export PATH=/usr/lib/ccache:~/bin:$PATH
+export PATH=~/bin:$PATH
