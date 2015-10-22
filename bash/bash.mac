@@ -43,4 +43,4 @@ export EDITOR='nvim'
 alias v='nvim'
 
 # Paths
-export PATH=~/bin:$PATH
+export PATH=~/bin:$PATH:~/opt/gcc-arm-none-eabi/bin
