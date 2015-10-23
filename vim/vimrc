@@ -83,6 +83,10 @@ call matchadd('Todo', 'FIXME')
 call matchadd('Todo', 'FIXME:')
 call matchadd('Todo', 'DEBUG')
 call matchadd('Todo', 'DEBUG:')
+call matchadd('Todo', 'NOTE')
+call matchadd('Todo', 'NOTE:')
+call matchadd('Todo', 'NOTES')
+call matchadd('Todo', 'NOTES:')
 
 " Define new leader key
 let mapleader=","
