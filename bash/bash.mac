@@ -44,3 +44,8 @@ alias v='nvim'
 
 # Paths
 export PATH=~/bin:$PATH:~/opt/gcc-arm-none-eabi/bin
+
+# Homebrew bash completion
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
