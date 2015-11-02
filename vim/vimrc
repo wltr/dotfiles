@@ -43,6 +43,7 @@ set title
 set list
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
 set scrolloff=3
+set spell
 
 syntax on
 
