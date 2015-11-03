@@ -1,0 +1,11 @@
+[user]
+	name = Johannes Walter
+	email = johannes@swift-nav.com
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	graph = log --graph --decorate --oneline
+[push]
+	default = simple
