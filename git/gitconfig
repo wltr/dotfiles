@@ -6,7 +6,7 @@
 	br = branch
 	ci = commit
 	st = status
-	lol = log --graph --decorate --oneline --abbrev-commit
-	lola = log --graph --decorate --oneline --abbrev-commit --all
+	lol = log --graph --decorate --oneline
+	lola = log --graph --decorate --oneline --all
 [push]
 	default = simple
