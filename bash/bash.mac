@@ -32,6 +32,7 @@ alias ls='ls -Gh'
 alias ll='ls -l'
 alias la='ls -Al'
 alias grep='grep --color=auto'
+alias diff='colordiff'
 
 alias make='make -j$(sysctl -n hw.ncpu)'
 
