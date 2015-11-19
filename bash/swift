@@ -2,3 +2,6 @@
 alias vivado_env='source /opt/Xilinx/Vivado/2015.3/settings64.sh'
 alias sdk_env='source /opt/Xilinx/SDK/2015.3/settings64.sh'
 alias ise_env='source /opt/Xilinx/14.7/ISE_DS/settings64.sh'
+
+export LM_LICENSE_FILE='/home/wltr/res/mentor/mentor.lic'
+export PATH=/opt/mentor/modelsim/modelsim_dlx/linuxpe:$PATH
