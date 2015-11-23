@@ -67,6 +67,8 @@ Plugin 'vim-scripts/verilog_systemverilog_fix'
 Plugin 'nelstrom/vim-visual-star-search'
 Plugin 'valloric/youcompleteme'
 Plugin 'easymotion/vim-easymotion'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 
 call vundle#end()
 
