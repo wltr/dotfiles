@@ -1,9 +1,13 @@
 # Xilinx
-alias vivado_env='source /opt/Xilinx/Vivado/2015.3/settings64.sh'
-alias sdk_env='source /opt/Xilinx/SDK/2015.3/settings64.sh'
-alias ise_env='source /opt/Xilinx/14.7/ISE_DS/settings64.sh'
+alias env_vivado='source /opt/Xilinx/Vivado/2015.3/settings64.sh'
+alias env_xsdk='source /opt/Xilinx/SDK/2015.3/settings64.sh'
+alias env_ise='source /opt/Xilinx/14.7/ISE_DS/settings64.sh'
 
 # Mentor Graphics
 export LM_LICENSE_FILE='/home/wltr/res/mentor/mentor.lic'
-alias msim='export PATH=/opt/mentor/modelsim/modelsim_dlx/linuxpe:$PATH'
-alias qsim='export PATH=/opt/mentor/questasim/questasim/linux_x86_64:$PATH'
+alias env_modelsim='export PATH=/opt/mentor/modelsim/modelsim_dlx/linuxpe:$PATH'
+alias env_questasim='export PATH=/opt/mentor/questasim/questasim/linux_x86_64:$PATH'
+
+# SVUnit
+export SVUNIT_INSTALL='/opt/svunit'
+alias env_svunit='export PATH=$PATH:$SVUNIT_INSTALL/bin'
