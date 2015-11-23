@@ -44,9 +44,6 @@ setw -g monitor-activity on
 
 setw -g utf8 on
 
-#setw -g c0-change-trigger 10
-#setw -g c0-change-interval 250
-
 setw -g window-status-attr dim
 setw -g window-status-bg default
 setw -g window-status-fg white
@@ -56,3 +53,8 @@ setw -g window-status-current-bg default
 setw -g window-status-current-fg red
 
 bind -t vi-copy y copy-pipe 'xclip -in -selection clipboard > /dev/null'
+
+bind -n M-h select-pane -L
+bind -n M-l select-pane -R
+bind -n M-k select-pane -U
+bind -n M-j select-pane -D
