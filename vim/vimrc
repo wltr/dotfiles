@@ -112,6 +112,9 @@ nnoremap <C-W><C-H> :exe "vertical resize -5"<CR>
 " Close buffer without closing window
 nnoremap <C-X> :Bdelete<CR>
 
+" Go to last buffer
+nnoremap <tab> :b#<CR>
+
 " Use ctags with Ctrl-P
 nnoremap <leader>. :CtrlPTag<CR>
 
