@@ -129,3 +129,5 @@ imap ii <Esc>
 set statusline=%<\ %n:%f\ %m%r
 set statusline+=%#warningmsg#%{fugitive#statusline()}%*
 set statusline+=%=line:\ %l\/%L,\ col:\ %c%V\ (%P)\ 0x%B
+
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
