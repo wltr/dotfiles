@@ -10,3 +10,5 @@
 	lola = log --graph --decorate --oneline --all
 [push]
 	default = simple
+[core]
+	excludesfile = /Users/wltr/.gitignore_global
