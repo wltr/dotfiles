@@ -122,6 +122,9 @@ nnoremap <leader>. :CtrlPTag<CR>
 nnoremap <C-]> :CtrlPtjump<CR>
 vnoremap <C-]> :CtrlPtjumpVisual<CR>
 
+" Use current search for Ag
+nnoremap <leader>* :AgFromSearch<CR>
+
 " Colors
 colorscheme molokai
 
