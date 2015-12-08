@@ -34,7 +34,7 @@ alias la='ls -Al'
 alias grep='grep --color=auto'
 alias diff='colordiff'
 
-alias make='make -j$(sysctl -n hw.ncpu)'
+#alias make='make -j$(sysctl -n hw.ncpu)'
 
 # Shell
 export PS1='\[\e[1;92m\]\u\[\e[1;37m\]@\[\e[1;93m\]\h\[\e[0m\]: \[\e[0;94m\]\W\[\e[1;37m\] $(git_check_changes)$(git_parse_branch)\[\e[0;36m\] $(git_user_email)\[\e[0m\]\n\#\$ '
