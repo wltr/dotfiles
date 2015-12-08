@@ -1,0 +1,14 @@
+[user]
+	name = Johannes Walter
+	email = johannes@swift-nav.com
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	lol = log --graph --decorate --oneline
+	lola = log --graph --decorate --oneline --all
+[push]
+	default = simple
+[core]
+	excludesfile = /home/wltr/.gitignore_global
