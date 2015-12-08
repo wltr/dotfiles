@@ -1,10 +1,3 @@
-# ZPU compiler
-ZPUPREFIX=~/opt/zpu
-export PATH=$PATH:$ZPUPREFIX/bin
-export LD_LOAD_LIBRARY=$LD_LOAD_LIBRARY:$ZPUPREFIX/lib
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$ZPUPREFIX/lib
-export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$ZPUPREFIX/lib/pkgconfig
-
 # UHD
 UHDPREFIX=~/opt/uhd
 export PATH=$PATH:$UHDPREFIX/bin
@@ -14,7 +7,7 @@ export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$UHDPREFIX/lib/pkgconfig
 export CPATH=~/opt/uhd/include
 
 export UHD_LOG_LEVEL=regularly
-export UHD_TEMP_PATH=/home/johannes/tmp
+export UHD_TEMP_PATH=~/tmp
 
 # GNU Radio
 GRPREFIX=~/opt/gnuradio
@@ -24,31 +17,3 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$GRPREFIX/lib
 export PYTHONPATH=$PYTHONPATH:$GRPREFIX/lib/python2.7/dist-packages
 export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$GRPREFIX/lib/pkgconfig
 export GRC_BLOCKS_PATH=$GRC_BLOCKS_PATH:$GRPREFIX/share/gnuradio/grc/blocks
-
-# GNU Radio OsmoSDR
-OSMOSDRPREFIX=~/opt/gr-osmosdr
-export PATH=$PATH:$OSMOSDRPREFIX/bin
-export LD_LOAD_LIBRARY=$LD_LOAD_LIBRARY:$OSMOSDRPREFIX/lib
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$OSMOSDRPREFIX/lib
-export PYTHONPATH=$PYTHONPATH:$OSMOSDRPREFIX/lib/python2.7/dist-packages
-export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$OSMOSDRPREFIX/lib/pkgconfig
-export GRC_BLOCKS_PATH=$GRC_BLOCKS_PATH:$OSMOSDRPREFIX/share/gnuradio/grc/blocks
-
-# GNU Radio Ettus
-ETTUSPREFIX=~/opt/gr-ettus
-export PATH=$PATH:$ETTUSPREFIX/bin
-export LD_LOAD_LIBRARY=$LD_LOAD_LIBRARY:$ETTUSPREFIX/lib
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$ETTUSPREFIX/lib
-export PYTHONPATH=$PYTHONPATH:$ETTUSPREFIX/lib/python2.7/dist-packages
-export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$ETTUSPREFIX/lib/pkgconfig
-export GRC_BLOCKS_PATH=$GRC_BLOCKS_PATH:$ETTUSPREFIX/share/gnuradio/grc/blocks
-
-# Modelsim
-export LM_LICENSE_FILE=7330@us-aus-pcbflex2.ni.corp.natinst.com
-export PATH=/opt/mentor/modelsim/modeltech/linux_x86_64:$PATH
-
-# Xilinx
-export XILINXD_LICENSE_FILE=2101@simfarm-license1
-alias vivado15_env='source /opt/Xilinx/Vivado/2015.1/settings64.sh'
-alias vivado14_env='source /opt/Xilinx/Vivado/2014.4/settings64.sh'
-alias ise_env='source /opt/Xilinx/14.7/ISE_DS/settings64.sh'
