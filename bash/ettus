@@ -8,6 +8,7 @@ export CPATH=~/opt/uhd/include
 
 export UHD_LOG_LEVEL=regularly
 export UHD_TEMP_PATH=~/tmp
+export UHD_IMAGES_DIR=$UHDPREFIX/share/uhd/images
 
 # GNU Radio
 GRPREFIX=~/opt/gnuradio
