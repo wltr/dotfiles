@@ -7,8 +7,8 @@ alias env_ise='source /opt/Xilinx/14.7/ISE_DS/settings64.sh'
 export LM_LICENSE_FILE='/home/wltr/res/mentor/mentor.lic'
 MODELSIM_DIR=/opt/mentor/modelsim/modelsim_dlx
 QUESTASIM_DIR=/opt/mentor/questasim/questasim
-alias env_modelsim='export PATH=$MODELSIM_DIR/bin:$PATH; export MODELSIM=$MODELSIM_DIR/modelsim.ini; export MODEL_TECH=$MODELSIM_DIR'
-alias env_questasim='export PATH=$QUESTASIM_DIR/bin:$PATH; export QUESTASIM=$QUESTASIM_DIR/modelsim.ini; export MODEL_TECH=$QUESTASIM_DIR'
+alias env_modelsim='export PATH=$MODELSIM_DIR/linuxpe/mgls/bin:$MODELSIM_DIR/bin:$PATH; export MODELSIM=$MODELSIM_DIR/modelsim.ini; export MODEL_TECH=$MODELSIM_DIR'
+alias env_questasim='export PATH=$QUESTASIM_DIR/linux_x86_64/mgls/bin:$QUESTASIM_DIR/bin:$PATH; export QUESTASIM=$QUESTASIM_DIR/modelsim.ini; export MODEL_TECH=$QUESTASIM_DIR'
 
 # SVUnit
 export SVUNIT_INSTALL='/opt/svunit'
