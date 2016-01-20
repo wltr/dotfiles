@@ -1,10 +1,10 @@
 # Xilinx
-alias env_vivado='source /opt/Xilinx/Vivado/2015.3/settings64.sh'
-alias env_xsdk='source /opt/Xilinx/SDK/2015.3/settings64.sh'
+source /opt/Xilinx/Vivado/2015.3/settings64.sh
 alias env_ise='source /opt/Xilinx/14.7/ISE_DS/settings64.sh'
 
 # Mentor Graphics
 export LM_LICENSE_FILE='1717@mufasa.swiftnav.com'
-MODELSIM_DIR=/opt/mentor/modelsim/modelsim_dlx
-alias env_modelsim='export PATH=$MODELSIM_DIR/linuxpe/mgls/bin:$MODELSIM_DIR/bin:$PATH; export MODELSIM=$MODELSIM_DIR/modelsim.ini; export MODEL_TECH=$MODELSIM_DIR'
-
+MODELSIM_DIR=/opt/mentor/modelsim_10.4d/modelsim_dlx
+export MODEL_TECH=$MODELSIM_DIR
+export MODELSIM=$MODELSIM_DIR/modelsim.ini
+export PATH=$MODELSIM_DIR/linuxpe:$PATH
