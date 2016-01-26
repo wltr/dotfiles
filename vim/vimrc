@@ -125,6 +125,9 @@ vnoremap <C-]> :CtrlPtjumpVisual<CR>
 " Use current search for Ag
 nnoremap <leader>8 :AgFromSearch<CR>
 
+" Exit terminal mode
+tnoremap <leader>e <C-\><C-n>
+
 " Colors
 colorscheme molokai
 
