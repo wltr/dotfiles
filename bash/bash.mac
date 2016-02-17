@@ -45,7 +45,7 @@ export EDITOR='nvim'
 alias v='nvim'
 
 # Paths
-export PATH=~/bin:$PATH:~/opt/gcc-arm-none-eabi-4_9-2015q3/bin
+export PATH=~/bin:$PATH:/usr/local/sbin:~/opt/gcc-arm-none-eabi-4_9-2015q3/bin
 
 # Homebrew bash completion
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
