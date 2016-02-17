@@ -69,6 +69,7 @@ Plugin 'valloric/youcompleteme'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'mtth/scratch.vim'
 
 call vundle#end()
 
