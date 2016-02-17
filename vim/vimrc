@@ -99,6 +99,10 @@ let mapleader=","
 " File explorer style
 let g:netrw_liststyle=1
 
+" Increment and decrement numbers
+nnoremap <A-a> <C-a>
+nnoremap <A-x> <C-x>
+
 " Buffer navigation
 nnoremap <C-L> :bnext<CR>
 nnoremap <C-H> :bprevious<CR>
