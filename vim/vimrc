@@ -131,7 +131,9 @@ vnoremap <C-]> :CtrlPtjumpVisual<CR>
 nnoremap <leader>8 :AgFromSearch<CR>
 
 " Exit terminal mode
-tnoremap <leader>e <C-\><C-n>
+if has("nvim")
+  tnoremap <leader>e <C-\><C-n>
+endif
 
 " Colors
 colorscheme molokai
