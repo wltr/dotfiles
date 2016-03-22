@@ -133,6 +133,9 @@ nnoremap <leader>8 :AgFromSearch<CR>
 " Exit terminal mode
 tnoremap <leader>e <C-\><C-n>
 
+" Toggle NERD Tree
+nnoremap <C-N> :NERDTreeToggle<CR>
+
 " Colors
 colorscheme molokai
 
