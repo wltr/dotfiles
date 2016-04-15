@@ -35,7 +35,7 @@ alias g..='[ ! -z `git rev-parse --show-toplevel` ] && cd `git rev-parse --show-
 #alias make='make -j$(nproc)'
 
 # Shell
-export PS1='\[\e[1;92m\]\u\[\e[1;37m\]@\[\e[1;91m\]\h\[\e[0m\]: \[\e[0;94m\]\W\[\e[1;37m\] $(git_check_changes)$(git_parse_branch)\[\e[0;36m\] $(git_user_email)\[\e[0m\]\n\#\$ '
+export PS1='\[\e[32m\]\u\[\e[90m\]@\[\e[31m\]\h\[\e[0m\]: \[\e[34m\]\W\[\e[1;37m\] $(git_check_changes)$(git_parse_branch)\[\e[0;36m\] $(git_user_email)\[\e[0m\]\n\#\$ '
 
 # Editor
 export EDITOR='nvim'
