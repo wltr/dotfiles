@@ -1,7 +1,7 @@
 " Options
 set nocompatible
 set encoding=utf-8
-set background=dark
+"set background=dark
 set hidden
 set mouse=a
 set cursorline
@@ -70,6 +70,7 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'mtth/scratch.vim'
+Plugin 'flazz/vim-colorschemes'
 
 call vundle#end()
 
@@ -99,6 +100,9 @@ let mapleader=","
 
 " File explorer style
 let g:netrw_liststyle=1
+
+" Always show sign column
+let g:gitgutter_sign_column_always = 1
 
 " Increment and decrement numbers
 nnoremap <A-a> <C-a>
@@ -137,9 +141,10 @@ endif
 
 " Toggle NERD Tree
 nnoremap <C-N> :NERDTreeToggle<CR>
+nnoremap <C-M> :NERDTreeFind<CR>
 
 " Colors
-colorscheme molokai
+colorscheme PaperColor
 
 " Use ii instead of ESC
 imap ii <Esc>
