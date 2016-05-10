@@ -33,15 +33,15 @@ set -g status-right "#[fg=green]][#[fg=yellow]#(uptime | sed -e 's/^.*[a-z]: //'
 
 set -g visual-activity on
 
-set -g mouse-select-pane on
+#set -g mouse-select-pane on
 
 set -g base-index 1
 
-setw -g c0-change-trigger 75
-setw -g c0-change-interval 50
+#setw -g c0-change-trigger 75
+#setw -g c0-change-interval 50
 
 setw -g mode-keys vi
-setw -g mode-mouse on
+#setw -g mode-mouse on
 
 setw -g monitor-activity on
 
