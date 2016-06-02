@@ -4,10 +4,10 @@ export PATH=$PATH:$UHDPREFIX/bin
 export LD_LOAD_LIBRARY=$LD_LOAD_LIBRARY:$UHDPREFIX/lib
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$UHDPREFIX/lib
 export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$UHDPREFIX/lib/pkgconfig
-export CPATH=~/opt/uhd/include
+export CPATH=$UHDPREFIX/include
 
-export UHD_LOG_LEVEL=regularly
 export UHD_TEMP_PATH=~/tmp
+export UHD_LOG_LEVEL=regularly
 export UHD_IMAGES_DIR=$UHDPREFIX/share/uhd/images
 
 # GNU Radio
