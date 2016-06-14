@@ -1,6 +1,6 @@
 # Xilinx
 export XILINXD_LICENSE_FILE='2100@mufasa.swiftnav.com'
-alias env_vivado='source /opt/Xilinx/Vivado/2015.4/settings64.sh'
+alias env_vivado='source /opt/Xilinx/Vivado/2016.2/settings64.sh'
 alias env_ise='source /opt/Xilinx/14.7/ISE_DS/settings64.sh'
 
 # Mentor Graphics
