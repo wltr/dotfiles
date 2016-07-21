@@ -59,9 +59,9 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
 Plugin 'kshenoy/vim-signature'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'ivalkeen/vim-ctrlp-tjump'
-Plugin 'rking/ag.vim'
+Plugin 'albfan/ag.vim'
 Plugin 'moll/vim-bbye'
 Plugin 'vim-scripts/verilog_systemverilog_fix'
 Plugin 'nelstrom/vim-visual-star-search'
@@ -160,7 +160,7 @@ endif
 nnoremap <C-N> :NERDTreeToggle<CR>
 nnoremap <C-M> :NERDTreeFind<CR>
 
-let g:NERDTreeWinSize = 40
+let g:NERDTreeWinSize = 50
 
 " EasyMotion highlighting
 hi link EasyMotionTarget2First Number
