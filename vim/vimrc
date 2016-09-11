@@ -110,7 +110,7 @@ let g:netrw_liststyle=1
 let g:gitgutter_sign_column_always = 1
 
 " Airline
-let g:airline_theme = 'papercolor'
+let g:airline_theme = 'solarized'
 let g:airline_powerline_fonts = 1
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
@@ -167,7 +167,7 @@ hi link EasyMotionTarget2First Number
 hi link EasyMotionTarget2Second Number
 
 " Colors
-colorscheme PaperColor
+colorscheme solarized
 
 " Use ii instead of ESC
 imap ii <Esc>
