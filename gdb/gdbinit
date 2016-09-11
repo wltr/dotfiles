@@ -1,0 +1,4 @@
+set mem inaccessible-by-default off
+target extended-remote /dev/cu.usbmodemE0E5B6D1
+mon jtag_scan 6 4
+attach 2
