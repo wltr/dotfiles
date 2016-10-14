@@ -1,7 +1,7 @@
 " Options
 set nocompatible
 set encoding=utf-8
-"set background=dark
+set background=dark
 set hidden
 set mouse=a
 set cursorline
@@ -118,9 +118,6 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ''
 let g:airline#extensions#tabline#left_alt_sep = '|'
 
-" Markdown
-let g:vim_markdown_folding_disabled = 1
-
 " Increment and decrement numbers
 nnoremap <A-a> <C-a>
 nnoremap <A-x> <C-x>
@@ -169,12 +166,16 @@ hi link EasyMotionTarget2Second Number
 " Colors
 colorscheme solarized
 
-" Use ii instead of ESC
-imap ii <Esc>
-
 " Status line
 set statusline=%<\ %n:%f\ %m%r
 set statusline+=%#warningmsg#%{fugitive#statusline()}%*
 set statusline+=%=line:\ %l\/%L,\ col:\ %c%V\ (%P)\ 0x%B
 
+" Use ii instead of ESC
+imap ii <Esc>
+
+" Default Enter key
+unmap <CR>
+
+" Close if NERDTree is the last window
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
