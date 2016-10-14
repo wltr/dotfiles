@@ -26,10 +26,10 @@ set -g status-utf8 on
 set -g status-keys vi
 
 set -g status-left-length 70
-set -g status-left "#[fg=green][#[fg=yellow]#h#[fg=green]]["
+set -g status-left " #[fg=green]#h#[fg=white] |"
 
 set -g status-right-length 60
-set -g status-right "#[fg=green]][#[fg=yellow]#(uptime | sed -e 's/^.*[a-z]: //')#[fg=green]][#[fg=yellow]%Y-%m-%d %I:%M%P#[fg=green]][#[fg=yellow]#(cat /sys/class/power_supply/BAT0/capacity)%#(cat /sys/class/power_supply/BAT0/status | sed -e '/Unknown/d' -e 's/Charging/++/' -e 's/Discharging/--/' -e '/Full/d')#[fg=green]]"
+set -g status-right "#[fg=white]| #[fg=yellow]#(uptime | sed -e 's/^.*[a-z]: //' | sed -e 's/ //g')|%Y-%m-%d|%I:%M%P|#(cat /sys/class/power_supply/BAT0/capacity)%#(cat /sys/class/power_supply/BAT0/status | sed -e '/Unknown/d' -e 's/Charging/++/' -e 's/Discharging/--/' -e '/Full/d') "
 
 set -g visual-activity on
 
