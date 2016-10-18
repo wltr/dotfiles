@@ -44,6 +44,10 @@ set list
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
 set scrolloff=3
 set nospell
+set foldmethod=indent
+set foldnestmax=10
+set nofoldenable
+set foldlevel=2
 
 syntax on
 
