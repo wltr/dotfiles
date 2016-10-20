@@ -65,7 +65,7 @@ Plugin 'kshenoy/vim-signature'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'ivalkeen/vim-ctrlp-tjump'
-Plugin 'albfan/ag.vim'
+Plugin 'mileszs/ack.vim'
 Plugin 'moll/vim-bbye'
 Plugin 'vim-scripts/verilog_systemverilog_fix'
 Plugin 'nelstrom/vim-visual-star-search'
@@ -149,8 +149,11 @@ nnoremap <leader>. :CtrlPTag<CR>
 nnoremap <C-]> :CtrlPtjump<CR>
 vnoremap <C-]> :CtrlPtjumpVisual<CR>
 
-" Use current search for Ag
-nnoremap <leader>8 :AgFromSearch<CR>
+" Use current search for Ack
+nnoremap <leader>8 :AckFromSearch<CR>
+
+" Use Ag instead of Ack
+let g:ackprg = 'ag --nogroup --nocolor --column'
 
 " Exit terminal mode
 if has("nvim")
