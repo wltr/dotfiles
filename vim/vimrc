@@ -154,6 +154,10 @@ nnoremap <leader>8 :AckFromSearch<CR>
 
 " Use Ag instead of Ack
 let g:ackprg = 'ag --nogroup --nocolor --column'
+cnoreabbrev ag Ack
+cnoreabbrev aG Ack
+cnoreabbrev Ag Ack
+cnoreabbrev AG Ack
 
 " Exit terminal mode
 if has("nvim")
