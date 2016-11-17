@@ -166,7 +166,7 @@ endif
 
 " Toggle NERD Tree
 nnoremap <C-N> :NERDTreeToggle<CR>
-nnoremap <C-M> :NERDTreeFind<CR>
+nnoremap <C-M-N> :NERDTreeFind<CR>
 
 let g:NERDTreeWinSize = 50
 
@@ -186,7 +186,7 @@ set statusline+=%=line:\ %l\/%L,\ col:\ %c%V\ (%P)\ 0x%B
 imap ii <Esc>
 
 " Default Enter key
-unmap <CR>
+"unmap <CR>
 
 " Close if NERDTree is the last window
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
