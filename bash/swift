@@ -1,5 +1,6 @@
 # Xilinx
-export XILINXD_LICENSE_FILE='2100@mufasa.swiftnav.com'
+#export XILINXD_LICENSE_FILE='2100@mufasa.swiftnav.com'
+export XILINXD_LICENSE_FILE='2100@10.1.22.252'
 export XILINX_VIVADO='/opt/Xilinx/Vivado/2016.2'
 export XILINX_SDK='/opt/Xilinx/SDK/2016.2'
 alias env_vivado='source $XILINX_VIVADO/settings64.sh'
