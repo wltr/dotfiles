@@ -29,7 +29,7 @@ is_mine() {
   if [[ $(hostname -s) == wltr-* ]]; then
     echo -e '\e[33m'
   else
-    echo -e '\e[35m'
+    echo -e '\e[1;31m'
   fi
 }
 
