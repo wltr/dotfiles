@@ -27,6 +27,15 @@ git_user_name() {
   fi
 }
 
+# Check if it's my machine
+is_mine() {
+  if [[ $(hostname -s) == wltr-* ]]; then
+    echo -e '\e[33m'
+  else
+    echo -e '\e[1;31m'
+  fi
+}
+
 # Aliases
 alias ls='ls -Gh'
 alias ll='ls -l'
@@ -38,7 +47,7 @@ alias g..='[ ! -z `git rev-parse --show-toplevel` ] && cd `git rev-parse --show-
 #alias make='make -j$(sysctl -n hw.ncpu)'
 
 # Shell
-export PS1='\[\e[32m\]\u\[\e[90m\]@\[\e[33m\]\h\[\e[0m\]: \[\e[34m\]\W\[\e[1;30m\] $(git_check_changes)$(git_parse_branch)\[\e[0;36m\] $(git_user_email)\[\e[0m\]\n\#\$ '
+export PS1='\[\e[32m\]\u\[\e[90m\]@$(is_mine)\h\[\e[0m\]: \[\e[34m\]\W\[\e[1;30m\] $(git_check_changes)$(git_parse_branch)\[\e[0;36m\] $(git_user_email)\[\e[0m\]\n\#\$ '
 
 # Editor
 export EDITOR='nvim'

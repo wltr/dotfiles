@@ -4,7 +4,7 @@
 #export XILINXD_LICENSE_FILE=2100@mufasa.swiftnav.com
 export XILINXD_LICENSE_FILE=2100@10.1.22.252
 
-XILINX_VERSION=2016.2
+XILINX_VERSION=2016.4
 
 export XILINX_VIVADO=/opt/Xilinx/Vivado/$XILINX_VERSION
 export XILINX_SDK=/opt/Xilinx/SDK/$XILINX_VERSION
@@ -20,7 +20,7 @@ alias env_ise='source /opt/Xilinx/14.7/ISE_DS/settings64.sh'
 #export LM_LICENSE_FILE=1717@mufasa.swiftnav.com
 export LM_LICENSE_FILE=1717@10.1.22.252
 
-MODELSIM_VERSION=10.4d
+MODELSIM_VERSION=10.6
 MODELSIM_DIR=/opt/mentor/modelsim_$MODELSIM_VERSION/modelsim_dlx
 
 export MODEL_TECH=$MODELSIM_DIR
