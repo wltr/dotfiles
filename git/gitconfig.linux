@@ -8,6 +8,7 @@
 	st = status
 	lol = log --graph --decorate --oneline
 	lola = log --graph --decorate --oneline --all
+	smu = submodule update --init --recursive
 [push]
 	default = simple
 [core]
