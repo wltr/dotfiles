@@ -1,19 +1,32 @@
 # Xilinx
-#export XILINXD_LICENSE_FILE='2100@mufasa.swiftnav.com'
-export XILINXD_LICENSE_FILE='2100@10.1.22.252'
-export XILINX_VIVADO='/opt/Xilinx/Vivado/2016.2'
-export XILINX_SDK='/opt/Xilinx/SDK/2016.2'
+# ======
+
+#export XILINXD_LICENSE_FILE=2100@mufasa.swiftnav.com
+export XILINXD_LICENSE_FILE=2100@10.1.22.252
+
+XILINX_VERSION=2016.2
+
+export XILINX_VIVADO=/opt/Xilinx/Vivado/$XILINX_VERSION
+export XILINX_SDK=/opt/Xilinx/SDK/$XILINX_VERSION
+
 alias env_vivado='source $XILINX_VIVADO/settings64.sh'
 alias env_xsdk='source $XILINX_SDK/settings64.sh'
 alias env_ise='source /opt/Xilinx/14.7/ISE_DS/settings64.sh'
 
+
 # Mentor Graphics
-#export LM_LICENSE_FILE='1717@mufasa.swiftnav.com'
-export LM_LICENSE_FILE='1717@10.1.22.252'
-MODELSIM_DIR=/opt/mentor/modelsim_10.4d/modelsim_dlx
+# ===============
+
+#export LM_LICENSE_FILE=1717@mufasa.swiftnav.com
+export LM_LICENSE_FILE=1717@10.1.22.252
+
+MODELSIM_VERSION=10.4d
+MODELSIM_DIR=/opt/mentor/modelsim_$MODELSIM_VERSION/modelsim_dlx
+
 export MODEL_TECH=$MODELSIM_DIR
 export MTI_HOME=$MODELSIM_DIR
 export MODELSIM=$MODELSIM_DIR/modelsim.ini
-export PATH=$MODELSIM_DIR/linuxpe:$PATH
 export UVM_HOME=/opt/uvm-1.2
+
+export PATH=$MODELSIM_DIR/linuxpe:$PATH
 export LIBRARY_PATH=/usr/lib32:$LIBRARY_PATH
