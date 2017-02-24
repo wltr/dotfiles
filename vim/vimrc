@@ -168,7 +168,7 @@ endif
 nnoremap <C-N> :NERDTreeToggle<CR>
 nnoremap <C-M-N> :NERDTreeFind<CR>
 
-let g:NERDTreeWinSize = 35
+let g:NERDTreeWinSize = 45
 
 " EasyMotion highlighting
 hi link EasyMotionTarget2First Number
