@@ -91,6 +91,9 @@ autocmd BufWritePre * :%s/\s\+$//e
 " Use tabs with Makefiles
 autocmd FileType make setlocal noexpandtab
 
+" Still use 2 spaces with Python
+autocmd FileType python setlocal shiftwidth=2 softtabstop=2 expandtab
+
 " Highlight todos
 "call matchadd('Todo', '\s\+$')
 call matchadd('Todo', 'TODO')

@@ -9,6 +9,8 @@
 	lol = log --graph --decorate --oneline
 	lola = log --graph --decorate --oneline --all
 	smu = submodule update --init --recursive
+	hide = update-index --assume-unchanged
+	unhide = update-index --no-assume-unchanged
 [push]
 	default = simple
 [core]
