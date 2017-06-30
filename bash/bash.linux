@@ -51,4 +51,4 @@ export EDITOR='nvim'
 alias v='nvim'
 
 # Paths
-export PATH=~/bin:~/opt/gcc-linaro-6.3.1-2017.05-x86_64_arm-linux-gnueabihf/bin:~/opt/gcc-arm-none-eabi-5_4-2016q2/bin:~/opt/node-v6.9.4-linux-x64/bin:$PATH
+export PATH=~/bin:~/opt/gcc-linaro-6.3.1-2017.05-x86_64_arm-linux-gnueabihf/bin:~/opt/gcc-arm-none-eabi-5_4-2016q3/bin:~/opt/node-v6.9.4-linux-x64/bin:$PATH
