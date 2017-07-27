@@ -4,6 +4,7 @@
 [alias]
 	co = checkout
 	br = branch
+	rb = rebase
 	ci = commit
 	st = status
 	lol = log --graph --decorate --oneline
