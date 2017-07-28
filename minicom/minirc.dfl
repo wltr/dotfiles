@@ -1,0 +1,6 @@
+# Machine-generated file - use "minicom -s" to change parameters.
+pu port             /dev/ttyUSB0
+pu escape-key       Escape (Meta)
+pu rtscts           No
+pu histlines        5000
+pu linewrap         Yes
