@@ -55,7 +55,7 @@ setw -g window-status-current-attr bright
 setw -g window-status-current-bg default
 setw -g window-status-current-fg red
 
-bind -t vi-copy y copy-pipe 'xclip -in -selection clipboard > /dev/null'
+bind -t vi-copy y copy-pipe "xsel -i -b"
 
 bind -n M-h select-pane -L
 bind -n M-l select-pane -R

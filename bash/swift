@@ -1,28 +1,24 @@
-# Xilinx
-# ======
+# Xilinx Vivado
+# =============
+XILINX_VERSION=2017.2 # update me
 
-#export XILINXD_LICENSE_FILE=2100@mufasa.swiftnav.com
+# License server: currently Mufasa
 export XILINXD_LICENSE_FILE=2100@10.1.22.252
-
-XILINX_VERSION=2017.2
 
 export XILINX_VIVADO=/opt/Xilinx/Vivado/$XILINX_VERSION
 export XILINX_SDK=/opt/Xilinx/SDK/$XILINX_VERSION
 
 alias env_vivado='source $XILINX_VIVADO/settings64.sh'
 alias env_xsdk='source $XILINX_SDK/settings64.sh'
-alias env_ise='source /opt/Xilinx/14.7/ISE_DS/settings64.sh'
 
+# Mentor Graphics Modelsim
+# ========================
+MODELSIM_VERSION=10.6 # update me
 
-# Mentor Graphics
-# ===============
-
-#export LM_LICENSE_FILE=1717@mufasa.swiftnav.com
+# License server: currently Mufasa
 export LM_LICENSE_FILE=1717@10.1.22.252
 
-MODELSIM_VERSION=10.6
-MODELSIM_DIR=/opt/mentor/modelsim_$MODELSIM_VERSION/modelsim_dlx
-
+export MODELSIM_DIR=/opt/mentor/modelsim_$MODELSIM_VERSION/modelsim_dlx
 export MODEL_TECH=$MODELSIM_DIR
 export MTI_HOME=$MODELSIM_DIR
 export MODELSIM=$MODELSIM_DIR/modelsim.ini
