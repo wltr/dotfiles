@@ -53,7 +53,7 @@ fi
 export IGNOREEOF=3
 
 # Shell
-export PS1='\[\e[32m\]\u\[\e[0m\]@$(is_mine)\h\[\e[0m\]: \[\e[34m\]\W\[\e[37m\] $(git_check_changes)$(git_parse_branch)\[\e[0;36m\]$(git_list_stash)$(git_user_email)\[\e[0m\]\n\#\$ '
+export PS1='\[\e[32m\]\u\[\e[0m\]@$(is_mine)\h\[\e[0m\]:$(jobs | wc -l): \[\e[34m\]\W\[\e[37m\] $(git_check_changes)$(git_parse_branch)\[\e[0;36m\]$(git_list_stash)$(git_user_email)\[\e[0m\]\n\#\$ '
 
 # Editor
 export EDITOR='nvim'
