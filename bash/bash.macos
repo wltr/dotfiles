@@ -1,15 +1,22 @@
 # Git helper functions
 git_parse_branch() {
-  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
 }
 
 git_check_changes() {
   git status -s 2> /dev/null | tail -n 1 | sed -e $'s/.*/\x1b[1;95m/'
 }
 
+git_list_stash() {
+  count=$(git stash list 2> /dev/null | wc -l)
+  if [ $count -gt 0 ]; then
+    echo $count | sed -e 's/\(.*\)/ (\1 stashed)/'
+  fi
+}
+
 git_user_email() {
   if [ -n "$(git branch 2> /dev/null)" ]; then
-    echo "<$(git config -l 2> /dev/null | grep user.email | tail -n 1 | sed -e 's/.*=\(.*\)$/\1/')>"
+    echo " <$(git config -l 2> /dev/null | grep user.email | tail -n 1 | sed -e 's/.*=\(.*\)$/\1/')>"
   fi
 }
 
@@ -48,7 +55,7 @@ fi
 export IGNOREEOF=3
 
 # Shell
-export PS1='\[\e[32m\]\u\[\e[90m\]@$(is_mine)\h\[\e[0m\]: \[\e[34m\]\W\[\e[1;30m\] $(git_check_changes)$(git_parse_branch)\[\e[0;36m\] $(git_user_email)\[\e[0m\]\n\#\$ '
+export PS1='\[\e[32m\]\u\[\e[90m\]@$(is_mine)\h\[\e[0m\]: \[\e[34m\]\W\[\e[1;30m\] $(git_check_changes)$(git_parse_branch)\[\e[0;36m\]$(git_list_stash)$(git_user_email)\[\e[0m\]\n\#\$ '
 
 # Editor
 export EDITOR='nvim'
