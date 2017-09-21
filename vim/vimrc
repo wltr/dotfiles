@@ -50,6 +50,8 @@ set nofoldenable
 set foldlevel=2
 set clipboard+=unnamedplus
 
+autocmd FileType vhdl let b:tagbar_ignore = 1
+
 syntax on
 
 " Vundle
@@ -110,10 +112,10 @@ call matchadd('Todo', 'NOTES')
 call matchadd('Todo', 'NOTES:')
 
 " Define new leader key
-let mapleader=","
+let mapleader = ","
 
 " File explorer style
-let g:netrw_liststyle=1
+let g:netrw_liststyle = 1
 
 " Always show sign column
 let g:gitgutter_sign_column_always = 1
