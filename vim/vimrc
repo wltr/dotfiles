@@ -175,12 +175,12 @@ endif
 nnoremap <C-N> :NERDTreeToggle<CR>
 nnoremap <C-M-N> :NERDTreeFind<CR>
 
-let g:NERDTreeWinSize = 35
+let g:NERDTreeWinSize = 30
 
 " Toggle TagBar
 nnoremap <C-M-M> :TagbarToggle<CR>
 
-let g:tagbar_width = 35
+let g:tagbar_width = 30
 
 " EasyMotion highlighting
 hi link EasyMotionTarget2First Number
