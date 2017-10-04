@@ -180,6 +180,8 @@ let g:NERDTreeWinSize = 35
 " Toggle TagBar
 nnoremap <C-M-M> :TagbarToggle<CR>
 
+let g:tagbar_width = 35
+
 " EasyMotion highlighting
 hi link EasyMotionTarget2First Number
 hi link EasyMotionTarget2Second Number
