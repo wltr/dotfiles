@@ -7,6 +7,8 @@
 	rb = rebase
 	ci = commit
 	st = status
+	df = diff
+	dt = difftool
 	lol = log --graph --decorate --oneline
 	lola = log --graph --decorate --oneline --all
 	smu = submodule update --init --recursive
@@ -16,3 +18,7 @@
 	default = simple
 [core]
 	excludesfile = /Users/wltr/.gitignore_global
+[diff]
+	tool = nvimdiff
+[difftool "nvimdiff"]
+	cmd = nvim -d $LOCAL $REMOTE

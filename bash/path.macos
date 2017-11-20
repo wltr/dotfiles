@@ -1,2 +1,2 @@
 # Paths
-export PATH=~/bin:$PATH:/usr/local/sbin:~/opt/gcc-arm-none-eabi-5_4-2016q2/bin
+export PATH=$PATH:~/bin

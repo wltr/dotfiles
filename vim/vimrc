@@ -84,6 +84,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'majutsushi/tagbar'
+Plugin 'elzr/vim-json'
 
 call vundle#end()
 
@@ -118,7 +119,7 @@ let mapleader = ","
 let g:netrw_liststyle = 1
 
 " Always show sign column
-let g:gitgutter_sign_column_always = 1
+set signcolumn=yes
 
 " Airline
 let g:airline_theme = 'solarized'
