@@ -28,7 +28,7 @@ git_user_name() {
 
 # Check if it's my machine
 is_mine() {
-  if [[ $(hostname -s) == wltr-* ]]; then
+  if [[ $(hostname -s) == wltr-* ]] || [[ $(hostname -s) == sydmacd0dv ]]; then
     echo -e '\x1b[33m'
   else
     echo -e '\x1b[1;31m'
