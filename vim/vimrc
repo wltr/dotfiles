@@ -25,9 +25,9 @@ set visualbell
 set noerrorbells
 set showmatch
 set showcmd
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 set shiftround
 set backspace=indent,eol,start
 set expandtab

@@ -1,6 +1,6 @@
 [user]
 	name = Johannes Walter
-	email = johannes@swift-nav.com
+	email = johannes.walter@imc.com
 [alias]
 	co = checkout
 	br = branch
@@ -9,16 +9,24 @@
 	st = status
 	df = diff
 	dt = difftool
-	lol = log --graph --decorate --oneline
-	lola = log --graph --decorate --oneline --all
+#	lol = log --graph --decorate --oneline
+	lol = log --pretty=format:'%C(yellow)%h%C(auto)%d %Creset%s %Cblue[%cn] %Cgreen%cr' --graph
+#	lola = log --graph --decorate --oneline --all
+	lola = log --pretty=format:'%C(yellow)%h%C(auto)%d %Creset%s %Cblue[%cn] %Cgreen%cr' --graph --all
 	smu = submodule update --init --recursive
 	hide = update-index --assume-unchanged
 	unhide = update-index --no-assume-unchanged
 [push]
 	default = simple
 [core]
-	excludesfile = /home/wltr/.gitignore_global
+	excludesfile = /export/home/jwalter/.gitignore_global
 [diff]
 	tool = nvimdiff
 [difftool "nvimdiff"]
 	cmd = nvim -d $LOCAL $REMOTE
+[color]
+	status = auto
+	branch = auto
+	diff = auto
+	interactive = auto
+	ui = true

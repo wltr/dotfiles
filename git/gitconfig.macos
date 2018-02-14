@@ -1,6 +1,6 @@
 [user]
 	name = Johannes Walter
-	email = johannes@swift-nav.com
+	email = johannes.walter@imc.com
 [alias]
 	co = checkout
 	br = branch
@@ -22,3 +22,9 @@
 	tool = nvimdiff
 [difftool "nvimdiff"]
 	cmd = nvim -d $LOCAL $REMOTE
+[color]
+	status = auto
+	branch = auto
+	diff = auto
+	interactive = auto
+	ui = true

@@ -1,2 +1,5 @@
 # Paths
-export PATH=$PATH:~/bin
+
+export PATH=/opt/imc/gcc-6.2.0/bin:/opt/imc/anaconda/bin:/opt/imc/maven3/bin:/opt/imc/cmake-3.6.2/bin:/opt/imc/oracle-jdk-1.8.0_u102/bin:~/bin:$PATH
+
+export JAVA_HOME=/opt/imc/oracle-jdk-1.8.0_u102/
