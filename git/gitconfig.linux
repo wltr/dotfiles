@@ -25,7 +25,7 @@
 [push]
 	default = simple
 [core]
-	excludesfile = /export/home/jwalter/.gitignore_global
+	excludesfile = ~/.gitignore_global
 [diff]
 	tool = nvimdiff
 [difftool "nvimdiff"]
