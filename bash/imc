@@ -1,0 +1,5 @@
+# IMC Tools
+export PATH=/opt/imc/gcc-6.2.0/bin:/opt/imc/anaconda/bin:/opt/imc/maven3/bin:/opt/imc/cmake-3.6.2/bin:/opt/imc/oracle-jdk-1.8.0_u102/bin:$PATH
+
+# Java
+export JAVA_HOME=/opt/imc/oracle-jdk-1.8.0_u102/
