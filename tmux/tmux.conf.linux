@@ -22,13 +22,13 @@ bind -n C-M-j resize-pane -D
 
 set -g prefix C-a
 set -g utf8 on
-set -g mouse on
+#set -g mouse on
 set -g base-index 1
 set -g mode-keys vi
 set -g default-terminal "screen-256color"
 set -g escape-time 0
 set -g display-time 2000
-set -g history-limit 10000
+set -g history-limit 999999
 set -g set-titles on
 set -g set-titles-string "tmux.#I.#W"
 set -g visual-activity on
@@ -52,4 +52,4 @@ set -g status-left-length 70
 set -g status-left " #[fg=green]#h#[fg=white] |"
 
 set -g status-right-length 60
-set -g status-right "#[fg=white]| #[fg=yellow]#(uptime | sed -e 's/^.*[a-z]: //' | sed -e 's/ //g')|%Y-%m-%d|%I:%M%P|#(cat /sys/class/power_supply/BAT0/capacity)%#(cat /sys/class/power_supply/BAT0/status | sed -e '/Unknown/d' -e 's/Charging/++/' -e 's/Discharging/--/' -e '/Full/d') "
+set -g status-right "#[fg=white]| #[fg=yellow]#(uptime | sed -e 's/^.*[a-z]: //' | sed -e 's/ //g')|%Y-%m-%d|%I:%M%P|#(battery-status) "

@@ -51,17 +51,17 @@ URxvt*color14:                S_base1
 URxvt*color15:                S_base3
 
 Xft.dpi:                      96
-Xft.antialias:                false
 Xft.rgba:                     rgb
+Xft.antialias:                true
 Xft.hinting:                  true
-Xft.hintstyle:                hintslight
+Xft.hintstyle:                hintsfull
 
 URxvt.depth:                  32
 URxvt.geometry:               90x30
 URxvt.transparent:            false
 URxvt.fading:                 0
 URxvt.loginShell:             true
-URxvt.saveLines:              10000
+URxvt.saveLines:              999999
 URxvt.internalBorder:         1
 URxvt.lineSpace:              1
 URxvt*letterSpace:            -1
@@ -72,5 +72,5 @@ URxvt.urlLauncher:            google-chrome
 URxvt.matcher.button:         1
 URxvt.allow_bold:             true
 
-URxvt*font:                   xft:Liberation Mono:pixelsize=18, xft:Inconsolata for Powerline
-URxvt*boldFont:               xft:Liberation Mono:bold:pixelsize=18, xft:Inconsolata for Powerline
+URxvt*font:                   xft:Liberation Mono for Powerline:pixelsize=18, xft:Inconsolata for Powerline
+URxvt*boldFont:               xft:Liberation Mono for Powerline:bold:pixelsize=18, xft:Inconsolata for Powerline

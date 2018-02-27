@@ -1,0 +1,6 @@
+#!/bin/bash
+
+value=$(cat /sys/class/power_supply/BAT0/capacity 2> /dev/null | sed -e 's/$/\%/')
+state=$(cat /sys/class/power_supply/BAT0/status 2> /dev/null | sed -e '/Unknown/d' -e 's/Charging/++/' -e 's/Discharging/--/' -e '/Full/d')
+
+echo "$value$state"
