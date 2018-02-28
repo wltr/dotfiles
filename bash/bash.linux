@@ -4,7 +4,7 @@ git_parse_branch() {
 }
 
 git_check_changes() {
-  git status -s 2> /dev/null | tail -n 1 | sed -e 's/.*/\x1b[1;35m/'
+  git status -s 2> /dev/null | tail -n 1 | sed -e $'s/.*/\x1b[1;35m/'
 }
 
 git_list_stash() {
@@ -27,8 +27,19 @@ git_user_name() {
 }
 
 # Check if it's my machine
+mine=("wltr-*" "sygps065" "sydmacd0dv")
+
 is_mine() {
-  if [[ $(hostname -s) == wltr-* ]] || [[ $(hostname -s) == sygps065 ]]; then
+  found=0
+  for i in ${mine[@]}
+  do
+    if [[ $(hostname -s) == $i ]]; then
+        found=1
+        break
+    fi
+  done
+
+  if [ $found -eq 1 ]; then
     echo -e '\x1b[33m'
   else
     echo -e '\x1b[1;31m'
