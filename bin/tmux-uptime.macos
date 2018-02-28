@@ -1,0 +1,3 @@
+#!/bin/bash
+
+uptime | sed -e 's/^.*[a-z]: //' | sed -e 's/ /,/g'

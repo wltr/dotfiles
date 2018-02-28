@@ -74,4 +74,4 @@ set -g status-left-length 70
 set -g status-left " #[fg=green]#h#[fg=white] |"
 
 set -g status-right-length 60
-set -g status-right "#[fg=white]| #[fg=yellow]#(uptime | sed -e 's/^.*[a-z]: //' | sed -e 's/ /,/g')|%Y-%m-%d|%H:%M|#(battery-status) "
+set -g status-right "#[fg=white]| #[fg=yellow]#(tmux-status) "
