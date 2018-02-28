@@ -10,6 +10,9 @@ bind ^A select-pane -t :.+
 bind -t vi-copy y copy-pipe "xsel -i -b"
 bind -n C-y run "xsel -o -b | tmux load-buffer - ; tmux paste-buffer"
 
+bind -n C-M-n next-window
+bind -n C-M-p previous-window
+
 bind -n M-h select-pane -L
 bind -n M-l select-pane -R
 bind -n M-k select-pane -U
@@ -52,4 +55,4 @@ set -g status-left-length 70
 set -g status-left " #[fg=green]#h#[fg=white] |"
 
 set -g status-right-length 60
-set -g status-right "#[fg=white]| #[fg=yellow]#(uptime | sed -e 's/^.*[a-z]: //' | sed -e 's/ //g')|%Y-%m-%d|%I:%M%P|#(battery-status) "
+set -g status-right "#[fg=white]| #[fg=yellow]#(uptime | sed -e 's/^.*[a-z]: //' | sed -e 's/ //g')|%Y-%m-%d|%H:%M|#(battery-status) "
