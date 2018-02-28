@@ -54,7 +54,7 @@ case $TERM in
     ;;
   screen*)
     DEFAULT_TITLE=$(ps -o comm $$ | tail -n 1)
-    function update_title { printf "\033k%s\033\\" "${1:-$DEFAULT_TITLE}"; }
+    function update_title { printf "\033k%s\033\\" "`echo ${1:-$DEFAULT_TITLE} | awk -F ' ' '{ print $1 }'`"; }
     PROMPT_COMMAND='update_title'
     trap 'update_title "$BASH_COMMAND"' DEBUG
     ;;
