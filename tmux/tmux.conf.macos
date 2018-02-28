@@ -10,8 +10,13 @@ bind ^A select-pane -t :.+
 #bind -t vi-copy y copy-pipe "xsel -i -b"
 #bind -n C-y run "xsel -o -b | tmux load-buffer - ; tmux paste-buffer"
 
-bind -n C-M-n next-window
-bind -n C-M-p previous-window
+unbind '"'
+bind - split-window -v
+unbind %
+bind \ split-window -h
+
+bind -n M-n next-window
+bind -n M-p previous-window
 
 bind -n M-h select-pane -L
 bind -n M-l select-pane -R
@@ -34,22 +39,36 @@ set -g display-time 2000
 set -g history-limit 999999
 set -g set-titles on
 set -g set-titles-string "tmux.#I.#W"
-set -g visual-activity on
+set -g visual-activity off
 set -g monitor-activity on
+
+set -g pane-border-fg default
+set -g pane-active-border-fg cyan
+
+set -g message-fg yellow
+set -g message-bg black
+set -g message-command-fg blue
+set -g message-command-bg black
+
 set -g status on
-set -g status-attr default
-set -g status-bg default
-set -g status-fg white
-set -g status-interval 10
-set -g status-justify centre
 #set -g status-utf8 on
 set -g status-keys vi
+set -g status-attr dim
+set -g status-interval 10
+set -g status-position bottom
+set -g status-justify centre
+set -g status-bg default
+set -g status-fg white
+
+set -g window-status-format "#I:#W"
 set -g window-status-attr dim
 set -g window-status-bg default
 set -g window-status-fg white
+
+set -g window-status-current-format "#I:#W#F"
 set -g window-status-current-attr bright
 set -g window-status-current-bg default
-set -g window-status-current-fg red
+set -g window-status-current-fg magenta
 
 set -g status-left-length 70
 set -g status-left " #[fg=green]#h#[fg=white] |"

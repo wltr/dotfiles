@@ -45,10 +45,18 @@ alias vi='nvim'
 #alias make='make -j$(nproc)'
 alias g..='[ ! -z `git rev-parse --show-toplevel` ] && cd `git rev-parse --show-toplevel || pwd`'
 
-# Color terminal
-if [[ $TERM == xterm ]]; then
-  export TERM=xterm-256color
-fi
+# Terminal
+case $TERM in
+  xterm)
+    export TERM=xterm-256color
+    ;;
+  screen*)
+    DEFAULT_TITLE=$(ps -o comm $$ | tail -n 1)
+    function update_title { printf "\033k%s\033\\" "${1:-$DEFAULT_TITLE}"; }
+    PROMPT_COMMAND='update_title'
+    trap 'update_title "$BASH_COMMAND"' DEBUG
+    ;;
+esac
 
 # Ignore CTRL-D
 export IGNOREEOF=3
