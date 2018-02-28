@@ -15,8 +15,8 @@ bind - split-window -v
 unbind %
 bind \ split-window -h
 
-bind -n M-n next-window
-bind -n M-p previous-window
+bind -n M-p next-window
+bind -n M-n previous-window
 
 bind -n M-h select-pane -L
 bind -n M-l select-pane -R
