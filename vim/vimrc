@@ -158,7 +158,7 @@ nnoremap <C-]> :CtrlPtjump<CR>
 vnoremap <C-]> :CtrlPtjumpVisual<CR>
 
 " Use current search for Ack
-nnoremap <leader>8 :AckFromSearch<CR>
+nnoremap <leader>8 :AckFromSearch!<CR>
 
 " Use Ag instead of Ack
 let g:ackprg = 'ag --nogroup --nocolor --column'
