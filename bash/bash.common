@@ -18,13 +18,13 @@ git_list_stash() {
 }
 
 git_user_email() {
-  if [ -n '$(git branch 2> /dev/null)' ]; then
+  if [ -n "$(git branch 2> /dev/null)" ]; then
     echo " <$(git config -l 2> /dev/null | grep user.email | tail -n 1 | sed -e 's/.*=.*@\(.*\)$/\1/')>"
   fi
 }
 
 git_user_name() {
-  if [ -n '$(git branch 2> /dev/null)' ]; then
+  if [ -n "$(git branch 2> /dev/null)" ]; then
     git config -l 2> /dev/null | grep user.name | tail -n 1 | sed -e 's/.*=\(.*\)$/\1/'
   fi
 }
