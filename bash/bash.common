@@ -49,7 +49,7 @@ is_mine() {
 
 # Terminal setup
 update_title() {
-  if [[ $1 != 'update_title' ]]; then
+  if [[ $1 != 'update_title' && $1 != 'exit' ]]; then
     fallback=${1:-$(ps -o comm $$ | tail -n 1)}
     cmd=$(echo $fallback | awk -F' ' '{print $1}')
     printf '\033k%s\033\\' $cmd
