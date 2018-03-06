@@ -19,6 +19,7 @@
 	unhide = update-index --no-assume-unchanged
 	push-gerrit = push origin HEAD:refs/for/master
 	prb = pull --rebase
+	cleanall = clean -fxd
 [color]
 	status = auto
 	branch = auto
