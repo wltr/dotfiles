@@ -6,3 +6,6 @@ export PATH=/opt/imc/gcc-6.2.0/bin:/opt/imc/anaconda/bin:/opt/imc/maven3/bin:/op
 
 # Java
 export JAVA_HOME=/opt/imc/oracle-jdk-1.8.0_u102/
+
+# Falcon
+export FALCON_PCAP_DIR=/home/falcon_unit_tests/
