@@ -157,15 +157,30 @@ nnoremap <leader>. :CtrlPTag<CR>
 nnoremap <C-]> :CtrlPtjump<CR>
 vnoremap <C-]> :CtrlPtjumpVisual<CR>
 
+" Use Rg for Ctrl-P
+if executable('rg')
+  let g:ctrlp_user_command = 'rg --files %s'
+  let g:ctrlp_use_caching = 0
+  let g:ctrlp_working_path_mode = 'ra'
+  let g:ctrlp_switch_buffer = 'et'
+endif
+
 " Use current search for Ack
 nnoremap <leader>8 :AckFromSearch!<CR>
 
 " Use Ag instead of Ack
-let g:ackprg = 'ag --nogroup --nocolor --column'
-cnoreabbrev ag Ack
-cnoreabbrev aG Ack
-cnoreabbrev Ag Ack
-cnoreabbrev AG Ack
+"let g:ackprg = 'ag --nogroup --nocolor --column'
+"cnoreabbrev ag Ack
+"cnoreabbrev aG Ack
+"cnoreabbrev Ag Ack
+"cnoreabbrev AG Ack
+
+" Use Rg instead of Ack
+let g:ackprg = 'rg --vimgrep --no-heading'
+cnoreabbrev rg Ack
+cnoreabbrev rG Ack
+cnoreabbrev Rg Ack
+cnoreabbrev RG Ack
 
 " Exit terminal mode
 if has("nvim")
