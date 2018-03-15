@@ -29,10 +29,3 @@
 --regex-systemverilog=/^[ \t]*`SVT_REPLACEABLE_DEFINE\([ \t]*([a-zA-Z_0-9]+),.*\)/`\1/d,define/
 
 --systemverilog-kinds=+ctfmpied
-
---langdef=altsystemverilog
---regex-altsystemverilog=/^[ \t]*(extern)?[ \t]*(virtual)?[ \t]*(protected)?[ \t]*class[ \t]*([a-zA-Z_0-9]+)/\4/c,class/
---regex-altsystemverilog=/^[ \t]*(extern)?[ \t]*(virtual)?[ \t]*(protected)?[ \t]*task[ \t]*.*[ \t]+([a-zA-Z_0-9]+)[\t]*[(;]/\4/t,task
---regex-altsystemverilog=/^[ \t]*(extern)?[ \t]*(virtual)?[ \t]*(protected)?[ \t]*function[ \t]*.*[ \t]+([a-zA-Z_0-9]+)[ \t]*[(;]/\4/f,function/
---regex-altsystemverilog=/^[ \t]*(virtual)?[ \t]*task[ \t]*.*[ \t]+([a-zA-Z_0-9]+)[\t]*[(;]/\2/t,task/
---regex-altsystemverilog=/^[ \t]*(virtual)?[ \t]*function[ \t]*.*[ \t]+([a-zA-Z_0-9]+)[ \t]*[(;]/\2/f,function/
