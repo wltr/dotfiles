@@ -7,7 +7,7 @@ bind r source-file ~/.tmux.conf \; display "Reloaded config."
 unbind ^A
 bind ^A select-pane -t :.+
 
-bind -t vi-copy y copy-pipe "xsel -i -b"
+bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "reattach-to-user-namespace xsel -i -b"
 bind -n C-y run "xsel -o -b | tmux load-buffer - ; tmux paste-buffer"
 
 unbind '"'
@@ -29,7 +29,7 @@ bind -n C-M-k resize-pane -U
 bind -n C-M-j resize-pane -D
 
 set -g prefix C-a
-set -g utf8 on
+#set -g utf8 on
 #set -g mouse on
 set -g base-index 1
 set -g mode-keys vi
@@ -51,7 +51,7 @@ set -g message-command-fg blue
 set -g message-command-bg black
 
 set -g status on
-set -g status-utf8 on
+#set -g status-utf8 on
 set -g status-keys vi
 set -g status-attr dim
 set -g status-interval 10
