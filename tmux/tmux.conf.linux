@@ -7,7 +7,7 @@ bind r source-file ~/.tmux.conf \; display "Reloaded config."
 unbind ^A
 bind ^A select-pane -t :.+
 
-bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "reattach-to-user-namespace xsel -i -b"
+bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "xsel -i -b"
 bind -n C-y run "xsel -o -b | tmux load-buffer - ; tmux paste-buffer"
 
 unbind '"'
