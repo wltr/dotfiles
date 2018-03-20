@@ -1,0 +1,4 @@
+# IMC Paths
+export CPATH=/opt/imc/gcc-6.2.0/include/c++/6.2.0:/opt/imc/gcc-6.2.0/include/c++/6.2.0/x86_64-pc-linux-gnu:/opt/imc/gcc-6.2.0/include/c++/6.2.0:$CPATH
+
+export LIBRARY_PATH=/opt/imc/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0:/opt/imc/gcc-6.2.0/lib64:$LIBRARY_PATH
