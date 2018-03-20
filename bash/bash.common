@@ -69,10 +69,16 @@ esac
 # Aliases
 alias ll='ls -l'
 alias la='ls -Al'
-alias grep='grep --color=auto'
-alias diff='colordiff'
 alias vi='nvim'
+alias diff='colordiff'
+alias grep='grep --color=auto'
 alias g..='[ ! -z `git rev-parse --show-toplevel` ] && cd `git rev-parse --show-toplevel || pwd`'
+
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias ......='cd ../../../../..'
 
 # Ignore CTRL-D
 export IGNOREEOF=3
