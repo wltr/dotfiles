@@ -10,8 +10,8 @@ set nobackup
 set nowritebackup
 set noswapfile
 "set nowrap
-set history=1000
-set undolevels=1000
+set history=9999
+set undolevels=9999
 set number
 set numberwidth=5
 set autoindent
@@ -25,9 +25,9 @@ set visualbell
 set noerrorbells
 set showmatch
 set showcmd
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 set shiftround
 set backspace=indent,eol,start
 set expandtab
@@ -49,6 +49,10 @@ set foldnestmax=10
 set nofoldenable
 set foldlevel=2
 set clipboard+=unnamedplus
+set signcolumn=yes
+set statusline=%<\ %n:%f\ %m%r
+set statusline+=%#warningmsg#%{fugitive#statusline()}%*
+set statusline+=%=line:\ %l\/%L,\ col:\ %c%V\ (%P)\ 0x%B
 
 autocmd FileType vhdl let b:tagbar_ignore = 1
 
@@ -73,6 +77,7 @@ Plugin 'moll/vim-bbye'
 Plugin 'vim-scripts/verilog_systemverilog_fix'
 Plugin 'nelstrom/vim-visual-star-search'
 Plugin 'valloric/youcompleteme'
+Plugin 'rdnetto/YCM-Generator'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
@@ -90,45 +95,11 @@ call vundle#end()
 
 filetype plugin indent on
 
-" Trim whitespace
-autocmd BufWritePre * :%s/\s\+$//e
+" Colors
+colorscheme solarized
 
-" Use tabs with Makefiles
-autocmd FileType make setlocal noexpandtab
-
-" Still use 2 spaces with Python
-"autocmd FileType python setlocal shiftwidth=2 softtabstop=2 expandtab
-
-" Highlight todos
-"call matchadd('Todo', '\s\+$')
-call matchadd('Todo', 'TODO')
-call matchadd('Todo', 'TODO:')
-call matchadd('Todo', 'FIXME')
-call matchadd('Todo', 'FIXME:')
-call matchadd('Todo', 'DEBUG')
-call matchadd('Todo', 'DEBUG:')
-call matchadd('Todo', 'NOTE')
-call matchadd('Todo', 'NOTE:')
-call matchadd('Todo', 'NOTES')
-call matchadd('Todo', 'NOTES:')
-
-" Define new leader key
-let mapleader = ","
-
-" File explorer style
-let g:netrw_liststyle = 1
-
-" Always show sign column
-set signcolumn=yes
-
-" Airline
-let g:airline_theme = 'solarized'
-let g:airline_powerline_fonts = 1
-let g:airline_left_sep = ''
-let g:airline_right_sep = ''
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ''
-let g:airline#extensions#tabline#left_alt_sep = '|'
+" Use ii instead of ESC
+imap ii <Esc>
 
 " Increment and decrement numbers
 nnoremap <A-a> <C-a>
@@ -157,6 +128,36 @@ nnoremap <leader>. :CtrlPTag<CR>
 nnoremap <C-]> :CtrlPtjump<CR>
 vnoremap <C-]> :CtrlPtjumpVisual<CR>
 
+" Use current search for Ack
+nnoremap <leader>8 :AckFromSearch!<CR>
+
+" Toggle NERD Tree
+nnoremap <C-N> :NERDTreeToggle<CR>
+nnoremap <C-M-N> :NERDTreeFind<CR>
+
+" Toggle TagBar
+nnoremap <C-M-M> :TagbarToggle<CR>
+
+" Exit terminal mode
+if has("nvim")
+  tnoremap <leader>e <C-\><C-n>
+endif
+
+" Define new leader key
+let mapleader = ","
+
+" File explorer style
+let g:netrw_liststyle = 1
+
+" Airline
+let g:airline_theme = 'solarized'
+let g:airline_powerline_fonts = 1
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ''
+let g:airline#extensions#tabline#left_alt_sep = '|'
+
 " Use Rg for Ctrl-P
 if executable('rg')
   let g:ctrlp_user_command = 'rg --files %s'
@@ -165,56 +166,43 @@ if executable('rg')
   let g:ctrlp_switch_buffer = 'et'
 endif
 
-" Use current search for Ack
-nnoremap <leader>8 :AckFromSearch!<CR>
-
-" Use Ag instead of Ack
+" Use better Ack
 "let g:ackprg = 'ag --nogroup --nocolor --column'
-"cnoreabbrev ag Ack
-"cnoreabbrev aG Ack
-"cnoreabbrev Ag Ack
-"cnoreabbrev AG Ack
-
-" Use Rg instead of Ack
 let g:ackprg = 'rg --vimgrep --no-heading'
+cnoreabbrev ag Ack
+cnoreabbrev aG Ack
+cnoreabbrev Ag Ack
+cnoreabbrev AG Ack
 cnoreabbrev rg Ack
 cnoreabbrev rG Ack
 cnoreabbrev Rg Ack
 cnoreabbrev RG Ack
 
-" Exit terminal mode
-if has("nvim")
-  tnoremap <leader>e <C-\><C-n>
-endif
-
-" Toggle NERD Tree
-nnoremap <C-N> :NERDTreeToggle<CR>
-nnoremap <C-M-N> :NERDTreeFind<CR>
-
 let g:NERDTreeWinSize = 30
-
-" Toggle TagBar
-nnoremap <C-M-M> :TagbarToggle<CR>
-
 let g:tagbar_width = 30
 
 " EasyMotion highlighting
 hi link EasyMotionTarget2First Number
 hi link EasyMotionTarget2Second Number
 
-" Colors
-colorscheme solarized
+" Trim whitespace
+autocmd BufWritePre * :%s/\s\+$//e
 
-" Status line
-set statusline=%<\ %n:%f\ %m%r
-set statusline+=%#warningmsg#%{fugitive#statusline()}%*
-set statusline+=%=line:\ %l\/%L,\ col:\ %c%V\ (%P)\ 0x%B
-
-" Use ii instead of ESC
-imap ii <Esc>
-
-" Default Enter key
-"unmap <CR>
+" Use tabs with Makefiles
+autocmd FileType make setlocal noexpandtab
 
 " Close if NERDTree is the last window
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" Highlight todos
+"call matchadd('Todo', '\s\+$')
+call matchadd('Todo', 'TODO')
+call matchadd('Todo', 'TODO:')
+call matchadd('Todo', 'FIXME')
+call matchadd('Todo', 'FIXME:')
+call matchadd('Todo', 'DEBUG')
+call matchadd('Todo', 'DEBUG:')
+call matchadd('Todo', 'NOTE')
+call matchadd('Todo', 'NOTE:')
+call matchadd('Todo', 'NOTES')
+call matchadd('Todo', 'NOTES:')

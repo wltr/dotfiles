@@ -3,9 +3,9 @@
 date=`date +"%Y-%m-%d|%H:%M"`
 uptime=`tmux-uptime`"|"
 
-battery=`battery-status`
+battery=`tmux-battery`
 if [ ! -z $battery ]; then
-    battery="|"$battery
+  battery="|"$battery
 fi
 
 echo "$uptime$date$battery"
