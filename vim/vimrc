@@ -139,12 +139,12 @@ nnoremap <C-M-N> :NERDTreeFind<CR>
 nnoremap <C-M-M> :TagbarToggle<CR>
 
 " Exit terminal mode
-if has("nvim")
+if has('nvim')
   tnoremap <leader>e <C-\><C-n>
 endif
 
 " Define new leader key
-let mapleader = ","
+let mapleader = ','
 
 " File explorer style
 let g:netrw_liststyle = 1
@@ -181,6 +181,8 @@ cnoreabbrev RG Ack
 let g:NERDTreeWinSize = 30
 let g:tagbar_width = 30
 
+let g:ycm_glocal_ycm_extra_conf = '~/.ycm_extra_conf.py'
+
 " EasyMotion highlighting
 hi link EasyMotionTarget2First Number
 hi link EasyMotionTarget2Second Number
@@ -192,7 +194,7 @@ autocmd BufWritePre * :%s/\s\+$//e
 autocmd FileType make setlocal noexpandtab
 
 " Close if NERDTree is the last window
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+autocmd bufenter * if (winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree()) | q | endif
 
 " Highlight todos
 "call matchadd('Todo', '\s\+$')
