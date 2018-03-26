@@ -56,15 +56,20 @@ update_title() {
   fi
 }
 
+shopt -s histappend
+PROMPT_CMD='history -a; history -n;'
+
 case $TERM in
   xterm)
     export TERM=xterm-256color
     ;;
   screen*)
-    export PROMPT_COMMAND='update_title'
+    PROMPT_CMD=$PROMPT_CMD' update_title'
     trap 'update_title "$BASH_COMMAND"' DEBUG
     ;;
 esac
+
+export PROMPT_COMMAND=$PROMPT_CMD
 
 # Aliases
 alias ll='ls -l'
