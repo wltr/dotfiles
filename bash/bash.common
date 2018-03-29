@@ -35,13 +35,13 @@ is_mine() {
   for i in ${mine[@]}
   do
     if [[ $(hostname -s) == $i ]]; then
-        found=1
-        break
+      found=1
+      break
     fi
   done
 
   if [ $found -eq 1 ]; then
-    echo -e '\x1b[33m'
+    echo -e '\x1b[0;33m'
   else
     echo -e '\x1b[1;31m'
   fi
@@ -57,24 +57,39 @@ update_title() {
 }
 
 shopt -s histappend
-PROMPT_CMD='history -a; history -n;'
+prompt_cmd='history -a; history -n;'
 
 case $TERM in
   xterm)
     export TERM=xterm-256color
     ;;
   screen*)
-    PROMPT_CMD=$PROMPT_CMD' update_title'
+    prompt_cmd=$prompt_cmd' update_title'
     trap 'update_title "$BASH_COMMAND"' DEBUG
     ;;
 esac
 
-export PROMPT_COMMAND=$PROMPT_CMD
+export PROMPT_COMMAND=$prompt_cmd
+
+# Shell setup
+has_unicode() {
+  if [[ $(locale charmap) == 'UTF-8' ]]; then
+    echo -e '\x1b[0;35m\u276f '
+  fi
+}
+
+export PS1='$(has_unicode)\[\e[0;32m\]\u\[\e[0m\]@$(is_mine)\h\[\e[0m\] \[\e[34m\]\W\[\e[0;37m\] $(git_check_changes)$(git_parse_branch)\[\e[0;36m\]$(git_list_stash)$(git_user_email)\[\e[0m\]\n\#\$ '
+
+# Ignore CTRL-D
+export IGNOREEOF=3
+
+# Editor
+export EDITOR='nvim'
 
 # Aliases
+alias vi='nvim'
 alias ll='ls -l'
 alias la='ls -Al'
-alias vi='nvim'
 alias diff='colordiff'
 alias grep='grep --color=auto'
 alias g..='[ ! -z `git rev-parse --show-toplevel` ] && cd `git rev-parse --show-toplevel || pwd`'
@@ -84,12 +99,3 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
-
-# Ignore CTRL-D
-export IGNOREEOF=3
-
-# Shell
-export PS1='\[\e[32m\]\u\[\e[0m\]@$(is_mine)\h\[\e[0m\]: \[\e[34m\]\W\[\e[37m\] $(git_check_changes)$(git_parse_branch)\[\e[0;36m\]$(git_list_stash)$(git_user_email)\[\e[0m\]\n\#\$ '
-
-# Editor
-export EDITOR='nvim'
