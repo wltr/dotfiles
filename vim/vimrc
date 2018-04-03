@@ -54,10 +54,6 @@ set statusline=%<\ %n:%f\ %m%r
 set statusline+=%#warningmsg#%{fugitive#statusline()}%*
 set statusline+=%=line:\ %l\/%L,\ col:\ %c%V\ (%P)\ 0x%B
 
-autocmd FileType vhdl let b:tagbar_ignore = 1
-
-syntax on
-
 " Vundle
 filetype off
 
@@ -96,52 +92,33 @@ call vundle#end()
 filetype plugin indent on
 
 " Colors
+syntax on
 colorscheme solarized
 
-" Use ii instead of ESC
-imap ii <Esc>
+" Trim whitespace
+autocmd BufWritePre * :%s/\s\+$//e
 
-" Increment and decrement numbers
-nnoremap <A-a> <C-a>
-nnoremap <A-x> <C-x>
+" Use tabs with Makefiles
+autocmd FileType make setlocal noexpandtab
 
-" Buffer navigation
-nnoremap <C-L> :bnext<CR>
-nnoremap <C-H> :bprevious<CR>
+" Don't use Tagbar with VHDL
+autocmd FileType vhdl let b:tagbar_ignore = 1
 
-" Buffer resizing
-nnoremap <C-W><C-K> :exe "resize +5"<CR>
-nnoremap <C-W><C-J> :exe "resize -5"<CR>
-nnoremap <C-W><C-L> :exe "vertical resize +5"<CR>
-nnoremap <C-W><C-H> :exe "vertical resize -5"<CR>
+" Close if NERDTree is the last window
+autocmd bufenter * if (winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree()) | q | endif
 
-" Close buffer without closing window
-nnoremap <C-X> :Bdelete<CR>
-
-" Go to last buffer
-nnoremap <tab> :b#<CR>
-
-" Use ctags with Ctrl-P
-nnoremap <leader>. :CtrlPTag<CR>
-
-" Use tjump with Ctrl-P
-nnoremap <C-]> :CtrlPtjump<CR>
-vnoremap <C-]> :CtrlPtjumpVisual<CR>
-
-" Use current search for Ack
-nnoremap <leader>8 :AckFromSearch!<CR>
-
-" Toggle NERD Tree
-nnoremap <C-N> :NERDTreeToggle<CR>
-nnoremap <C-M-N> :NERDTreeFind<CR>
-
-" Toggle TagBar
-nnoremap <C-M-M> :TagbarToggle<CR>
-
-" Exit terminal mode
-if has('nvim')
-  tnoremap <leader>e <C-\><C-n>
-endif
+" Highlight todos
+"call matchadd('Todo', '\s\+$')
+call matchadd('Todo', 'TODO')
+call matchadd('Todo', 'TODO:')
+call matchadd('Todo', 'FIXME')
+call matchadd('Todo', 'FIXME:')
+call matchadd('Todo', 'DEBUG')
+call matchadd('Todo', 'DEBUG:')
+call matchadd('Todo', 'NOTE')
+call matchadd('Todo', 'NOTE:')
+call matchadd('Todo', 'NOTES')
+call matchadd('Todo', 'NOTES:')
 
 " Define new leader key
 let mapleader = ','
@@ -187,24 +164,47 @@ let g:ycm_glocal_ycm_extra_conf = '~/.ycm_extra_conf.py'
 hi link EasyMotionTarget2First Number
 hi link EasyMotionTarget2Second Number
 
-" Trim whitespace
-autocmd BufWritePre * :%s/\s\+$//e
+" Use ii instead of ESC
+imap ii <Esc>
 
-" Use tabs with Makefiles
-autocmd FileType make setlocal noexpandtab
+" Increment and decrement numbers
+nnoremap <A-a> <C-a>
+nnoremap <A-x> <C-x>
 
-" Close if NERDTree is the last window
-autocmd bufenter * if (winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree()) | q | endif
+" Buffer navigation
+nnoremap <C-L> :bnext<CR>
+nnoremap <C-H> :bprevious<CR>
 
-" Highlight todos
-"call matchadd('Todo', '\s\+$')
-call matchadd('Todo', 'TODO')
-call matchadd('Todo', 'TODO:')
-call matchadd('Todo', 'FIXME')
-call matchadd('Todo', 'FIXME:')
-call matchadd('Todo', 'DEBUG')
-call matchadd('Todo', 'DEBUG:')
-call matchadd('Todo', 'NOTE')
-call matchadd('Todo', 'NOTE:')
-call matchadd('Todo', 'NOTES')
-call matchadd('Todo', 'NOTES:')
+" Buffer resizing
+nnoremap <C-W><C-K> :exe "resize +5"<CR>
+nnoremap <C-W><C-J> :exe "resize -5"<CR>
+nnoremap <C-W><C-L> :exe "vertical resize +5"<CR>
+nnoremap <C-W><C-H> :exe "vertical resize -5"<CR>
+
+" Close buffer without closing window
+nnoremap <C-X> :Bdelete<CR>
+
+" Go to last buffer
+nnoremap <tab> :b#<CR>
+
+" Use ctags with Ctrl-P
+nnoremap <leader>. :CtrlPTag<CR>
+
+" Use tjump with Ctrl-P
+nnoremap <C-]> :CtrlPtjump<CR>
+vnoremap <C-]> :CtrlPtjumpVisual<CR>
+
+" Use current search for Ack
+nnoremap <leader>8 :AckFromSearch!<CR>
+
+" Toggle NERD Tree
+nnoremap <C-N> :NERDTreeToggle<CR>
+nnoremap <C-M-N> :NERDTreeFind<CR>
+
+" Toggle TagBar
+nnoremap <C-M-M> :TagbarToggle<CR>
+
+" Exit terminal mode
+if has('nvim')
+  tnoremap <leader>e <C-\><C-n>
+endif
