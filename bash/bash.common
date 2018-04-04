@@ -74,7 +74,7 @@ export PROMPT_COMMAND=$prompt_cmd
 # Shell setup
 has_unicode() {
   if [[ $(locale charmap) == 'UTF-8' ]]; then
-    echo -e '\x1b[0;35m\u276f '
+    echo -e '\x1b[0;35m\xe2\x9d\xaf '
   fi
 }
 
