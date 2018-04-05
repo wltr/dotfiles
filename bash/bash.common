@@ -72,7 +72,7 @@ esac
 export PROMPT_COMMAND=$prompt_cmd
 
 # Shell setup
-export PS1='\[\e[0;35m\]\u\[\e[0m\]@$(is_mine)\h\[\e[0m\] \[\e[0;34m\]\W\[\e[0;37m\] $(git_check_changes)$(git_parse_branch)\[\e[0;36m\]$(git_list_stash)$(git_user_email)\[\e[0m\]\n\[\e[0;35m\]\$\[\e[0m\] '
+export PS1='$(is_mine)\h\[\e[0m\]:\[\e[0;34m\]\w\[\e[0;37m\] $(git_check_changes)$(git_parse_branch)\[\e[0;33m\]$(git_list_stash)\[\e[0;36m\]$(git_user_email)\[\e[0m\]\n\[\e[0;35m\]\u\$\[\e[0m\] '
 
 # Ignore CTRL-D
 export IGNOREEOF=3
