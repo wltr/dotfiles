@@ -41,7 +41,7 @@ is_mine() {
   done
 
   if [ $found -eq 1 ]; then
-    echo -e '\x1b[0;33m'
+    echo -e '\x1b[0;32m'
   else
     echo -e '\x1b[1;31m'
   fi
@@ -72,13 +72,7 @@ esac
 export PROMPT_COMMAND=$prompt_cmd
 
 # Shell setup
-has_unicode() {
-  if [[ $(locale charmap) == 'UTF-8' ]]; then
-    echo -e '\x1b[0;35m\xe2\x9d\xaf '
-  fi
-}
-
-export PS1='$(has_unicode)\[\e[0;32m\]\u\[\e[0m\]@$(is_mine)\h\[\e[0m\] \[\e[34m\]\W\[\e[0;37m\] $(git_check_changes)$(git_parse_branch)\[\e[0;36m\]$(git_list_stash)$(git_user_email)\[\e[0m\]\n\#\$ '
+export PS1='\[\e[0;35m\]\u\[\e[0m\]@$(is_mine)\h\[\e[0m\] \[\e[0;34m\]\W\[\e[0;37m\] $(git_check_changes)$(git_parse_branch)\[\e[0;36m\]$(git_list_stash)$(git_user_email)\[\e[0m\]\n\[\e[0;35m\]\$\[\e[0m\] '
 
 # Ignore CTRL-D
 export IGNOREEOF=3
