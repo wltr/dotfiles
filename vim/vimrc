@@ -104,6 +104,9 @@ autocmd FileType make setlocal noexpandtab
 " Don't use Tagbar with VHDL
 autocmd FileType vhdl let b:tagbar_ignore = 1
 
+" Close if quickfix is the last window
+autocmd bufenter * if (winnr('$') == 1 && &buftype == 'quickfix') | q | endif
+
 " Close if NERDTree is the last window
 autocmd bufenter * if (winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree()) | q | endif
 
