@@ -30,6 +30,15 @@ is_root() {
   echo -n -e '\x1b[1;37m'
 }
 
+# Check command return code
+is_happy() {
+  if [[ $? != 0 ]]; then
+    echo -n -e '\x1b[38;5;161m✗ '
+  else
+    echo -n -e '\x1b[38;5;156m✓ '
+  fi
+}
+
 # Git
 git_prompt() {
   if [ -n "$(git branch 2> /dev/null)" ]; then
@@ -47,7 +56,7 @@ git_prompt() {
     if [[ -z $status ]]; then
       echo -n -e '\x1b[0;37m'
     else
-      echo -n -e '\x1b[1;35m'
+      echo -n -e '\x1b[0;95m'
     fi
 
     echo -n ' '$branch
@@ -65,4 +74,4 @@ git_prompt() {
 }
 
 # Shell setup
-export PS1='$(is_mine)\h\[\e[0m\]:\[\e[0;36m\]\w$(git_prompt)\n$(is_root)\u\[\e[0;35m\]\$\[\e[0m\] '
+export PS1='$(is_happy)$(is_mine)\h\[\e[0m\]:\[\e[0;36m\]\w$(git_prompt)\n$(is_root)\u\[\e[0;35m\]\$\[\e[0m\] '
