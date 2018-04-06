@@ -49,8 +49,7 @@ git_prompt() {
       echo -n -e ' \x1b[0;33m('$stash' stashed)'
     fi
 
-    echo -n -e ' \x1b[2;39m<'$email'>'
-    echo -n -e '\x1b[0m'
+    echo -n -e ' \x1b[0m\x1b[2;39m<'$email'>\x1b[0m'
   fi
 }
 
