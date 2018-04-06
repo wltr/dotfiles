@@ -34,16 +34,27 @@ is_root() {
 git_prompt() {
   if [ -n "$(git branch 2> /dev/null)" ]; then
     branch=$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')
-    status=$(git status -s 2> /dev/null | wc -l)
+    status=$(git status --porcelain 2> /dev/null)
     stash=$(git stash list 2> /dev/null | wc -l)
     email=$(git config -l 2> /dev/null | grep user.email | tail -n 1 | sed -e 's/.*=.*@\(.*\)$/\1/')
 
-    if [[ $status == 0 ]]; then
+    added=$(echo "$status" | grep -e '^A' -e '^ A' | tail -n 1 | sed -e 's/.*/✚/')
+    modified=$(echo "$status" | grep -e '^M' -e '^ M' | tail -n 1 | sed -e 's/.*/✹/')
+    deleted=$(echo "$status" | grep -e '^D' -e '^ D' | tail -n 1 | sed -e 's/.*/✖/')
+    renamed=$(echo "$status" | grep -e '^R' -e '^ R' | tail -n 1 | sed -e 's/.*/➜/')
+    untracked=$(echo "$status" | grep -e '^??' | tail -n 1 | sed -e 's/.*/✭/')
+
+    if [[ -z $status ]]; then
       echo -n -e '\x1b[0;37m'
     else
       echo -n -e '\x1b[1;35m'
     fi
+
     echo -n ' '$branch
+
+    if [[ -n $status ]]; then
+      echo -n '('$added$modified$deleted$renamed$untracked')'
+    fi
 
     if [[ $stash > 0 ]]; then
       echo -n -e ' \x1b[0;33m('$stash' stashed)'
