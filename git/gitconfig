@@ -39,4 +39,5 @@
 	unhide = update-index --no-assume-unchanged
 	push-gerrit = push origin HEAD:refs/for/master
 	prb = pull --rebase
+	sts = status -s -b
 	cleanall = clean -fxd
