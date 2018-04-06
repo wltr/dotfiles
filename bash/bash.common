@@ -52,6 +52,9 @@ update_title() {
   if [[ $1 != 'update_title' && $1 != 'exit' ]]; then
     fallback=${1:-$(ps -o comm $$ | tail -n 1)}
     cmd=$(echo $fallback | awk -F' ' '{print $1}')
+    if [[ $cmd == 'bash' ]]; then
+      cmd=$(basename `pwd`)
+    fi
     printf '\033k%s\033\\' $cmd
   fi
 }
@@ -72,7 +75,7 @@ esac
 export PROMPT_COMMAND=$prompt_cmd
 
 # Shell setup
-export PS1='$(is_mine)\h\[\e[0m\]:\[\e[0;34m\]\w\[\e[0;37m\] $(git_check_changes)$(git_parse_branch)\[\e[0;33m\]$(git_list_stash)\[\e[0;36m\]$(git_user_email)\[\e[0m\]\n\[\e[0;37m\]\u\[\e[0;35m\]\$\[\e[0m\] '
+export PS1='$(is_mine)\h\[\e[0m\]:\[\e[0;34m\]\w\[\e[0;37m\] $(git_check_changes)$(git_parse_branch)\[\e[0;33m\]$(git_list_stash)\[\e[0;36m\]$(git_user_email)\[\e[0m\]\n\[\e[1;37m\]\u\[\e[0;35m\]\$\[\e[0m\] '
 
 # Ignore CTRL-D
 export IGNOREEOF=3
