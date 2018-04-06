@@ -1,51 +1,8 @@
-# My machines
-mine=('wltr-*' 'sygps065' 'sydmacd0dv')
+# Editor
+export EDITOR='nvim'
 
-# Git helper functions
-git_parse_branch() {
-  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
-}
-
-git_check_changes() {
-  git status -s 2> /dev/null | tail -n 1 | sed -e $'s/.*/\x1b[1;35m/'
-}
-
-git_list_stash() {
-  count=$(git stash list 2> /dev/null | wc -l)
-  if [ $count -gt 0 ]; then
-    echo $count | sed -e 's/\(.*\)/ (\1 stashed)/'
-  fi
-}
-
-git_user_email() {
-  if [ -n "$(git branch 2> /dev/null)" ]; then
-    echo " <$(git config -l 2> /dev/null | grep user.email | tail -n 1 | sed -e 's/.*=.*@\(.*\)$/\1/')>"
-  fi
-}
-
-git_user_name() {
-  if [ -n "$(git branch 2> /dev/null)" ]; then
-    git config -l 2> /dev/null | grep user.name | tail -n 1 | sed -e 's/.*=\(.*\)$/\1/'
-  fi
-}
-
-# Check if it's my machine
-is_mine() {
-  found=0
-  for i in ${mine[@]}
-  do
-    if [[ $(hostname -s) == $i ]]; then
-      found=1
-      break
-    fi
-  done
-
-  if [ $found -eq 1 ]; then
-    echo -e '\x1b[0;32m'
-  else
-    echo -e '\x1b[1;31m'
-  fi
-}
+# Ignore CTRL-D
+export IGNOREEOF=3
 
 # Terminal setup
 update_title() {
@@ -74,22 +31,15 @@ esac
 
 export PROMPT_COMMAND=$prompt_cmd
 
-# Shell setup
-export PS1='$(is_mine)\h\[\e[0m\]:\[\e[0;34m\]\w\[\e[0;37m\] $(git_check_changes)$(git_parse_branch)\[\e[0;33m\]$(git_list_stash)\[\e[0;36m\]$(git_user_email)\[\e[0m\]\n\[\e[1;37m\]\u\[\e[0;35m\]\$\[\e[0m\] '
-
-# Ignore CTRL-D
-export IGNOREEOF=3
-
-# Editor
-export EDITOR='nvim'
-
 # Aliases
-alias vi='nvim'
 alias ll='ls -l'
 alias la='ls -Al'
+
+alias vi='nvim'
 alias diff='colordiff'
 alias grep='grep --color=auto'
-alias g..='[ ! -z `git rev-parse --show-toplevel` ] && cd `git rev-parse --show-toplevel || pwd`'
+
+alias g..='cd $(git rev-parse --show-toplevel || pwd)'
 
 alias ..='cd ..'
 alias ...='cd ../..'

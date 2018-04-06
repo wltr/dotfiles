@@ -1,0 +1,58 @@
+# My machines
+mine=('wltr-*' 'sygps065' 'sydmacd0dv')
+
+# Check if it's my machine
+is_mine() {
+  hn=$(hostname -s)
+  found=0
+  for i in ${mine[@]}
+  do
+    if [[ $hn == $i ]]; then
+      found=1
+      break
+    fi
+  done
+
+  if [[ $found == 0 ]]; then
+    echo -n -e '\x1b[38;5;166m'
+  else
+    echo -n -e '\x1b[38;5;184m'
+  fi
+}
+
+# Check if I'm root
+is_root() {
+  if [[ $UID == 0 ]]; then
+    echo -n -e '\x1b[38;5;161m🗲 '
+  else
+    echo -n -e '\x1b[38;5;156m» '
+  fi
+  echo -n -e '\x1b[1;37m'
+}
+
+# Git
+git_prompt() {
+  if [ -n "$(git branch 2> /dev/null)" ]; then
+    branch=$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')
+    status=$(git status -s 2> /dev/null | wc -l)
+    stash=$(git stash list 2> /dev/null | wc -l)
+    email=$(git config -l 2> /dev/null | grep user.email | tail -n 1 | sed -e 's/.*=.*@\(.*\)$/\1/')
+
+    if [[ $status == 0 ]]; then
+      echo -n -e '\x1b[0;37m'
+    else
+      echo -n -e '\x1b[1;35m'
+    fi
+    echo -n ' '$branch
+
+    if [[ $stash > 0 ]]; then
+      echo -n -e ' \x1b[0;33m('$stash' stashed)'
+    fi
+
+    echo -n -e ' \x1b[2;39m<'$email'>'
+    echo -n -e '\x1b[0m'
+  fi
+}
+
+# Shell setup
+export PS1='$(is_mine)\h\[\e[0m\]:\[\e[0;36m\]\w$(git_prompt)\n$(is_root)\u\[\e[0;35m\]\$\[\e[0m\] '
