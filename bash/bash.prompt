@@ -23,7 +23,7 @@ is_mine() {
 # Check if I'm root
 is_root() {
   if [[ $UID == 0 ]]; then
-    echo -n -e '\x01\x1b[38;5;161m\x02🗲 '
+    echo -n -e '\x01\x1b[38;5;161m\x02⚑ '
   else
     echo -n -e '\x01\x1b[38;5;156m\x02» '
   fi
