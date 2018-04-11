@@ -1,3 +1,5 @@
+set -sa terminal-overrides ",*:dim=\\E[2m"
+
 unbind C-b
 bind C-a send-prefix
 
