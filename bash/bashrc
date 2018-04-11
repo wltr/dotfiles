@@ -1,0 +1,15 @@
+settings=$(dirname $BASH_SOURCE)
+
+source $settings/bash.common
+source $settings/bash.prompt
+
+case $(uname -s) in
+  Linux)
+    source $settings/bash.linux
+    source $settings/path.linux
+    ;;
+  Darwin)
+    source $settings/bash.macos
+    source $settings/path.macos
+    ;;
+esac
