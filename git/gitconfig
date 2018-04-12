@@ -40,4 +40,5 @@
 	push-gerrit = push origin HEAD:refs/for/master
 	prb = pull --rebase
 	sts = status -s -b
+	cob = !(git checkout $(git branch -a | grep -v '^*' | fzf))
 	cleanall = clean -fxd
