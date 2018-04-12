@@ -37,7 +37,7 @@ alias la='ls -Al'
 
 alias vi='nvim'
 alias diff='colordiff'
-alias grep='grep --color=auto'
+alias grep='grep --color=always'
 
 alias g..='cd $(git rev-parse --show-toplevel || pwd)'
 
