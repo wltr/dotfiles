@@ -79,6 +79,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'mtth/scratch.vim'
 Plugin 'flazz/vim-colorschemes'
+Plugin 'cocopon/iceberg.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -93,7 +94,7 @@ filetype plugin indent on
 
 " Colors
 syntax on
-colorscheme solarized
+colorscheme iceberg
 
 " Trim whitespace
 autocmd BufWritePre * :%s/\s\+$//e
@@ -130,7 +131,7 @@ let mapleader = ','
 let g:netrw_liststyle = 1
 
 " Airline
-let g:airline_theme = 'solarized'
+let g:airline_theme = 'iceberg'
 let g:airline_powerline_fonts = 1
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
