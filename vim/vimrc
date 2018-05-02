@@ -1,5 +1,4 @@
 " Options
-set termguicolors
 set nocompatible
 set encoding=utf-8
 set background=dark
