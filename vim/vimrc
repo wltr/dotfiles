@@ -102,17 +102,20 @@ colorscheme iceberg
 " Trim whitespace
 autocmd BufWritePre * :%s/\s\+$//e
 
+" Read external file changes
+autocmd BufEnter,FocusGained,CursorHold,CursorHoldI * checktime
+
+" Close if quickfix is the last window
+autocmd BufEnter * if (winnr('$') == 1 && &buftype == 'quickfix') | q | endif
+
+" Close if NERDTree is the last window
+autocmd BufEnter * if (winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree()) | q | endif
+
 " Use tabs with Makefiles
 autocmd FileType make setlocal noexpandtab
 
 " Don't use Tagbar with VHDL
 autocmd FileType vhdl let b:tagbar_ignore = 1
-
-" Close if quickfix is the last window
-autocmd bufenter * if (winnr('$') == 1 && &buftype == 'quickfix') | q | endif
-
-" Close if NERDTree is the last window
-autocmd bufenter * if (winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree()) | q | endif
 
 " Highlight todos
 "call matchadd('Todo', '\s\+$')
