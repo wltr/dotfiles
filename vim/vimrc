@@ -103,7 +103,7 @@ colorscheme iceberg
 autocmd BufWritePre * :%s/\s\+$//e
 
 " Read external file changes
-autocmd BufEnter,FocusGained,CursorHold,CursorHoldI * checktime
+autocmd BufEnter,FocusGained,CursorHold,CursorHoldI * :checktime
 
 " Close if quickfix is the last window
 autocmd BufEnter * if (winnr('$') == 1 && &buftype == 'quickfix') | q | endif
