@@ -1,5 +1,10 @@
+" Create backup folder for persistent undo
+silent !mkdir -p ~/.config/nvim/backups
+
 " Options
 set nocompatible
+set undodir=~/.config/nvim/backups
+set undofile
 set encoding=utf-8
 set background=dark
 set hidden
@@ -9,7 +14,7 @@ set modelines=0
 set nobackup
 set nowritebackup
 set noswapfile
-"set nowrap
+set nowrap
 set history=9999
 set undolevels=9999
 set number
@@ -43,6 +48,8 @@ set title
 set list
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
 set scrolloff=3
+set sidescrolloff=5
+set sidescroll=5
 set nospell
 set foldmethod=indent
 set foldnestmax=10
