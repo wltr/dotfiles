@@ -172,8 +172,8 @@ cnoreabbrev rG Ack
 cnoreabbrev Rg Ack
 cnoreabbrev RG Ack
 
-let g:NERDTreeWinSize = 30
-let g:tagbar_width = 30
+let g:NERDTreeWinSize = 40
+let g:tagbar_width = 40
 
 let g:ycm_glocal_ycm_extra_conf = '~/.ycm_extra_conf.py'
 
