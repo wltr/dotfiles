@@ -221,6 +221,9 @@ nnoremap <C-M-N> :NERDTreeFind<CR>
 " Toggle TagBar
 nnoremap <C-M-M> :TagbarToggle<CR>
 
+" Remove search result highlighting
+nnoremap <C-C> :noh<CR>
+
 " Exit terminal mode
 if has('nvim')
   tnoremap <leader>e <C-\><C-n>
