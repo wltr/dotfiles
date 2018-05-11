@@ -1,5 +1,5 @@
 # IMC Paths
-export PATH=/opt/imc/gcc-6.2.0/bin:/opt/imc/anaconda/bin:/opt/imc/maven3/bin:/opt/imc/cmake-3.11.0/bin:/opt/imc/oracle-jdk-1.8.0_u102/bin:$PATH
+export PATH=/opt/imc/llvm-6.0.0/bin:/opt/imc/gcc-7.3.0/bin:/opt/imc/cmake-3.11.0/bin:/opt/imc/maven3/bin:/opt/imc/anaconda/bin:/opt/imc/oracle-jdk-1.8.0_u102/bin:$PATH
 
 export JAVA_HOME=/opt/imc/oracle-jdk-1.8.0_u102/
 
@@ -7,5 +7,6 @@ export FALCON_PCAP_DIR=/home/falcon_unit_tests/
 
 # Aliases
 alias cdf='cd ~/wrk/fpga/Falcon'
+alias cdr='cd ~/wrk/roadrunner'
 
 alias imc-clang-setup='export CPATH=/opt/imc/gcc-6.2.0/include/c++/6.2.0:/opt/imc/gcc-6.2.0/include/c++/6.2.0/x86_64-pc-linux-gnu:/opt/imc/gcc-6.2.0/include/c++/6.2.0:$CPATH; export LIBRARY_PATH=/opt/imc/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0:/opt/imc/gcc-6.2.0/lib64:$LIBRARY_PATH'
