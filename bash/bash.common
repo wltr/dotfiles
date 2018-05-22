@@ -7,6 +7,8 @@ export IGNOREEOF=3
 # Terminal setup
 export HISTSIZE=
 export HISTFILESIZE=
+export HISTCONTROL=erasedups
+export HISTFILE=~/.bash_eternal_history
 
 update_title() {
   if [[ $1 != 'update_title' && $1 != 'exit' ]]; then
