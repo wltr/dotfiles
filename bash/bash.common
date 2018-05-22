@@ -5,6 +5,9 @@ export EDITOR='nvim'
 export IGNOREEOF=3
 
 # Terminal setup
+export HISTSIZE=
+export HISTFILESIZE=
+
 update_title() {
   if [[ $1 != 'update_title' && $1 != 'exit' ]]; then
     fallback=${1:-$(ps -o comm $$ | tail -n 1)}
