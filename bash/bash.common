@@ -5,11 +5,6 @@ export EDITOR='nvim'
 export IGNOREEOF=3
 
 # Terminal setup
-export HISTSIZE=
-export HISTFILESIZE=
-export HISTCONTROL=ignoredups
-export HISTFILE=~/.bash_eternal_history
-
 update_title() {
   if [[ $1 != 'update_title' && $1 != 'exit' ]]; then
     fallback=${1:-$(ps -o comm $$ | tail -n 1)}
@@ -23,8 +18,14 @@ update_title() {
   fi
 }
 
+export HISTFILE=~/.bash_eternal_history
+export HISTSIZE=
+export HISTFILESIZE=
+export HISTCONTROL=ignoredups:erasedups
+
 shopt -s histappend
-prompt_cmd='history -a; history -n;'
+
+prompt_cmd='history -n; history -w; history -c; history -r;'
 
 case $TERM in
   xterm)
