@@ -7,7 +7,7 @@ export IGNOREEOF=3
 # Terminal setup
 export HISTSIZE=
 export HISTFILESIZE=
-export HISTCONTROL=erasedups
+export HISTCONTROL=ignoredups
 export HISTFILE=~/.bash_eternal_history
 
 update_title() {
