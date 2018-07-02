@@ -14,7 +14,7 @@ set modelines=0
 set nobackup
 set nowritebackup
 set noswapfile
-set nowrap
+set wrap
 set history=9999
 set undolevels=9999
 set number
