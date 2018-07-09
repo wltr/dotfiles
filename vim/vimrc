@@ -96,6 +96,7 @@ Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'majutsushi/tagbar'
 Plugin 'elzr/vim-json'
+Plugin 'junegunn/gv.vim'
 Plugin 'junegunn/fzf.vim'
 
 call vundle#end()
