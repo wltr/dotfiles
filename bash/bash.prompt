@@ -44,7 +44,7 @@ git_prompt() {
   if [ -n "$(git branch 2> /dev/null)" ]; then
     branch=$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')
     status=$(git status --porcelain 2> /dev/null)
-    stash=$(git stash list 2> /dev/null | wc -l)
+    stash=$(git stash list 2> /dev/null | wc -l | tr -d ' ')
     email=$(git config -l 2> /dev/null | grep user.email | tail -n 1 | sed -e 's/.*=.*@\(.*\)$/\1/')
 
     added=$(echo "$status" | grep -e '^A' -e '^ A' | tail -n 1 | sed -e 's/.*/✚/')
