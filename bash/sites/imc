@@ -1,11 +1,11 @@
 # IMC Paths
-export PATH=/opt/imc/llvm-6.0.0/bin:/opt/imc/gcc-7.3.0/bin:/opt/imc/cmake-3.11.0/bin:/opt/imc/maven3/bin:/opt/imc/anaconda/bin:/opt/imc/oracle-jdk-1.8.0_u102/bin:$PATH
-
-export JAVA_HOME=/opt/imc/oracle-jdk-1.8.0_u102/
-
 export FALCON_PCAP_DIR=/home/falcon_unit_tests/
 
 export VERILATOR_ROOT=/home/eda/verilator/latest
+
+export JAVA_HOME=/opt/imc/oracle-jdk-1.8.0_u102/
+
+export PATH=/opt/imc/llvm-6.0.0/bin:/opt/imc/gcc-7.3.0/bin:/opt/imc/cmake-3.11.0/bin:/opt/imc/maven3/bin:/opt/imc/anaconda/bin:$JAVA_HOME/bin:$VERILATOR_ROOT/bin:$PATH
 
 # Aliases
 alias cdf='cd ~/wrk/fpga/Falcon'
