@@ -5,7 +5,7 @@ export JAVA_HOME=/opt/imc/oracle-jdk-1.8.0_u102/
 
 export FALCON_PCAP_DIR=/home/falcon_unit_tests/
 
-export VERILATOR_ROOT=/home/eda/verilator/latest/bin
+export VERILATOR_ROOT=/home/eda/verilator/latest
 
 # Aliases
 alias cdf='cd ~/wrk/fpga/Falcon'
