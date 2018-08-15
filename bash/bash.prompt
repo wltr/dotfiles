@@ -39,6 +39,16 @@ is_happy() {
   fi
 }
 
+# Tmux
+has_tmux() {
+  if [[ -z $TMUX ]]; then
+    sessions=$(tmux ls 2> /dev/null | wc -l | tr -d ' ')
+    if [[ $sessions > 0 ]]; then
+      echo -n -e ' \x01\x1b[2;39m\x02(tmux:'$sessions')\x01\x1b[0m\x02'
+    fi
+  fi
+}
+
 # Git
 git_prompt() {
   if [ -n "$(git branch 2> /dev/null)" ]; then
@@ -66,7 +76,7 @@ git_prompt() {
     fi
 
     if [[ $stash > 0 ]]; then
-      echo -n -e ' \x01\x1b[0;33m\x02('$stash' stashed)'
+      echo -n -e ' \x01\x1b[0;33m\x02(stash:'$stash')'
     fi
 
     echo -n -e ' \x01\x1b[0m\x02\x01\x1b[2;39m\x02<'$email'>\x01\x1b[0m\x02'
@@ -74,4 +84,4 @@ git_prompt() {
 }
 
 # Shell setup
-export PS1='$(is_happy)$(is_mine)\h\[\e[0m\]:\[\e[0;36m\]\w$(git_prompt)\n$(is_root)\u\[\e[0;35m\]\$\[\e[0m\] '
+export PS1='$(is_happy)$(is_mine)\h\[\e[0m\]:\[\e[0;36m\]\w$(git_prompt)$(has_tmux)\n$(is_root)\u\[\e[0;35m\]\$\[\e[0m\] '
