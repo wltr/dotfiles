@@ -28,6 +28,15 @@ export PYTHONPATH=$PYTHONPATH:$GRBAZPREFIX/lib/python2.7/dist-packages
 export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$GRBAZPREFIX/lib/pkgconfig
 export GRC_BLOCKS_PATH=$GRC_BLOCKS_PATH:$GRBAZPREFIX/share/gnuradio/grc/blocks
 
+# GNU Radio gr-radar
+GRRADARPREFIX=~/opt/gr-radar
+export PATH=$PATH:$GRRADARPREFIX/bin
+export LD_LOAD_LIBRARY=$LD_LOAD_LIBRARY:$GRRADARPREFIX/lib
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$GRRADARPREFIX/lib
+export PYTHONPATH=$PYTHONPATH:$GRRADARPREFIX/lib/python2.7/dist-packages
+export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$GRRADARPREFIX/lib/pkgconfig
+export GRC_BLOCKS_PATH=$GRC_BLOCKS_PATH:$GRRADARPREFIX/share/gnuradio/grc/blocks
+
 # GNU Radio gr-osmosdr
 GROSMOSDRPREFIX=~/opt/gr-osmosdr
 export PATH=$PATH:$GROSMOSDRPREFIX/bin

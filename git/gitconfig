@@ -1,6 +1,6 @@
 [user]
 	name = Johannes Walter
-	email = johannes.walter@imc.com
+	email = johannes@wltr.io
 
 [core]
 	excludesfile = ~/.gitignore_global
