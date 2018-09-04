@@ -14,28 +14,28 @@ is_mine() {
   done
 
   if [[ $found == 0 ]]; then
-    echo -n -e '\x01\x1b[38;5;166m\x02'
+    echo -n -e '\x01\x1b[0;31m\x02'
   else
-    echo -n -e '\x01\x1b[38;5;184m\x02'
+    echo -n -e '\x01\x1b[0;33m\x02'
   fi
 }
 
 # Check if I'm root
 is_root() {
   if [[ $UID == 0 ]]; then
-    echo -n -e '\x01\x1b[38;5;161m\x02★ '
+    echo -n -e '\x01\x1b[0;91m\x02★ '
   else
-    echo -n -e '\x01\x1b[38;5;156m\x02» '
+    echo -n -e '\x01\x1b[0;92m\x02» '
   fi
-  echo -n -e '\x01\x1b[1;37m\x02'
+  echo -n -e '\x01\x1b[0m\x02'
 }
 
 # Check command return code
 is_happy() {
   if [[ $? != 0 ]]; then
-    echo -n -e '\x01\x1b[38;5;161m\x02✗ '
+    echo -n -e '\x01\x1b[0;91m\x02✗ '
   else
-    echo -n -e '\x01\x1b[38;5;156m\x02✓ '
+    echo -n -e '\x01\x1b[0;92m\x02✓ '
   fi
 }
 
@@ -66,7 +66,7 @@ git_prompt() {
     if [[ -z $status ]]; then
       echo -n -e '\x01\x1b[0;37m\x02'
     else
-      echo -n -e '\x01\x1b[0;95m\x02'
+      echo -n -e '\x01\x1b[0;35m\x02'
     fi
 
     echo -n ' '$branch
