@@ -5,10 +5,11 @@ silent !mkdir -p ~/.config/nvim/backups
 set nocompatible
 set undodir=~/.config/nvim/backups
 set undofile
-set encoding=utf-8
-set background=dark
-set hidden
 "set mouse=a
+set encoding=utf-8
+set background=light
+set termguicolors
+set hidden
 set cursorline
 set modelines=0
 set nobackup
@@ -87,8 +88,6 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'mtth/scratch.vim'
-"Plugin 'flazz/vim-colorschemes'
-Plugin 'cocopon/iceberg.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -98,6 +97,9 @@ Plugin 'majutsushi/tagbar'
 Plugin 'elzr/vim-json'
 Plugin 'junegunn/gv.vim'
 Plugin 'junegunn/fzf.vim'
+Plugin 'hzchirs/vim-material'
+"Plugin 'flazz/vim-colorschemes'
+"Plugin 'cocopon/iceberg.vim'
 
 call vundle#end()
 
@@ -105,7 +107,7 @@ filetype plugin indent on
 
 " Colors
 syntax on
-colorscheme iceberg
+colorscheme vim-material
 
 " Trim whitespace
 autocmd BufWritePre * :%s/\s\+$//e
@@ -145,13 +147,15 @@ let mapleader = ','
 let g:netrw_liststyle = 1
 
 " Airline
-let g:airline_theme = 'iceberg'
+let g:airline_theme = 'material'
 let g:airline_powerline_fonts = 1
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ''
 let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#tabline#right_sep = ''
+let g:airline#extensions#tabline#right_alt_sep = '|'
 "let g:airline#extensions#tabline#buffer_idx_mode = 1
 
 " Use Rg for Ctrl-P
