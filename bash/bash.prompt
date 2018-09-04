@@ -64,7 +64,7 @@ git_prompt() {
     untracked=$(echo "$status" | grep -e '^??' | tail -n 1 | sed -e 's/.*/✭/')
 
     if [[ -z $status ]]; then
-      echo -n -e '\x01\x1b[0;37m\x02'
+      echo -n -e '\x01\x1b[2;39m\x02'
     else
       echo -n -e '\x01\x1b[0;35m\x02'
     fi
