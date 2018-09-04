@@ -62,53 +62,45 @@ set statusline=%<\ %n:%f\ %m%r
 set statusline+=%#warningmsg#%{fugitive#statusline()}%*
 set statusline+=%=line:\ %l\/%L,\ col:\ %c%V\ (%P)\ 0x%B
 
-" Vundle
-filetype off
+" Plugins
+call plug#begin('~/.local/share/nvim/plugged')
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+Plug 'gmarik/Vundle.vim'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
+Plug 'kshenoy/vim-signature'
+Plug 'airblade/vim-gitgutter'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'ivalkeen/vim-ctrlp-tjump'
+Plug 'mileszs/ack.vim'
+Plug 'moll/vim-bbye'
+Plug 'vim-scripts/verilog_systemverilog_fix'
+Plug 'nelstrom/vim-visual-star-search'
+Plug 'valloric/youcompleteme'
+Plug 'rdnetto/YCM-Generator'
+Plug 'easymotion/vim-easymotion'
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'mtth/scratch.vim'
+Plug 'scrooloose/nerdcommenter'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+Plug 'majutsushi/tagbar'
+Plug 'elzr/vim-json'
+Plug 'junegunn/gv.vim'
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/vim-slash'
+Plug 'flazz/vim-colorschemes'
+"Plug 'hzchirs/vim-material'
+"Plug 'cocopon/iceberg.vim'
 
-set rtp+=~/.fzf
-
-Plugin 'gmarik/Vundle.vim'
-Plugin 'tpope/vim-sensible'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-fugitive'
-Plugin 'kshenoy/vim-signature'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'ivalkeen/vim-ctrlp-tjump'
-Plugin 'mileszs/ack.vim'
-Plugin 'moll/vim-bbye'
-Plugin 'vim-scripts/verilog_systemverilog_fix'
-Plugin 'nelstrom/vim-visual-star-search'
-Plugin 'valloric/youcompleteme'
-Plugin 'rdnetto/YCM-Generator'
-Plugin 'easymotion/vim-easymotion'
-Plugin 'scrooloose/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'mtth/scratch.vim'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'majutsushi/tagbar'
-Plugin 'elzr/vim-json'
-Plugin 'junegunn/gv.vim'
-Plugin 'junegunn/fzf.vim'
-Plugin 'junegunn/goyo.vim'
-Plugin 'junegunn/vim-slash'
-Plugin 'flazz/vim-colorschemes'
-"Plugin 'hzchirs/vim-material'
-"Plugin 'cocopon/iceberg.vim'
-
-call vundle#end()
-
-filetype plugin indent on
+call plug#end()
 
 " Colors
-syntax on
 colorscheme Tomorrow
 
 " Trim whitespace
