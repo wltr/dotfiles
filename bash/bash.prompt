@@ -14,9 +14,9 @@ is_mine() {
   done
 
   if [[ $found == 0 ]]; then
-    echo -n -e '\x01\x1b[0;31m\x02'
+    echo -n -e '\x01\x1b[1;31m\x02'
   else
-    echo -n -e '\x01\x1b[0;33m\x02'
+    echo -n -e '\x01\x1b[1;33m\x02'
   fi
 }
 
@@ -27,7 +27,7 @@ is_root() {
   else
     echo -n -e '\x01\x1b[0;92m\x02» '
   fi
-  echo -n -e '\x01\x1b[0m\x02'
+  echo -n -e '\x01\x1b[1;39m\x02'
 }
 
 # Check command return code
@@ -84,4 +84,4 @@ git_prompt() {
 }
 
 # Shell setup
-export PS1='$(is_happy)$(is_mine)\h\[\e[0m\]:\[\e[0;36m\]\w$(git_prompt)$(has_tmux)\n$(is_root)\u\[\e[0;35m\]\$\[\e[0m\] '
+export PS1='$(is_happy)$(is_mine)\h\[\e[0m\]:\[\e[0;36m\]\w$(git_prompt)$(has_tmux)\n$(is_root)\u\[\e[1;35m\]\$\[\e[0m\] '
