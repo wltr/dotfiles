@@ -7,7 +7,7 @@ set undodir=~/.config/nvim/backups
 set undofile
 "set mouse=a
 set encoding=utf-8
-set background=light
+set background=dark
 set termguicolors
 set hidden
 set cursorline
@@ -98,12 +98,12 @@ Plug 'elzr/vim-json'
 Plug 'moll/vim-bbye'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'vim-scripts/verilog_systemverilog_fix'
-Plug 'flazz/vim-colorschemes'
+Plug 'skielbasa/vim-material-monokai'
 
 call plug#end()
 
 " Colors
-colorscheme Tomorrow
+colorscheme material-monokai
 
 " Trim whitespace
 autocmd BufWritePre * :%s/\s\+$//e
@@ -143,7 +143,7 @@ let mapleader = ','
 let g:netrw_liststyle = 1
 
 " Airline
-let g:airline_theme = 'tomorrow'
+let g:airline_theme = 'materialmonokai'
 let g:airline_powerline_fonts = 1
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
