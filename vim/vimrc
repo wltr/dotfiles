@@ -2,13 +2,13 @@
 silent !mkdir -p ~/.config/nvim/backups
 
 " Options
+set termguicolors
 set nocompatible
 set undodir=~/.config/nvim/backups
 set undofile
 "set mouse=a
 set encoding=utf-8
 set background=dark
-set termguicolors
 set hidden
 set cursorline
 set modelines=0
