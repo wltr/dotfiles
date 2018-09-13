@@ -1,3 +1,6 @@
+# Colors
+export LS_COLORS=$LS_COLORS:'di=0;34:ex=0;32:'
+
 # Aliases
 alias ls='ls -h --color=auto --group-directories-first'
 #alias make='make -j$(nproc)'
