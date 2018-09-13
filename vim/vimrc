@@ -222,9 +222,6 @@ nnoremap <C-M-N> :NERDTreeFind<CR>
 " Toggle TagBar
 nnoremap <C-M-M> :TagbarToggle<CR>
 
-" Remove search result highlighting
-nnoremap <C-C> :noh<CR>
-
 " EasyAlign
 xnoremap ga :EasyAlign
 nnoremap ga :EasyAlign
