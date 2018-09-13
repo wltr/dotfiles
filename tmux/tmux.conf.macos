@@ -58,7 +58,7 @@ set -g status-keys vi
 set -g status-attr dim
 set -g status-interval 10
 set -g status-position bottom
-set -g status-justify centre
+set -g status-justify left
 set -g status-bg default
 set -g status-fg white
 
@@ -73,7 +73,7 @@ set -g window-status-current-bg default
 set -g window-status-current-fg red
 
 set -g status-left-length 70
-set -g status-left " #[fg=cyan]#h#[fg=white] |"
+set -g status-left " #[fg=cyan]#h#[fg=white] | "
 
 set -g status-right-length 60
-set -g status-right "#[fg=white]| #[fg=yellow]#(tmux-status) "
+set -g status-right "#[fg=white] | #[fg=yellow]#(tmux-status) "
