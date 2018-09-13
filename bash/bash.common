@@ -39,7 +39,7 @@ esac
 
 export PROMPT_COMMAND=$prompt_cmd
 
-export FZF_DEFAULT_OPTS='--color light'
+#export FZF_DEFAULT_OPTS='--color light'
 
 # Aliases
 alias ll='ls -l'
