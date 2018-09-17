@@ -17,6 +17,7 @@ bind \ split-window -h
 
 bind -n M-p next-window
 bind -n M-n previous-window
+bind -n M-Tab last-window
 
 bind -n M-h select-pane -L
 bind -n M-l select-pane -R
@@ -60,12 +61,12 @@ set -g status-justify left
 set -g status-bg default
 set -g status-fg white
 
-set -g window-status-format "#I:#W"
+set -g window-status-format "#I:#W(#{window_panes})"
 set -g window-status-attr default
 set -g window-status-bg default
 set -g window-status-fg white
 
-set -g window-status-current-format "#I:#W#F"
+set -g window-status-current-format "#I:#W(#{window_panes})#F"
 set -g window-status-current-attr default
 set -g window-status-current-bg default
 set -g window-status-current-fg red

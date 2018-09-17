@@ -7,14 +7,17 @@ export IGNOREEOF=3
 # Terminal setup
 update_title() {
   if [[ $1 != 'update_title' && $1 != 'exit' && $1 != 'history -'* ]]; then
-    fallback=${1:-$(ps -o comm $$ | tail -n 1)}
-    cmd=$(echo $fallback | awk -F' ' '{print $1}')
+    cmd=${1:-$(ps -o comm $$ | tail -n 1)}
+    cmd=$(echo $cmd | awk -F' ' '{print $1}')
     if [[ $cmd == 'bash' || $cmd == '-bash' ]]; then
       cmd='/'$(basename `pwd`)
     else
       cmd=$(basename $cmd)
     fi
     printf '\033k%s\033\\' $cmd
+    if [[ -n $TMUX ]]; then
+      tmux rename-window $cmd
+    fi
   fi
 }
 
