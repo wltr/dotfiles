@@ -1,6 +1,5 @@
-[user]
-	name = Johannes Walter
-	email = johannes@wltr.io
+[include]
+	path = ~/.gitconfig_site
 
 [core]
 	excludesfile = ~/.gitignore_global
