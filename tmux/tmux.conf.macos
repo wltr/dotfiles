@@ -31,8 +31,6 @@ bind -n C-M-l resize-pane -R
 bind -n C-M-k resize-pane -U
 bind -n C-M-j resize-pane -D
 
-setw -g allow-rename on
-
 set -ga terminal-overrides ",xterm-256color:Tc"
 set -g default-terminal "screen-256color"
 
@@ -46,6 +44,7 @@ set -g set-titles on
 set -g set-titles-string "tmux.#I.#W"
 set -g visual-activity off
 set -g monitor-activity on
+set -g allow-rename on
 
 set -g pane-border-fg default
 set -g pane-active-border-fg cyan
@@ -64,12 +63,12 @@ set -g status-justify left
 set -g status-bg default
 set -g status-fg white
 
-set -g window-status-format "#I:#W"
+set -g window-status-format "#I:#{?#{==:#{window_panes},1},#W,(#{window_panes} panes)}"
 set -g window-status-attr default
 set -g window-status-bg default
 set -g window-status-fg white
 
-set -g window-status-current-format "#I:#W#F"
+set -g window-status-current-format "#I:#{?#{==:#{window_panes},1},#W,(#{window_panes} panes)}#F"
 set -g window-status-current-attr default
 set -g window-status-current-bg default
 set -g window-status-current-fg red
