@@ -15,16 +15,13 @@ update_title() {
       cmd=$(basename $cmd)
     fi
     printf '\033k%s\033\\' $cmd
-    if [[ -n $TMUX ]]; then
-      tmux rename-window $cmd
-    fi
   fi
 }
 
 export HISTFILE=~/.bash_eternal_history
 export HISTSIZE=
 export HISTFILESIZE=
-export HISTCONTROL=ignoredups:erasedups
+export HISTCONTROL=ignoreboth:erasedups
 
 shopt -s histappend
 

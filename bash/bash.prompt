@@ -42,9 +42,6 @@ is_happy() {
 # Jobs
 has_jobs() {
   jobs=$(jobs | wc -l | tr -d ' ')
-  if [[ -n $TMUX ]]; then
-    jobs=$((jobs-1))
-  fi
   if [[ $jobs > 0 ]]; then
     echo -n -e ' \x01\x1b[2;39m\x02(jobs:'$jobs')\x01\x1b[0m\x02'
   fi
