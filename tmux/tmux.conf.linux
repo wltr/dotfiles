@@ -68,8 +68,8 @@ set -g window-status-fg white
 
 set -g window-status-current-format "#I:#{?#{==:#{window_panes},1},#W,(#{window_panes} panes)}#F"
 set -g window-status-current-attr default
-set -g window-status-current-bg default
-set -g window-status-current-fg red
+set -g window-status-current-bg magenta
+set -g window-status-current-fg default
 
 set -g status-left-length 40
 set -g status-left " #[fg=cyan]#h#[fg=white] | "
