@@ -747,8 +747,10 @@
 	<false/>
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
+	<key>NSFontPanelAttributes</key>
+	<string>1, 0</string>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/Downloads</string>
+	<string>~/Desktop</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{712, 448}</string>
 	<key>NSQuotedKeystrokeBinding</key>
@@ -783,23 +785,19 @@
 	<key>NSTableView Supports v2 KeyBingingTable</key>
 	<true/>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>1514 454 1193 535 0 0 3840 2138 </string>
-	<key>NSWindow Frame SUStatusFrame</key>
-	<string>949 1215 400 129 0 0 2560 1418 </string>
+	<string>1164 110 1330 726 0 0 2560 1578 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>970 769 620 392 0 0 2560 1418 </string>
+	<string>3530 906 620 392 2560 0 2560 1600 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>369 402 796 486 0 0 1680 1028 </string>
+	<string>994 485 918 452 0 0 2560 1578 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>157 134 1130 666 0 0 1680 1028 </string>
+	<string>3379 364 1130 666 2560 0 2560 1600 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>244 172 1130 666 0 0 2560 1418 </string>
+	<string>3015 173 1130 666 2560 0 2560 1578 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>243 664 1130 666 0 0 2560 1418 </string>
+	<string>2792 270 1130 666 2560 0 2560 1578 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
-	<string>0 752 1130 666 0 0 2560 1418 </string>
-	<key>NSWindow Frame iTerm Window 4</key>
-	<string>406 112 1130 666 0 0 2560 1418 </string>
+	<string>364 -1409 1130 666 0 -1600 2560 1578 </string>
 	<key>NeverWarnAboutShortLivedSessions_15A37E03-7BE0-4340-87B6-278F2B4EAB80</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_15A37E03-7BE0-4340-87B6-278F2B4EAB80_selection</key>
@@ -1447,7 +1445,7 @@
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
-	<string>E3B57079-259A-4EE3-A981-0C87D5D3621F</string>
+	<string>9E59E6FA-073E-4EE9-8511-B3C15FA06216</string>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -1455,7 +1453,7 @@
 	<key>NoSyncPermissionToShowTip</key>
 	<false/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
-	<real>545979182.05687201</real>
+	<real>561523538.96157396</real>
 	<key>OnlyWhenMoreTabs</key>
 	<false/>
 	<key>PMPrintingExpandedStateForPrint2</key>
@@ -1494,7 +1492,7 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/wltr/.dotfiles/iterm</string>
+	<string>/Users/jwalter/.dotfiles/iterm</string>
 	<key>Print In Black And White</key>
 	<true/>
 	<key>PromptOnQuit</key>
@@ -1506,11 +1504,11 @@
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/final.xml?shard=57</string>
+	<string>https://iterm2.com/appcasts/final.xml?shard=14</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-10-18T07:58:33Z</date>
+	<date>2018-11-28T05:32:20Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>TabStyle</key>
@@ -1519,8 +1517,10 @@
 	<false/>
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
+	<key>findMode_iTerm</key>
+	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.2.3</string>
+	<string>3.2.5</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
