@@ -1,7 +1,7 @@
 # IMC Paths
 export FALCON_PCAP_DIR=/home/falcon_unit_tests/
 
-export VERILATOR_ROOT=/home/eda/verilator/latest
+export VERILATOR_ROOT=/home/eda/verilator/4.008
 
 export JAVA_HOME=/opt/imc/oracle-jdk-1.8.0_u102/
 
