@@ -1,5 +1,6 @@
 # Aliases
-alias ls='ls -Gh'
+alias ls='gls -h --color=auto --group-directories-first'
+#alias ls='ls -Gh'
 #alias make='make -j$(sysctl -n hw.ncpu)'
 
 # Homebrew bash completion
