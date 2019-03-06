@@ -219,6 +219,9 @@ vnoremap <C-]> :CtrlPtjumpVisual<CR>
 " Use current search for Ack
 nnoremap <leader>8 :AckFromSearch!<CR>
 
+" Go to definition or declaration
+nnoremap <leader>jd :YcmCompleter GoTo<CR>
+
 " Toggle NERD Tree
 nnoremap <C-N> :NERDTreeToggle<CR>
 nnoremap <C-M-N> :NERDTreeFind<CR>
