@@ -156,6 +156,10 @@ let g:airline#extensions#tabline#right_sep = ''
 let g:airline#extensions#tabline#right_alt_sep = '|'
 "let g:airline#extensions#tabline#buffer_idx_mode = 1
 
+" Goyo
+let g:goyo_width = 120
+let g:goyo_height = '100%'
+
 " Use Rg for Ctrl-P
 if executable('rg')
   let g:ctrlp_user_command = 'rg --files %s'
