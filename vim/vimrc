@@ -38,8 +38,8 @@ set shiftround
 set backspace=indent,eol,start
 set expandtab
 set nosmarttab
-"set textwidth=80
-set colorcolumn=80
+"set textwidth=120
+set colorcolumn=120
 set ignorecase
 set smartcase
 set splitright
