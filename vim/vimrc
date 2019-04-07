@@ -98,9 +98,9 @@ Plug 'lyuts/vim-rtags'
 Plug 'elzr/vim-json'
 Plug 'moll/vim-bbye'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'vim-scripts/verilog_systemverilog_fix'
 Plug 'skielbasa/vim-material-monokai'
 Plug 'thaerkh/vim-indentguides'
+Plug 'nachumk/systemverilog.vim'
 
 call plug#end()
 
