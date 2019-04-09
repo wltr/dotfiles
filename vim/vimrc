@@ -101,6 +101,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'skielbasa/vim-material-monokai'
 Plug 'thaerkh/vim-indentguides'
 Plug 'nachumk/systemverilog.vim'
+Plug 'rhysd/vim-clang-format'
 
 call plug#end()
 
