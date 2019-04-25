@@ -5,11 +5,11 @@ source $settings/bash.prompt
 
 case $(uname -s) in
   Linux)
-    source $settings/bash.linux
     source $settings/path.linux
+    source $settings/bash.linux
     ;;
   Darwin)
-    source $settings/bash.macos
     source $settings/path.macos
+    source $settings/bash.macos
     ;;
 esac
