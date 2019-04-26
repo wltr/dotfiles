@@ -1,0 +1,6 @@
+#!/bin/bash
+
+OTHERS=$(users | sed s/$(whoami)//g | sed -e 's/ /\n/g' | sed -e '/^$/d' | sort -u | xargs)
+if [[ -n $OTHERS ]]; then
+  echo -e '\x01\x1b[1m\x02Other logged in users:\x01\x1b[0m\x02 '$OTHERS
+fi
