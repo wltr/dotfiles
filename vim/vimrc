@@ -169,16 +169,10 @@ if executable('rg')
   let g:ctrlp_switch_buffer = 'et'
 endif
 
-" Use better Ack
+" Use Rg instead of Ack
 let g:ackprg = 'rg --vimgrep --no-heading'
 cnoreabbrev ag Ack
-cnoreabbrev aG Ack
-cnoreabbrev Ag Ack
-cnoreabbrev AG Ack
 cnoreabbrev rg Ack
-cnoreabbrev rG Ack
-cnoreabbrev Rg Ack
-cnoreabbrev RG Ack
 
 let g:NERDTreeWinSize = 40
 let g:tagbar_width = 40
