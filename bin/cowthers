@@ -1,0 +1,14 @@
+#!/bin/bash
+
+SAY=$(which cowsay 2> /dev/null)
+if [[ -z $SAY ]]; then
+    echo "Couldn't find \"cowsay\". Make sure it's installed and in your PATH."
+    exit 1
+fi
+
+OTHERS=$(users | sed s/$(whoami)//g | sed -e 's/ /\n/g' | sed -e '/^$/d' | sort -u | xargs)
+if [[ -n $OTHERS ]]; then
+  echo -e '\x01\x1b[1m\x02'
+  cowsay -W 80 "Watch out! Other users: $OTHERS"
+  echo -e '\x01\x1b[0m\x02'
+fi
