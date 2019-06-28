@@ -3,10 +3,8 @@ silent !mkdir -p ~/.config/nvim/backups
 
 " Options
 set termguicolors
-set nocompatible
 set undodir=~/.config/nvim/backups
 set undofile
-"set mouse=a
 set encoding=utf-8
 set background=dark
 set hidden
@@ -56,9 +54,10 @@ set foldmethod=indent
 set foldnestmax=10
 set nofoldenable
 set foldlevel=2
+set signcolumn=yes
 set clipboard+=unnamedplus
 "set iskeyword-=_
-set signcolumn=yes
+"set mouse=a
 set statusline=%<\ %n:%f\ %m%r
 set statusline+=%#warningmsg#%{fugitive#statusline()}%*
 set statusline+=%=line:\ %l\/%L,\ col:\ %c%V\ (%P)\ 0x%B
@@ -70,6 +69,9 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
 Plug '~/.fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/gv.vim'
@@ -78,17 +80,13 @@ Plug 'junegunn/vim-slash'
 Plug 'junegunn/vim-peekaboo'
 Plug 'junegunn/vim-easy-align'
 
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 
-Plug 'majutsushi/tagbar'
-Plug 'valloric/youcompleteme'
 Plug 'mileszs/ack.vim'
 Plug 'mtth/scratch.vim'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'majutsushi/tagbar'
 Plug 'ivalkeen/vim-ctrlp-tjump'
 Plug 'kshenoy/vim-signature'
 Plug 'airblade/vim-gitgutter'
@@ -102,6 +100,8 @@ Plug 'skielbasa/vim-material-monokai'
 Plug 'thaerkh/vim-indentguides'
 Plug 'wltr/systemverilog.vim'
 Plug 'rhysd/vim-clang-format'
+Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
+Plug 'tweekmonster/deoplete-clang2'
 
 call plug#end()
 
@@ -155,7 +155,6 @@ let g:airline#extensions#tabline#left_sep = ''
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#right_sep = ''
 let g:airline#extensions#tabline#right_alt_sep = '|'
-"let g:airline#extensions#tabline#buffer_idx_mode = 1
 
 " Goyo
 let g:goyo_width = 120
@@ -171,15 +170,13 @@ endif
 
 " Use Rg instead of Ack
 let g:ackprg = 'rg --vimgrep --no-heading'
-cnoreabbrev ag Ack
 cnoreabbrev rg Ack
 
+" Misc
 let g:NERDTreeWinSize = 40
 let g:tagbar_width = 40
-
 let g:vim_json_syntax_conceal = 0
-
-let g:ycm_global_ycm_extra_conf = '~/.dotfiles/vim/ycm_extra_conf.py'
+let g:deoplete#enable_at_startup = 1
 
 " EasyMotion highlighting
 hi link EasyMotionTarget2First Number
@@ -217,9 +214,6 @@ vnoremap <C-]> :CtrlPtjumpVisual<CR>
 
 " Use current search for Ack
 nnoremap <leader>8 :AckFromSearch!<CR>
-
-" Go to definition or declaration
-nnoremap <leader>jd :YcmCompleter GoTo<CR>
 
 " Toggle NERD Tree
 nnoremap <C-N> :NERDTreeToggle<CR>
