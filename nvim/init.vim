@@ -100,8 +100,7 @@ Plug 'skielbasa/vim-material-monokai'
 Plug 'thaerkh/vim-indentguides'
 Plug 'wltr/systemverilog.vim'
 Plug 'rhysd/vim-clang-format'
-Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
-Plug 'tweekmonster/deoplete-clang2'
+Plug 'ycm-core/YouCompleteMe'
 
 call plug#end()
 
@@ -176,7 +175,6 @@ cnoreabbrev rg Ack
 let g:NERDTreeWinSize = 40
 let g:tagbar_width = 40
 let g:vim_json_syntax_conceal = 0
-let g:deoplete#enable_at_startup = 1
 
 " EasyMotion highlighting
 hi link EasyMotionTarget2First Number
