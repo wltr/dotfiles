@@ -1,3 +1,7 @@
+if [ -z $PS1 ]; then
+   return
+fi
+
 settings=$(dirname $BASH_SOURCE)
 
 source $settings/bash.common
