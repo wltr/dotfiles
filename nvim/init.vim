@@ -69,9 +69,6 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-
 Plug '~/.fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/gv.vim'
@@ -80,27 +77,28 @@ Plug 'junegunn/vim-slash'
 Plug 'junegunn/vim-peekaboo'
 Plug 'junegunn/vim-easy-align'
 
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 
-Plug 'mileszs/ack.vim'
-Plug 'mtth/scratch.vim'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'majutsushi/tagbar'
-Plug 'ivalkeen/vim-ctrlp-tjump'
+Plug 'moll/vim-bbye'
+Plug 'elzr/vim-json'
+Plug 'lyuts/vim-rtags'
 Plug 'kshenoy/vim-signature'
 Plug 'airblade/vim-gitgutter'
-Plug 'easymotion/vim-easymotion'
-Plug 'plasticboy/vim-markdown'
-Plug 'lyuts/vim-rtags'
-Plug 'elzr/vim-json'
-Plug 'moll/vim-bbye'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'skielbasa/vim-material-monokai'
-Plug 'thaerkh/vim-indentguides'
-Plug 'wltr/systemverilog.vim'
 Plug 'rhysd/vim-clang-format'
+Plug 'plasticboy/vim-markdown'
+Plug 'thaerkh/vim-indentguides'
+Plug 'easymotion/vim-easymotion'
+Plug 'skielbasa/vim-material-monokai'
+
+Plug 'majutsushi/tagbar'
 Plug 'ycm-core/YouCompleteMe'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+
+Plug 'wltr/systemverilog.vim'
 
 call plug#end()
 
@@ -159,18 +157,6 @@ let g:airline#extensions#tabline#right_alt_sep = '|'
 let g:goyo_width = 120
 let g:goyo_height = '100%'
 
-" Use Rg for Ctrl-P
-if executable('rg')
-  let g:ctrlp_user_command = 'rg --files %s'
-  let g:ctrlp_use_caching = 0
-  let g:ctrlp_working_path_mode = 'ra'
-  let g:ctrlp_switch_buffer = 'et'
-endif
-
-" Use Rg instead of Ack
-let g:ackprg = 'rg --vimgrep --no-heading'
-cnoreabbrev rg Ack
-
 " Misc
 let g:NERDTreeWinSize = 40
 let g:tagbar_width = 40
@@ -202,16 +188,6 @@ nnoremap <C-X> :Bdelete<CR>
 
 " Go to last buffer
 nnoremap <tab> :b#<CR>
-
-" Use ctags with Ctrl-P
-nnoremap <leader>. :CtrlPTag<CR>
-
-" Use tjump with Ctrl-P
-nnoremap <C-]> :CtrlPtjump<CR>
-vnoremap <C-]> :CtrlPtjumpVisual<CR>
-
-" Use current search for Ack
-nnoremap <leader>8 :AckFromSearch!<CR>
 
 " Toggle NERD Tree
 nnoremap <C-N> :NERDTreeToggle<CR>
