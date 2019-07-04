@@ -6,6 +6,6 @@ alias ls='ls -h --color=auto --group-directories-first'
 #alias make='make -j$(nproc)'
 
 # Tmux default session
-if [ -z $TMUX ]; then
+if [[ -z $TMUX ]]; then
   tmux attach -t default || tmux new -s default
 fi
