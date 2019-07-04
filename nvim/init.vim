@@ -200,6 +200,9 @@ nnoremap <C-M-M> :TagbarToggle<CR>
 xnoremap ga :EasyAlign
 nnoremap ga :EasyAlign
 
+" YouCompleteMe
+nnoremap <leader>j :YcmCompleter GoTo<CR>
+
 " FZF
 nnoremap <C-P> :GitFiles<CR>
 nnoremap <leader>f :Files<CR>
