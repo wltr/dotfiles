@@ -200,6 +200,17 @@ nnoremap <C-M-M> :TagbarToggle<CR>
 xnoremap ga :EasyAlign
 nnoremap ga :EasyAlign
 
+" FZF
+nnoremap <C-P> :GitFiles<CR>
+nnoremap <leader>f :Files<CR>
+nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>l :BLines<CR>
+nnoremap <leader>h :History<CR>
+nnoremap <leader>f :Files<CR>
+nnoremap <leader>m :Marks<CR>
+nnoremap <leader>8 :Rg <C-R><C-W><CR>
+vnoremap <leader>8 :Rg <C-R><C-W><CR>
+
 " Exit terminal mode
 if has('nvim')
   tnoremap <leader>e <C-\><C-n>
