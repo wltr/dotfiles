@@ -209,7 +209,6 @@ nnoremap <leader>h :History<CR>
 nnoremap <leader>f :Files<CR>
 nnoremap <leader>m :Marks<CR>
 nnoremap <leader>8 :Rg <C-R><C-W><CR>
-vnoremap <leader>8 :Rg <C-R><C-W><CR>
 
 " Exit terminal mode
 if has('nvim')
