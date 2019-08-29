@@ -40,8 +40,6 @@ esac
 
 export PROMPT_COMMAND=$prompt_cmd
 
-#export FZF_DEFAULT_OPTS='--color light'
-
 # Aliases
 alias ll='ls -l'
 alias la='ls -Al'
@@ -52,6 +50,7 @@ alias diff='colordiff'
 alias grep='grep --color=always'
 
 alias g..='cd $(git rev-parse --show-toplevel || pwd)'
+alias td='tmux attach -t default || tmux new -s default'
 
 alias ..='cd ..'
 alias ...='cd ../..'
