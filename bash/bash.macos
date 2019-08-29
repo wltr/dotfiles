@@ -7,3 +7,8 @@ alias ls='gls -h --color=auto --group-directories-first'
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
 fi
+
+# Tmux default session
+if [[ -z $TMUX ]]; then
+  tmux attach -t default || tmux new -s default
+fi
