@@ -123,6 +123,18 @@ autocmd FileType make setlocal noexpandtab
 " Don't use Tagbar with VHDL
 autocmd FileType vhdl let b:tagbar_ignore = 1
 
+" vim -b to edit binary using xxd
+augroup Binary
+  au!
+  au BufReadPre  *.cap let &bin=1
+  au BufReadPost *.cap if &bin | %!xxd
+  au BufReadPost *.cap set ft=xxd | endif
+  au BufWritePre *.cap if &bin | %!xxd -r
+  au BufWritePre *.cap endif
+  au BufWritePost *.cap if &bin | %!xxd
+  au BufWritePost *.cap set nomod | endif
+augroup END
+
 " Highlight todos
 "call matchadd('Todo', '\s\+$')
 call matchadd('Todo', 'TODO')

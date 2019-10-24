@@ -15,7 +15,7 @@ GRPREFIX=~/opt/gnuradio
 export PATH=$PATH:$GRPREFIX/bin
 export LD_LOAD_LIBRARY=$LD_LOAD_LIBRARY:$GRPREFIX/lib
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$GRPREFIX/lib
-export PYTHONPATH=$PYTHONPATH:$GRPREFIX/lib/python2.7/dist-packages
+export PYTHONPATH=$PYTHONPATH:$GRPREFIX/lib/python3.6/dist-packages
 export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$GRPREFIX/lib/pkgconfig
 export GRC_BLOCKS_PATH=$GRC_BLOCKS_PATH:$GRPREFIX/share/gnuradio/grc/blocks
 

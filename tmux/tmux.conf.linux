@@ -38,7 +38,7 @@ set -g prefix C-a
 set -g mode-keys vi
 set -g escape-time 0
 set -g display-time 2000
-set -g history-limit 999999
+set -g history-limit 10000
 set -g set-titles on
 set -g set-titles-string "tmux.#I"
 set -g visual-activity off
