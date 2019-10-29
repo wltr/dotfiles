@@ -169,6 +169,15 @@ let g:airline#extensions#tabline#right_alt_sep = '|'
 let g:goyo_width = 120
 let g:goyo_height = '100%'
 
+" EasyAlign
+let g:easy_align_delimiters = {
+\ '(': {
+\     'pattern': '(',
+\     'left_margin': 1,
+\     'right_margin': 0
+\   }
+\ }
+
 " Misc
 let g:NERDTreeWinSize = 40
 let g:tagbar_width = 40
