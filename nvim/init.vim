@@ -93,7 +93,7 @@ Plug 'plasticboy/vim-markdown'
 Plug 'thaerkh/vim-indentguides'
 Plug 'easymotion/vim-easymotion'
 Plug 'skielbasa/vim-material-monokai'
-Plug 'glench/vim-jinja2-syntax'
+Plug 'wltr/vim-jinja2-syntax'
 
 Plug 'majutsushi/tagbar'
 Plug 'ycm-core/YouCompleteMe'
