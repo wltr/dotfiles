@@ -1,4 +1,4 @@
-set prompt \033[1;35m(gdb) \033[0m
+set prompt \033[1;34m(gdb) \033[0m
 set auto-load safe-path /
 set print pretty on
 set confirm off
