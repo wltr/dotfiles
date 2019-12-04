@@ -26,7 +26,7 @@ export HISTIGNORE='ls:ll:la:bg:fg:history:exit'
 
 shopt -s histappend
 
-prompt_cmd='history -a; history -c; history -r;'
+prompt_cmd='history -n; history -w; history -c; history -r;'
 
 case $TERM in
   xterm)
