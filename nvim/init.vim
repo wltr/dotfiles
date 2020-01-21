@@ -124,6 +124,9 @@ autocmd FileType make setlocal noexpandtab
 " Don't use Tagbar with VHDL
 autocmd FileType vhdl let b:tagbar_ignore = 1
 
+" Use SV syntax for SVJT
+autocmd BufNewFile,BufRead *.svjt set syntax=systemverilog
+
 " vim -b to edit binary using xxd
 augroup Binary
   au!
