@@ -1,8 +1,8 @@
 # Paths
-export JAVA_HOME=/opt/imc/oracle-jdk-1.8.0_u102/
+export JAVA_HOME=/opt/imc/oracle-jdk-1.8.0_u202/
 export FALCON_PCAP_DIR=/home/falcon_unit_tests/
 
-export PATH=/opt/imc/bazel/bin:/opt/imc/llvm-7.0.0/bin:/opt/imc/gcc-8.2.0/bin:/opt/imc/cmake-3.11.0/bin:/opt/imc/maven3/bin:/opt/imc/anaconda/bin:$JAVA_HOME/bin:$VERILATOR_ROOT/bin:$PATH
+export PATH=$JAVA_HOME/bin:/opt/imc/maven3/bin:/opt/imc/bazelisk/bin:/opt/imc/llvm-9.0.0/bin:/opt/imc/gcc-9.2.0/bin:/opt/imc/cmake-3.14.6/bin:/opt/imc/ninja/1.9.0/bin:$PATH
 
 # Aliases
 alias cdf='cd ~/wrk/fpga/Falcon'

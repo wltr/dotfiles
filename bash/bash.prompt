@@ -1,5 +1,5 @@
 # My machines
-mine=('wltr-*' 'sygps065' 'sydmac1212')
+mine=('wltr-*' 'sydtl003' 'sydmac1212')
 
 # Check if it's my machine
 is_mine() {

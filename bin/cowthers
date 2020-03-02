@@ -9,6 +9,6 @@ fi
 OTHERS=$(users | sed s/$(whoami)//g | sed -e 's/ /\n/g' | sed -e '/^$/d' | sort -u | xargs)
 if [[ -n $OTHERS ]]; then
   echo -e '\x01\x1b[1m\x02'
-  cowsay -W 80 "Watch out! Other users: $OTHERS"
+  echo -e 'Watch out! Other users:\n'$OTHERS | cowsay -n -W 80 -f dragon
   echo -e '\x01\x1b[0m\x02'
 fi
