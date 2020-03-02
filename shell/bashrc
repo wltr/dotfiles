@@ -1,6 +1,4 @@
-if [[ -z $PS1 ]]; then
-   return
-fi
+[ -z $PS1 ] && return
 
 settings=$(dirname $BASH_SOURCE)
 
@@ -10,10 +8,10 @@ source $settings/bash.prompt
 case $(uname -s) in
   Linux)
     source $settings/path.linux
-    source $settings/bash.linux
+    source $settings/env.linux
     ;;
   Darwin)
     source $settings/path.macos
-    source $settings/bash.macos
+    source $settings/env.macos
     ;;
 esac

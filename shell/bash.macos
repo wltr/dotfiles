@@ -1,7 +1,0 @@
-# Aliases
-alias ls='gls -h --color=auto --group-directories-first'
-
-# Homebrew bash completion
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-  . $(brew --prefix)/etc/bash_completion
-fi

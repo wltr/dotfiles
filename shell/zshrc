@@ -1,51 +1,17 @@
-[ -z "$PS1" ] && return
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -z $PS1 ] && return
 
-PS1=$'$ '
+settings=$(dirname ${(%):-%x})
 
-autoload -Uz compinit
-compinit
+source $settings/zsh.common
+source $settings/zsh.prompt
 
-HISTFILE=~/.zsh_history
-HISTORY_IGNORE="(ls|[bf]g|exit|reset|clear|history|ls|ll|la|cd|cd ..|cd..|..)"
-HISTSIZE=100000
-SAVEHIST=100000
-setopt INC_APPEND_HISTORY
-setopt HIST_IGNORE_ALL_DUPS
-setopt HIST_IGNORE_SPACE
-setopt HIST_REDUCE_BLANKS
-setopt HIST_VERIFY
-
-setopt IGNORE_EOF
-setopt RM_STAR_WAIT
-setopt AUTO_CONTINUE
-setopt NOCLOBBER
-setopt NO_BG_NICE
-
-watch=notme
-export LOGCHECK=60
-
-export EDITOR=nvim
-export REPORTTIME=30
-export CLICOLOR=1
-export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
-
-export PATH=~/bin:$PATH
-
-alias ls='gls -h --color=auto --group-directories-first'
-alias ll='ls -l'
-alias la='ls -Al'
-
-alias vi='nvim'
-alias gdb='gdb -q'
-alias diff='colordiff'
-alias grep='grep --color=always'
-
-alias g..='cd $(git rev-parse --show-toplevel || pwd)'
-alias td='tmux attach -t default || tmux new -s default'
-
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
-alias .....='cd ../../../..'
-alias ......='cd ../../../../..'
+case $(uname -s) in
+  Linux)
+    source $settings/path.linux
+    source $settings/env.linux
+    ;;
+  Darwin)
+    source $settings/path.macos
+    source $settings/env.macos
+    ;;
+esac
