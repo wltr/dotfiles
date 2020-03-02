@@ -7,7 +7,7 @@ autoload -Uz compinit
 compinit
 
 HISTFILE=~/.zsh_history
-HISTORY_IGNORE="(ls|[bf]g|exit|reset|clear|history|ls|ll|la|cd|cd ..|cd..)"
+HISTORY_IGNORE="(ls|[bf]g|exit|reset|clear|history|ls|ll|la|cd|cd ..|cd..|..)"
 HISTSIZE=100000
 SAVEHIST=100000
 setopt INC_APPEND_HISTORY
