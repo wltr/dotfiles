@@ -51,3 +51,7 @@
 	sts = status -s -b
 	cob = !(git checkout $(git branch -a | grep -v '^*' | grep -v '/HEAD ' | fzf))
 	cleanall = clean -fxd
+	rbi2 = rebase -i HEAD~2
+
+[http]
+	sslVerify = false
