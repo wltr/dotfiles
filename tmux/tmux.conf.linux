@@ -13,7 +13,7 @@ bind -n C-y run "xsel -o -b | tmux load-buffer - ; tmux paste-buffer"
 unbind '"'
 bind - split-window -v
 unbind %
-bind \\ split-window -h
+bind \ split-window -h
 
 bind -n M-p next-window
 bind -n M-n previous-window

@@ -1,3 +1,5 @@
+bindkey -e
+
 autoload -Uz compinit
 compinit
 
@@ -11,6 +13,7 @@ setopt HIST_IGNORE_SPACE
 setopt HIST_REDUCE_BLANKS
 setopt HIST_VERIFY
 
+setopt PROMPT_SUBST
 setopt IGNORE_EOF
 setopt RM_STAR_WAIT
 setopt AUTO_CONTINUE
