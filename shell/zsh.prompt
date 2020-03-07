@@ -1,64 +1,28 @@
-# My machines
 mine=('wltr-mbp' 'sydtl003' 'sydmac1212')
 
-# Check if it's my machine
 is_mine() {
   hn=$(hostname -s)
-  found=0
   for i in $mine; do
     if [[ $hn == $i ]]; then
-      found=1
-      break
+      print -P '%F{3}'
+      return
     fi
   done
-  if [[ $found == 0 ]]; then
-    echo -n -e '\x01\x1b[1;31m\x02'
-  else
-    echo -n -e '\x01\x1b[1;33m\x02'
-  fi
+  print -P '%F{1}'
 }
 
-# Check if I'm root
-is_root() {
-  if [[ $UID == 0 ]]; then
-    echo -n -e '\x01\x1b[0;91m\x02★ '
-  else
-    echo -n -e '\x01\x1b[0;92m\x02» '
-  fi
-  echo -n -e '\x01\x1b[1;39m\x02'
-}
-
-# Check command return code
-is_happy() {
-  if [[ $? != 0 ]]; then
-    echo -n -e '\x01\x1b[0;91m\x02✗ '
-  else
-    echo -n -e '\x01\x1b[0;92m\x02✓ '
-  fi
-}
-
-# Jobs
-has_jobs() {
-  jobs=$(jobs | wc -l | tr -d ' ')
-  if [[ $jobs > 0 ]]; then
-    echo -n -e ' \x01\x1b[2;39m\x02(jobs:'$jobs')\x01\x1b[0m\x02'
-  fi
-}
-
-# Tmux
 has_tmux() {
   if [[ -z $TMUX ]]; then
     sessions=$(tmux ls 2> /dev/null | wc -l | tr -d ' ')
     if [[ $sessions > 0 ]]; then
-      echo -n -e ' \x01\x1b[2;39m\x02(tmux:'$sessions')\x01\x1b[0m\x02'
+      print -P ' %F{8}(tmux:$sessions)%f'
     fi
   fi
 }
 
-# Git
 git_prompt() {
-  if [ -n "$(git branch 2> /dev/null)" ]; then
-    branch=$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')
+  branch=$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')
+  if [[ -n $branch ]]; then
     staging=$(git status --porcelain 2> /dev/null)
     stash=$(git stash list 2> /dev/null | wc -l | tr -d ' ')
     email=$(git config -l 2> /dev/null | grep user.email | tail -n 1 | sed -e 's/.*=.*@\(.*\)$/\1/')
@@ -69,21 +33,25 @@ git_prompt() {
     renamed=$(echo "$staging" | grep -e '^R' -e '^ R' | tail -n 1 | sed -e 's/.*/➜/')
     untracked=$(echo "$staging" | grep -e '^??' | tail -n 1 | sed -e 's/.*/✭/')
 
+    output=' '
     if [[ -z $staging ]]; then
-      echo -n -e '\x01\x1b[2;39m\x02'
+      output+='%F{8}'
     else
-      echo -n -e '\x01\x1b[0;35m\x02'
+      output+='%F{5}'
     fi
-    echo -n ' '$branch
+    output+=$branch
     if [[ -n $staging ]]; then
-      echo -n '('$added$modified$deleted$renamed$untracked')'
+      output+='('$added$modified$deleted$renamed$untracked')'
     fi
     if [[ $stash > 0 ]]; then
-      echo -n -e ' \x01\x1b[0;33m\x02(stash:'$stash')'
+      output+=' %F{3}(stash:'$stash')%f'
     fi
-    echo -n -e ' \x01\x1b[0m\x02\x01\x1b[2;39m\x02<'$email'>\x01\x1b[0m\x02'
+    print -P '$output %F{8}<$email>%f'
   fi
 }
 
-# Shell setup
-export PS1=$'%{$(is_happy)$(is_mine)%}%m%f%b:%F{cyan}%~%{$(git_prompt)$(has_jobs)$(has_tmux)%}%{\n%}%{$(is_root)%}%n%B%F{magenta}%#%f%b '
+precmd() {
+  print -P '%(?.%F{10}✓.%F{9}✗) %B$(is_mine)%m%f%b:%F{6}%~%f$(git_prompt)%(1j. %F{8}(jobs:%j)%f.)$(has_tmux)'
+}
+
+export PROMPT=$'%(!.%F{9}★.%F{10}») %B%F{7}%n%F{5}%#%f%b '
