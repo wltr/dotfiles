@@ -3,6 +3,8 @@ bindkey -e
 autoload -Uz compinit
 compinit
 
+zstyle ':completion:*' menu select
+
 HISTFILE=~/.zsh_history
 HISTORY_IGNORE="(ls|[bf]g|exit|reset|clear|history|ls|ll|la|cd|cd ..|cd..|..)"
 HISTSIZE=100000

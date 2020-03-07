@@ -1,18 +1,16 @@
 # My machines
-mine=('wltr-*' 'sydtl003' 'sydmac1212')
+mine=('wltr-mbp' 'sydtl003' 'sydmac1212')
 
 # Check if it's my machine
 is_mine() {
   hn=$(hostname -s)
   found=0
-  for i in ${mine[@]}
-  do
+  for i in $mine; do
     if [[ $hn == $i ]]; then
       found=1
       break
     fi
   done
-
   if [[ $found == 0 ]]; then
     echo -n -e '\x01\x1b[1;31m\x02'
   else
@@ -61,35 +59,31 @@ has_tmux() {
 git_prompt() {
   if [ -n "$(git branch 2> /dev/null)" ]; then
     branch=$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')
-    status=$(git status --porcelain 2> /dev/null)
+    staging=$(git status --porcelain 2> /dev/null)
     stash=$(git stash list 2> /dev/null | wc -l | tr -d ' ')
     email=$(git config -l 2> /dev/null | grep user.email | tail -n 1 | sed -e 's/.*=.*@\(.*\)$/\1/')
 
-    added=$(echo "$status" | grep -e '^A' -e '^ A' | tail -n 1 | sed -e 's/.*/✚/')
-    modified=$(echo "$status" | grep -e '^M' -e '^ M' | tail -n 1 | sed -e 's/.*/✹/')
-    deleted=$(echo "$status" | grep -e '^D' -e '^ D' | tail -n 1 | sed -e 's/.*/✖/')
-    renamed=$(echo "$status" | grep -e '^R' -e '^ R' | tail -n 1 | sed -e 's/.*/➜/')
-    untracked=$(echo "$status" | grep -e '^??' | tail -n 1 | sed -e 's/.*/✭/')
+    added=$(echo "$staging" | grep -e '^A' -e '^ A' | tail -n 1 | sed -e 's/.*/✚/')
+    modified=$(echo "$staging" | grep -e '^M' -e '^ M' | tail -n 1 | sed -e 's/.*/✹/')
+    deleted=$(echo "$staging" | grep -e '^D' -e '^ D' | tail -n 1 | sed -e 's/.*/✖/')
+    renamed=$(echo "$staging" | grep -e '^R' -e '^ R' | tail -n 1 | sed -e 's/.*/➜/')
+    untracked=$(echo "$staging" | grep -e '^??' | tail -n 1 | sed -e 's/.*/✭/')
 
-    if [[ -z $status ]]; then
+    if [[ -z $staging ]]; then
       echo -n -e '\x01\x1b[2;39m\x02'
     else
       echo -n -e '\x01\x1b[0;35m\x02'
     fi
-
     echo -n ' '$branch
-
-    if [[ -n $status ]]; then
+    if [[ -n $staging ]]; then
       echo -n '('$added$modified$deleted$renamed$untracked')'
     fi
-
     if [[ $stash > 0 ]]; then
       echo -n -e ' \x01\x1b[0;33m\x02(stash:'$stash')'
     fi
-
     echo -n -e ' \x01\x1b[0m\x02\x01\x1b[2;39m\x02<'$email'>\x01\x1b[0m\x02'
   fi
 }
 
 # Shell setup
-export PS1=$'%{$(is_happy)$(is_mine)%}%m%f%b:%F{cyan}%~%{$(git_prompt)$(has_jobs)$(has_tmux)%}\n%{$(is_root)%}%n%B%F{magenta}%#%f%b '
+export PS1=$'%{$(is_happy)$(is_mine)%}%m%f%b:%F{cyan}%~%{$(git_prompt)$(has_jobs)$(has_tmux)%}%{\n%}%{$(is_root)%}%n%B%F{magenta}%#%f%b '
