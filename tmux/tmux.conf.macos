@@ -10,7 +10,7 @@ bind r source-file ~/.tmux.conf \; display "Reloaded config."
 unbind '"'
 bind - split-window -v
 unbind %
-bind \ split-window -h
+bind \\ split-window -h
 
 bind -n M-p next-window
 bind -n M-n previous-window
