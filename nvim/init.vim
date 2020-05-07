@@ -183,6 +183,7 @@ let g:easy_align_delimiters = {
 \ }
 
 " Misc
+let g:ycm_autoclose_preview_window_after_completion = 1
 let g:NERDTreeWinSize = 40
 let g:tagbar_width = 40
 let g:vim_json_syntax_conceal = 0
