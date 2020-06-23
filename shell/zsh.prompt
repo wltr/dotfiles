@@ -1,4 +1,4 @@
-mine=('wltr-mbp' 'sydtl003' 'sydmac1212')
+mine=('wltr-mbp' 'wltr-lnx')
 
 is_mine() {
   hn=$(hostname -s)
