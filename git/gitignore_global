@@ -3,3 +3,4 @@ compile_commands.json
 *.pyc
 .DS_Store
 .ipynb_checkpoints
+.cache
