@@ -69,7 +69,7 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 
-Plug '~/.fzf'
+Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/gv.vim'
 Plug 'junegunn/goyo.vim'
@@ -92,14 +92,14 @@ Plug 'rhysd/vim-clang-format'
 Plug 'plasticboy/vim-markdown'
 Plug 'thaerkh/vim-indentguides'
 Plug 'easymotion/vim-easymotion'
-Plug 'skielbasa/vim-material-monokai'
-Plug 'wltr/vim-jinja2-syntax'
 
 Plug 'majutsushi/tagbar'
 Plug 'ycm-core/YouCompleteMe'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
+Plug 'wltr/vim-material-monokai'
 Plug 'wltr/systemverilog.vim'
+Plug 'wltr/vim-jinja2-syntax'
 
 call plug#end()
 
