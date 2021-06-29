@@ -92,6 +92,7 @@ Plug 'rhysd/vim-clang-format'
 Plug 'plasticboy/vim-markdown'
 Plug 'thaerkh/vim-indentguides'
 Plug 'easymotion/vim-easymotion'
+Plug 'amal-khailtash/vim-xdc-syntax'
 
 Plug 'majutsushi/tagbar'
 Plug 'ycm-core/YouCompleteMe'
