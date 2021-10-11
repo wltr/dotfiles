@@ -2,3 +2,5 @@ export FPGA_GIT_ROOT=~/work/fpga
 
 export CTEST_OUTPUT_ON_FAILURE=1
 export UBSAN_OPTIONS=print_stacktrace=1
+
+export PATH=~/opt/riscv/bin:$PATH
