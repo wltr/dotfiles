@@ -73,7 +73,6 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/gv.vim'
 Plug 'junegunn/goyo.vim'
-Plug 'junegunn/vim-slash'
 Plug 'junegunn/vim-peekaboo'
 Plug 'junegunn/vim-easy-align'
 
@@ -98,6 +97,7 @@ Plug 'majutsushi/tagbar'
 Plug 'ycm-core/YouCompleteMe'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
+Plug 'wltr/vim-slash'
 Plug 'wltr/vim-material-monokai'
 Plug 'wltr/systemverilog.vim'
 Plug 'wltr/vim-jinja2-syntax'
@@ -230,6 +230,9 @@ nnoremap ga :EasyAlign
 
 " YouCompleteMe
 nnoremap <leader>j :YcmCompleter GoTo<CR>
+
+" Center slash search result
+noremap <plug>(slash-after) zz
 
 " FZF
 nnoremap <C-P> :GitFiles<CR>
