@@ -93,9 +93,9 @@ Plug 'thaerkh/vim-indentguides'
 Plug 'easymotion/vim-easymotion'
 Plug 'amal-khailtash/vim-xdc-syntax'
 
-Plug 'sainnhe/edge'
 Plug 'majutsushi/tagbar'
 Plug 'ycm-core/YouCompleteMe'
+Plug 'NLKNguyen/papercolor-theme'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
 Plug 'wltr/vim-slash'
@@ -105,7 +105,7 @@ Plug 'wltr/vim-jinja2-syntax'
 call plug#end()
 
 " Colors
-colorscheme edge
+colorscheme PaperColor
 
 " Trim whitespace
 autocmd BufWritePre * :%s/\s\+$//e
@@ -160,7 +160,7 @@ let mapleader = ','
 let g:netrw_liststyle = 1
 
 " Airline
-let g:airline_theme = 'edge'
+let g:airline_theme = 'papercolor'
 let g:airline_powerline_fonts = 1
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
