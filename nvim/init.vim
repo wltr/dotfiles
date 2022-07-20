@@ -95,10 +95,10 @@ Plug 'amal-khailtash/vim-xdc-syntax'
 
 Plug 'majutsushi/tagbar'
 Plug 'ycm-core/YouCompleteMe'
-Plug 'NLKNguyen/papercolor-theme'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
 Plug 'wltr/vim-slash'
+Plug 'wltr/papercolor-theme'
 Plug 'wltr/systemverilog.vim'
 Plug 'wltr/vim-jinja2-syntax'
 
