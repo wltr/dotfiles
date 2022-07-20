@@ -34,6 +34,8 @@ export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 
 export PATH=~/bin:$PATH
 
+export BAT_THEME='Monokai Extended Light'
+
 alias ls='gls -h --color=auto --group-directories-first'
 alias ll='ls -l'
 alias la='ls -Al'
