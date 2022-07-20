@@ -233,6 +233,10 @@ nnoremap ga :EasyAlign
 
 " YouCompleteMe
 nnoremap <leader>j :YcmCompleter GoTo<CR>
+nnoremap <leader>jd :YcmCompleter GoToDefinition<CR>
+nnoremap <leader>js :YcmCompleter GoToSymbol<CR>
+nnoremap <leader>jp :YcmCompleter GetParent<CR>
+nnoremap <leader>ji :YcmCompleter GoToInclude<CR>
 
 " Center slash search result
 noremap <plug>(slash-after) zz
