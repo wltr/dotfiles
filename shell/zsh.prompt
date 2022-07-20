@@ -4,7 +4,7 @@ is_mine() {
   hn=$(hostname -s)
   for i in $mine; do
     if [[ $hn == $i ]]; then
-      print -P '%F{3}'
+      print -P '%F{2}'
       return
     fi
   done
