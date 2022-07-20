@@ -14,7 +14,7 @@
   diffFilter = delta --color-only
 
 [delta]
-  syntax-theme = Monokai Extended
+  syntax-theme = Monokai Extended Light
   navigate = true
   line-numbers = true
 
