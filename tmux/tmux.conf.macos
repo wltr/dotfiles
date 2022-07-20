@@ -55,16 +55,16 @@ set -g status-keys vi
 set -g status-interval 10
 set -g status-position bottom
 set -g status-justify left
-set -g status-style fg=white,bg=default,dim,bold
+set -g status-style fg=default,bg=default,dim,bold
 
 set -g window-status-format "#I:#{?#{==:#{window_panes},1},#W,(#{window_panes} panes)}"
-set -g window-status-style fg=white,bg=default
+set -g window-status-style fg=default,bg=default
 
 set -g window-status-current-format "#I:#{?#{==:#{window_panes},1},#W,(#{window_panes} panes)}#F"
 set -g window-status-current-style fg=default,bg=magenta
 
 set -g status-left-length 40
-set -g status-left " #[fg=cyan]#h#[fg=white] | "
+set -g status-left " #[fg=cyan]#h#[fg=default] | "
 
 set -g status-right-length 40
-set -g status-right "#[fg=white] | #[fg=yellow]#(tmux-status) "
+set -g status-right "#[fg=default] | #[fg=yellow]#(tmux-status) "
