@@ -69,3 +69,5 @@ set -g status-left " #[fg=cyan]#h#[fg=default] | "
 
 set -g status-right-length 40
 set -g status-right "#[fg=default] | #[fg=yellow]#(tmux-status) "
+
+set -g mode-style fg=white,bg=yellow
