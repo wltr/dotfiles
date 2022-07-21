@@ -48,8 +48,8 @@ set -g focus-events on
 set -g pane-border-style fg=default
 set -g pane-active-border-style fg=red
 
-set -g message-style fg=blue,bg=black
-set -g message-command-style fg=blue,bg=black
+set -g message-style fg=white,bg=black
+set -g message-command-style fg=white,bg=black
 
 set -g status on
 set -g status-keys vi
