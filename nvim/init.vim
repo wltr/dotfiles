@@ -65,6 +65,8 @@ set statusline+=%=line:\ %l\/%L,\ col:\ %c%V\ (%P)\ 0x%B
 " Plugins
 call plug#begin('~/.local/share/nvim/plugged')
 
+Plug 'neovim/nvim-lspconfig'
+
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
@@ -103,6 +105,8 @@ Plug 'wltr/systemverilog.vim'
 Plug 'wltr/vim-jinja2-syntax'
 
 call plug#end()
+
+lua require('config')
 
 " Colors
 colorscheme PaperColor
