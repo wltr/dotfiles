@@ -40,6 +40,7 @@
 	rb = rebase
 	ci = commit
 	st = status
+	rs = restore
 	df = diff
 	dt = difftool
 	wt = worktree
