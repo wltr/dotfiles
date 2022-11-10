@@ -225,11 +225,10 @@ nnoremap <C-X> :Bdelete<CR>
 nnoremap <tab> :b#<CR>
 
 " Toggle NERD Tree
-nnoremap <C-N> :NERDTreeToggle<CR>
-nnoremap <C-M-N> :NERDTreeFind<CR>
+nnoremap <C-N> :NERDTreeFind<CR>
 
 " Toggle TagBar
-nnoremap <C-M-M> :TagbarToggle<CR>
+nnoremap <C-M-N> :TagbarToggle<CR>
 
 " EasyAlign
 xnoremap ga :EasyAlign
