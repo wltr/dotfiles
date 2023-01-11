@@ -1,6 +1,8 @@
 editor "nvim +%d %s"
 #fontname_signals Monospace 12
 
+leading_zero_removal off
+
 dragzoom_threshold 0
 sst_dbl_action_type insert
 
