@@ -74,6 +74,7 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-speeddating'
+Plug 'tpope/vim-repeat'
 
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
@@ -208,10 +209,6 @@ hi link EasyMotionTarget2Second Number
 " Use ii instead of ESC
 imap ii <Esc>
 
-" Increment and decrement numbers
-nnoremap <A-a> <C-a>
-nnoremap <A-x> <C-x>
-
 " Buffer navigation
 nnoremap <C-L> :bnext<CR>
 nnoremap <C-H> :bprevious<CR>
@@ -223,7 +220,7 @@ nnoremap <C-W><C-L> :exe "vertical resize +5"<CR>
 nnoremap <C-W><C-H> :exe "vertical resize -5"<CR>
 
 " Close buffer without closing window
-nnoremap <C-X> :Bdelete<CR>
+nnoremap <leader>q :Bdelete<CR>
 
 " Go to last buffer
 nnoremap <tab> :b#<CR>
