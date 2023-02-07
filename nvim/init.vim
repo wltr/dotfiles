@@ -233,15 +233,15 @@ nnoremap <C-N> :NERDTreeToggle<CR>
 nnoremap <C-M-N> :NERDTreeFind<CR>
 
 " Toggle TagBar
-nnoremap <leader>n :TagbarToggle<CR>
+nnoremap <leader>t :TagbarToggle<CR>
 
 " EasyAlign
-xnoremap ga :EasyAlign
-nnoremap ga :EasyAlign
+xnoremap ea :EasyAlign
+nnoremap ea :EasyAlign
 
 " YouCompleteMe
-nnoremap <leader>j :YcmCompleter GoTo<CR>
-nnoremap <leader>jd :YcmCompleter GoToDefinition<CR>
+nnoremap <leader>jd :YcmCompleter GoTo<CR>
+nnoremap <leader>jf :YcmCompleter GoToDefinition<CR>
 nnoremap <leader>js :YcmCompleter GoToSymbol<CR>
 nnoremap <leader>jp :YcmCompleter GetParent<CR>
 nnoremap <leader>ji :YcmCompleter GoToInclude<CR>
