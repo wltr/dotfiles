@@ -236,8 +236,8 @@ nnoremap <C-M-N> :NERDTreeFind<CR>
 nnoremap <leader>t :TagbarToggle<CR>
 
 " EasyAlign
-xnoremap ea :EasyAlign
-nnoremap ea :EasyAlign
+xnoremap gea :EasyAlign
+nnoremap gea :EasyAlign
 
 " YouCompleteMe
 nnoremap <leader>jd :YcmCompleter GoTo<CR>
