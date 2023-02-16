@@ -137,12 +137,20 @@ end)
 vim.cmd('colorscheme PaperColor')
 
 -- Functions
-function keymap(mode, lhs, rhs, opts)
+local keymap = function(mode, lhs, rhs, opts)
   local options = { noremap = true, silent = true }
   if opts then
     options = vim.tbl_extend('force', options, opts)
   end
   vim.keymap.set(mode, lhs, rhs, options)
+end
+
+local sign = function(opts)
+  vim.fn.sign_define(opts.name, {
+    texthl = opts.name,
+    text = opts.text,
+    numhl = ''
+  })
 end
 
 local on_attach = function(client, bufnr)
@@ -161,6 +169,11 @@ local on_attach = function(client, bufnr)
 end
 
 -- Config
+sign({name = 'DiagnosticSignError', text = ''})
+sign({name = 'DiagnosticSignWarn', text = ''})
+sign({name = 'DiagnosticSignHint', text = ''})
+sign({name = 'DiagnosticSignInfo', text = ''})
+
 require('leap').add_default_mappings()
 require('nvim-web-devicons').setup{}
 require('tabline').setup{}
