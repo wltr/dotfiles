@@ -232,6 +232,7 @@ vim.fn.matchadd('ErrorMsg', '^\\(<\\|=\\|>\\)\\{7\\}\\([^=].\\+\\)\\?$') -- git 
 
 -- Autocmds
 vim.api.nvim_create_autocmd({'BufWritePre'}, {command = ':%s/\\s\\+$//e'}) -- trim whitespace
+vim.api.nvim_create_autocmd({'BufEnter'}, {command = 'if (winnr("$") == 1 && &buftype == "quickfix") | q | endif'})
 
 -- Key mapping
 keymap('n', '<space>e', vim.diagnostic.open_float)
