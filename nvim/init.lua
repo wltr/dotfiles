@@ -122,13 +122,13 @@ require('packer').startup(function(use)
 
   use 'ggandor/leap.nvim'
   use 'j-hui/fidget.nvim'
+  use "lukas-reineke/indent-blankline.nvim"
   use 'bogado/file-line'
   use 'kshenoy/vim-signature'
   use 'mhinz/vim-signify'
   use 'embear/vim-localvimrc'
   use 'roxma/vim-paste-easy'
   use 'rhysd/vim-clang-format'
-  use 'thaerkh/vim-indentguides'
   use 'amal-khailtash/vim-xdc-syntax'
 
   use 'NLKNguyen/papercolor-theme'
@@ -173,6 +173,7 @@ require('guihua.maps').setup{}
 require('navigator').setup{}
 require('lsp_signature').setup{}
 require('fidget').setup{}
+require('indent_blankline').setup{}
 
 require('cmp').setup{
   snippet = { expand = function(args) vim.fn["vsnip#anonymous"](args.body) end },
