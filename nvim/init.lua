@@ -59,8 +59,8 @@ vim.opt.wildignore = '*.swp,*.bak,*.pyc'
 vim.opt.title = true
 vim.opt.comments = 's0:/*,mb:**,ex:*/,://'
 vim.opt.diffopt = 'iwhite,vertical'
-vim.opt.listchars = { tab = '>~', trail = '.', extends = '#', nbsp= '.' }
 vim.opt.list = true
+vim.opt.listchars = { tab = '>~', trail = '.', extends = '#', nbsp= '.' }
 vim.opt.scrolloff = 3
 vim.opt.sidescrolloff = 5
 vim.opt.sidescroll = 5
@@ -69,10 +69,9 @@ vim.opt.foldmethod = 'indent'
 vim.opt.foldnestmax = 10
 vim.opt.foldenable = false
 vim.opt.foldlevel = 2
+vim.opt.laststatus = 2
 vim.opt.signcolumn = 'yes'
 vim.opt.clipboard = 'unnamedplus'
-vim.opt.laststatus = 2
---vim.opt.statusline = '%<\ %n:%f\ %m%r%#warningmsg#%{fugitive#statusline()}%*%=line:\ %l\/%L,\ col:\ %c%V\ (%P)\ 0x%B'
 
 -- Plugins
 vim.cmd('packadd packer.nvim')
