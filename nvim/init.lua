@@ -256,8 +256,6 @@ keymap({'n', 'x'}, 'gea', ':EasyAlign')
 
 keymap('t', '<leader>e', '<C-\\><C-n>')
 
-keymap('n', '<leader>k', function() vim.lsp.buf.signature_help() end)
-
 keymap('n', '<C-P>', require('telescope.builtin').git_files)
 keymap('n', '<leader>ff', require('telescope.builtin').find_files)
 keymap('n', '<leader>fg', require('telescope.builtin').live_grep)
