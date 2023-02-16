@@ -164,7 +164,6 @@ end
 require('leap').add_default_mappings()
 require('nvim-web-devicons').setup{}
 require('tabline').setup{}
-require('nvim-tree').setup{}
 require('nvim-treesitter.configs').setup{}
 require('treesitter-context').setup{}
 require('telescope').setup{}
@@ -173,6 +172,10 @@ require('navigator').setup{}
 require('lsp_signature').setup{}
 require('fidget').setup{}
 require('indent_blankline').setup{}
+
+require('nvim-tree').setup{
+  view = { width = 40 }
+}
 
 require('cmp').setup{
   snippet = { expand = function(args) vim.fn["vsnip#anonymous"](args.body) end },
