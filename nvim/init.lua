@@ -121,7 +121,7 @@ require('packer').startup(function(use)
 
   use 'ggandor/leap.nvim'
   use 'j-hui/fidget.nvim'
-  use "lukas-reineke/indent-blankline.nvim"
+  use 'lukas-reineke/indent-blankline.nvim'
   use 'bogado/file-line'
   use 'kshenoy/vim-signature'
   use 'mhinz/vim-signify'
