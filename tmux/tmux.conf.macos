@@ -1,5 +1,5 @@
 unbind C-b
-bind C-o send-prefix
+bind M-o send-prefix
 
 unbind r
 bind r source-file ~/.tmux.conf \; display "Reloaded config."
@@ -33,7 +33,7 @@ set -sa terminal-overrides ",*:dim=\\E[2m"
 set -ga terminal-overrides ",xterm-256color:Tc"
 set -g default-terminal "screen-256color"
 
-set -g prefix C-o
+set -g prefix M-o
 set -g mode-keys vi
 set -g escape-time 0
 set -g display-time 2000
