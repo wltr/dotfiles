@@ -115,10 +115,11 @@ require('packer').startup(function(use)
   use 'nvim-lua/plenary.nvim'
   use 'nvim-telescope/telescope.nvim'
 
-  use {'ray-x/guihua.lua', run = 'cd lua/fzy && make'}
-  use 'ray-x/navigator.lua'
-  use 'ray-x/lsp_signature.nvim'
+  -- use {'ray-x/guihua.lua', run = 'cd lua/fzy && make'}
+  -- use 'ray-x/navigator.lua'
+  -- use 'ray-x/lsp_signature.nvim'
 
+  use 'phaazon/hop.nvim'
   use 'ggandor/leap.nvim'
   use 'j-hui/fidget.nvim'
   use 'lukas-reineke/indent-blankline.nvim'
@@ -180,11 +181,12 @@ require('tabline').setup{}
 require('nvim-treesitter.configs').setup{}
 require('treesitter-context').setup{}
 require('telescope').setup{}
-require('guihua.maps').setup{}
-require('navigator').setup{}
-require('lsp_signature').setup{}
+-- require('guihua.maps').setup{}
+-- require('navigator').setup{}
+-- require('lsp_signature').setup{}
 require('fidget').setup{}
 require('indent_blankline').setup{}
+require('hop').setup{}
 
 require('nvim-tree').setup{
   view = { width = 40 }
@@ -282,3 +284,6 @@ keymap('n', '<leader>fl', require('telescope.builtin').current_buffer_fuzzy_find
 keymap('n', '<leader>fh', require('telescope.builtin').oldfiles)
 keymap('n', '<leader>fr', require('telescope.builtin').git_status)
 keymap('n', '<leader>8', require('telescope.builtin').grep_string)
+
+vim.keymap.set('', 'f', function() require('hop').hint_char1({ direction = require('hop.hint').HintDirection.AFTER_CURSOR }) end, {remap=true})
+vim.keymap.set('', 'F', function() require('hop').hint_char1({ direction = require('hop.hint').HintDirection.BEFORE_CURSOR }) end, {remap=true})
