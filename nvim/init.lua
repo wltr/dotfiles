@@ -287,3 +287,7 @@ keymap('n', '<leader>8', require('telescope.builtin').grep_string)
 
 vim.keymap.set('', 'f', function() require('hop').hint_char1({ direction = require('hop.hint').HintDirection.AFTER_CURSOR }) end, {remap=true})
 vim.keymap.set('', 'F', function() require('hop').hint_char1({ direction = require('hop.hint').HintDirection.BEFORE_CURSOR }) end, {remap=true})
+
+vim.diagnostic.config({
+  virtual_text = { prefix = '●' }
+})
