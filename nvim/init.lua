@@ -122,6 +122,7 @@ require('packer').startup(function(use)
   use 'j-hui/fidget.nvim'
   use 'lukas-reineke/indent-blankline.nvim'
   use 'bogado/file-line'
+  use 'moll/vim-bbye'
   use 'kshenoy/vim-signature'
   use 'mhinz/vim-signify'
   use 'embear/vim-localvimrc'
@@ -266,7 +267,7 @@ keymap('n', '<C-M-N>', ':NvimTreeFindFileToggle<CR>')
 keymap('n', '<tab>', ':b#<CR>')
 keymap('n', '<C-L>', ':bnext<CR>')
 keymap('n', '<C-H>', ':bprevious<CR>')
-keymap('n', '<C-Q>', ':bdelete<CR>')
+keymap('n', '<C-Q>', ':Bdelete<CR>')
 keymap('n', '<C-W><C-J>', ':exe "resize +5"<CR>')
 keymap('n', '<C-W><C-K>', ':exe "resize -5"<CR>')
 keymap('n', '<C-W><C-L>', ':exe "vertical resize +5"<CR>')
