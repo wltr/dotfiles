@@ -48,17 +48,15 @@ vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.shiftround = true
-vim.opt.backspace = 'indent,eol,start'
+vim.opt.backspace = { 'indent', 'eol', 'start' }
 vim.opt.expandtab = true
 vim.opt.smarttab = false
 vim.opt.colorcolumn = '120'
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.splitright = true
-vim.opt.wildignore = '*.swp,*.bak,*.pyc'
-vim.opt.title = true
-vim.opt.comments = 's0:/*,mb:**,ex:*/,://'
-vim.opt.diffopt = 'iwhite,vertical'
+vim.opt.wildignore = { '*.swp', '*.bak', '*.pyc' }
+vim.opt.diffopt = { 'iwhite', 'vertical' }
 vim.opt.list = true
 vim.opt.listchars = { tab = '>~', trail = '.', extends = '#', nbsp= '.' }
 vim.opt.scrolloff = 3
@@ -170,6 +168,10 @@ local on_attach = function(client, bufnr)
 end
 
 -- Config
+vim.diagnostic.config({
+  virtual_text = { prefix = '●' }
+})
+
 sign({name = 'DiagnosticSignError', text = ''})
 sign({name = 'DiagnosticSignWarn', text = ''})
 sign({name = 'DiagnosticSignHint', text = ''})
@@ -285,9 +287,9 @@ keymap('n', '<leader>fh', require('telescope.builtin').oldfiles)
 keymap('n', '<leader>fr', require('telescope.builtin').git_status)
 keymap('n', '<leader>8', require('telescope.builtin').grep_string)
 
-vim.keymap.set('', 'f', function() require('hop').hint_char1({ direction = require('hop.hint').HintDirection.AFTER_CURSOR }) end, {remap=true})
-vim.keymap.set('', 'F', function() require('hop').hint_char1({ direction = require('hop.hint').HintDirection.BEFORE_CURSOR }) end, {remap=true})
-
-vim.diagnostic.config({
-  virtual_text = { prefix = '●' }
-})
+vim.keymap.set('', 'f', function()
+  require('hop').hint_char1({ direction = require('hop.hint').HintDirection.AFTER_CURSOR })
+end, { remap=true })
+vim.keymap.set('', 'F', function()
+  require('hop').hint_char1({ direction = require('hop.hint').HintDirection.BEFORE_CURSOR })
+end, { remap=true })
