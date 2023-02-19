@@ -48,6 +48,7 @@ vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.shiftround = true
+vim.opt.completeopt = { 'menuone', 'noselect' }
 vim.opt.backspace = { 'indent', 'eol', 'start' }
 vim.opt.expandtab = true
 vim.opt.smarttab = false
@@ -82,7 +83,6 @@ require('packer').startup(function(use)
   use 'tpope/vim-fugitive'
   use 'tpope/vim-endwise'
   use 'tpope/vim-abolish'
-  use 'tpope/vim-commentary'
   use 'tpope/vim-speeddating'
   use 'tpope/vim-repeat'
 
@@ -120,6 +120,7 @@ require('packer').startup(function(use)
   use 'phaazon/hop.nvim'
   use 'ggandor/leap.nvim'
   use 'j-hui/fidget.nvim'
+  use 'numToStr/Comment.nvim'
   use 'lukas-reineke/indent-blankline.nvim'
   use 'bogado/file-line'
   use 'moll/vim-bbye'
@@ -190,14 +191,10 @@ require('telescope').setup{}
 require('fidget').setup{}
 require('indent_blankline').setup{}
 require('hop').setup{}
+require('Comment').setup{}
 
 require('nvim-tree').setup{
   view = { width = 40 }
-}
-
-require('cmp').setup{
-  snippet = { expand = function(args) vim.fn["vsnip#anonymous"](args.body) end },
-  sources = { { name = 'nvim_lsp' }, { name = 'vsnip' } }
 }
 
 require('lualine').setup{
@@ -214,6 +211,35 @@ require('tabline').setup{
     component_separators = {'', ''}
   }
 }
+
+require('cmp').setup{
+  snippet = { expand = function(args) vim.fn["vsnip#anonymous"](args.body) end },
+  sources = { { name = 'nvim_lsp' }, { name = 'buffer' }, { name = 'path' }, { name = 'vsnip' } }
+}
+
+require('cmp').setup.filetype('gitcommit', {
+  sources = require('cmp').config.sources({
+    { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it.
+  }, {
+    { name = 'buffer' },
+  })
+})
+
+require('cmp').setup.cmdline({ '/', '?' }, {
+  mapping = require('cmp').mapping.preset.cmdline(),
+  sources = {
+    { name = 'buffer' }
+  }
+})
+
+require('cmp').setup.cmdline(':', {
+  mapping = require('cmp').mapping.preset.cmdline(),
+  sources = require('cmp').config.sources({
+    { name = 'path' }
+  }, {
+    { name = 'cmdline' }
+  })
+})
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
