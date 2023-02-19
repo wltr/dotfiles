@@ -301,6 +301,8 @@ keymap('n', '<C-W><C-H>', ':exe "vertical resize -5"<CR>')
 
 keymap({'n', 'x'}, 'gea', ':EasyAlign')
 
+keymap('n', '<leader>s', ':ClangdSwitchSourceHeader')
+
 keymap('t', '<leader>e', '<C-\\><C-n>')
 
 keymap('n', '<C-P>', require('telescope.builtin').git_files)
