@@ -301,7 +301,7 @@ keymap('n', '<C-W><C-H>', ':exe "vertical resize -5"<CR>')
 
 keymap({'n', 'x'}, 'gea', ':EasyAlign')
 
-keymap('n', '<leader>s', ':ClangdSwitchSourceHeader')
+keymap('n', '<leader>s', ':ClangdSwitchSourceHeader<CR>')
 
 keymap('t', '<leader>e', '<C-\\><C-n>')
 
