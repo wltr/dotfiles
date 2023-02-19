@@ -1,4 +1,4 @@
-local HOME = os.getenv("HOME")
+local HOME = os.getenv('HOME')
 
 -- Set leader
 vim.g.mapleader = ','
@@ -212,29 +212,45 @@ require('tabline').setup{
   }
 }
 
-require('cmp').setup{
-  snippet = { expand = function(args) vim.fn["vsnip#anonymous"](args.body) end },
-  sources = { { name = 'nvim_lsp' }, { name = 'buffer' }, { name = 'path' }, { name = 'vsnip' } }
-}
+local cmp = require('cmp')
 
-require('cmp').setup.filetype('gitcommit', {
-  sources = require('cmp').config.sources({
-    { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it.
+cmp.setup{
+  snippet = { expand = function(args) vim.fn['vsnip#anonymous'](args.body) end },
+  mapping = cmp.mapping.preset.insert({
+    ['<Tab>'] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_next_item()
+      else
+        fallback()
+      end
+    end, { 'i', 's' }),
+    ['<S-Tab>'] = cmp.mapping(function()
+      if cmp.visible() then
+        cmp.select_prev_item()
+      end
+    end, { 'i', 's' }),
+    ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-f>'] = cmp.mapping.scroll_docs(4),
+    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<C-e>'] = cmp.mapping.abort(),
+    ['<CR>'] = cmp.mapping.confirm({ select = true })
+  }),
+  sources = cmp.config.sources({
+    { name = 'nvim_lsp' },
+    { name = 'vsnip' }
   }, {
     { name = 'buffer' },
   })
+}
+
+cmp.setup.cmdline({ '/', '?' }, {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = { { name = 'buffer' } }
 })
 
-require('cmp').setup.cmdline({ '/', '?' }, {
-  mapping = require('cmp').mapping.preset.cmdline(),
-  sources = {
-    { name = 'buffer' }
-  }
-})
-
-require('cmp').setup.cmdline(':', {
-  mapping = require('cmp').mapping.preset.cmdline(),
-  sources = require('cmp').config.sources({
+cmp.setup.cmdline(':', {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = cmp.config.sources({
     { name = 'path' }
   }, {
     { name = 'cmdline' }
