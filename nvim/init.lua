@@ -8,6 +8,71 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 vim.g.netrw_liststyle = 1
 
+-- Plugins
+-- vim.cmd('packadd packer.nvim')
+require('packer').startup(function(use)
+  use 'wbthomason/packer.nvim'
+  use 'neovim/nvim-lspconfig'
+
+  -- use 'tpope/vim-sensible'
+  -- use 'tpope/vim-endwise'
+  -- use 'tpope/vim-surround'
+  -- use 'tpope/vim-abolish'
+  -- use 'tpope/vim-repeat'
+  use 'tpope/vim-fugitive'
+  use 'tpope/vim-speeddating'
+
+  -- use 'junegunn/gv.vim'
+  -- use 'junegunn/goyo.vim'
+  -- use 'junegunn/limelight.vim'
+  -- use 'junegunn/vim-slash'
+  -- use 'junegunn/vim-peekaboo'
+  use 'junegunn/vim-easy-align'
+
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-path'
+  use 'hrsh7th/cmp-cmdline'
+  use 'hrsh7th/nvim-cmp'
+  use 'hrsh7th/cmp-vsnip'
+  use 'hrsh7th/vim-vsnip'
+
+  use 'nvim-tree/nvim-web-devicons'
+  use 'nvim-tree/nvim-tree.lua'
+
+  use 'nvim-lualine/lualine.nvim'
+  use 'kdheepak/tabline.nvim'
+
+  use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+  use 'nvim-treesitter/nvim-treesitter-context'
+
+  use 'nvim-lua/plenary.nvim'
+  use 'nvim-telescope/telescope.nvim'
+
+  -- use {'ray-x/guihua.lua', run = 'cd lua/fzy && make'}
+  -- use 'ray-x/navigator.lua'
+  -- use 'ray-x/lsp_signature.nvim'
+
+  use 'phaazon/hop.nvim'
+  use 'ggandor/leap.nvim'
+  use 'j-hui/fidget.nvim'
+  use 'numToStr/Comment.nvim'
+  use 'lukas-reineke/indent-blankline.nvim'
+  -- use 'bogado/file-line'
+  use 'moll/vim-bbye'
+  use 'kshenoy/vim-signature'
+  use 'mhinz/vim-signify'
+  -- use 'embear/vim-localvimrc'
+  -- use 'roxma/vim-paste-easy'
+  use 'rhysd/vim-clang-format'
+  use 'amal-khailtash/vim-xdc-syntax'
+
+  use 'NLKNguyen/papercolor-theme'
+end)
+
+-- Colors
+vim.cmd('colorscheme PaperColor')
+
 -- Create backup folder for persistent undo
 local backup_dir = HOME..'/.local/share/nvim/backups'
 vim.fn.mkdir(backup_dir, 'p')
@@ -40,15 +105,12 @@ vim.opt.autoread = true
 vim.opt.autowrite = true
 vim.opt.visualbell = true
 vim.opt.errorbells = false
-vim.opt.gdefault = true
-vim.opt.showmode = true
 vim.opt.showmatch = true
-vim.opt.showcmd = true
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.shiftround = true
-vim.opt.completeopt = { 'menuone', 'noinsert', 'noselect' }
+vim.opt.completeopt = { 'menu', 'menuone', 'noinsert', 'noselect' }
 vim.opt.backspace = { 'indent', 'eol', 'start' }
 vim.opt.expandtab = true
 vim.opt.smarttab = false
@@ -58,8 +120,8 @@ vim.opt.smartcase = true
 vim.opt.splitright = true
 vim.opt.wildignore = { '*.swp', '*.bak', '*.pyc' }
 vim.opt.diffopt = { 'iwhite', 'vertical' }
+vim.opt.listchars = { tab = '>-', trail = '.', extends = '#', nbsp= '.' }
 vim.opt.list = true
-vim.opt.listchars = { tab = '>~', trail = '.', extends = '#', nbsp= '.' }
 vim.opt.scrolloff = 3
 vim.opt.sidescrolloff = 5
 vim.opt.sidescroll = 5
@@ -71,71 +133,6 @@ vim.opt.foldlevel = 2
 vim.opt.laststatus = 2
 vim.opt.signcolumn = 'yes'
 vim.opt.clipboard = 'unnamedplus'
-
--- Plugins
-vim.cmd('packadd packer.nvim')
-require('packer').startup(function(use)
-  use 'wbthomason/packer.nvim'
-  use 'neovim/nvim-lspconfig'
-
-  use 'tpope/vim-sensible'
-  use 'tpope/vim-surround'
-  use 'tpope/vim-fugitive'
-  use 'tpope/vim-endwise'
-  use 'tpope/vim-abolish'
-  use 'tpope/vim-speeddating'
-  use 'tpope/vim-repeat'
-
-  use 'junegunn/gv.vim'
-  use 'junegunn/goyo.vim'
-  use 'junegunn/limelight.vim'
-  use 'junegunn/vim-slash'
-  use 'junegunn/vim-peekaboo'
-  use 'junegunn/vim-easy-align'
-
-  use 'hrsh7th/cmp-nvim-lsp'
-  use 'hrsh7th/cmp-buffer'
-  use 'hrsh7th/cmp-path'
-  use 'hrsh7th/cmp-cmdline'
-  use 'hrsh7th/nvim-cmp'
-  use 'hrsh7th/cmp-vsnip'
-  use 'hrsh7th/vim-vsnip'
-
-  use 'nvim-tree/nvim-web-devicons'
-  use 'nvim-tree/nvim-tree.lua'
-
-  use 'nvim-lualine/lualine.nvim'
-  use 'kdheepak/tabline.nvim'
-
-  use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
-  use 'nvim-treesitter/nvim-treesitter-context'
-
-  use 'nvim-lua/plenary.nvim'
-  use 'nvim-telescope/telescope.nvim'
-
-  -- use {'ray-x/guihua.lua', run = 'cd lua/fzy && make'}
-  -- use 'ray-x/navigator.lua'
-  -- use 'ray-x/lsp_signature.nvim'
-
-  use 'phaazon/hop.nvim'
-  use 'ggandor/leap.nvim'
-  use 'j-hui/fidget.nvim'
-  use 'numToStr/Comment.nvim'
-  use 'lukas-reineke/indent-blankline.nvim'
-  use 'bogado/file-line'
-  use 'moll/vim-bbye'
-  use 'kshenoy/vim-signature'
-  use 'mhinz/vim-signify'
-  use 'embear/vim-localvimrc'
-  use 'roxma/vim-paste-easy'
-  use 'rhysd/vim-clang-format'
-  use 'amal-khailtash/vim-xdc-syntax'
-
-  use 'NLKNguyen/papercolor-theme'
-end)
-
--- Colors
-vim.cmd('colorscheme PaperColor')
 
 -- Functions
 local keymap = function(mode, lhs, rhs, opts)
@@ -176,12 +173,11 @@ vim.diagnostic.config({
 
 sign({name = 'DiagnosticSignError', text = ''})
 sign({name = 'DiagnosticSignWarn', text = ''})
-sign({name = 'DiagnosticSignHint', text = ''})
-sign({name = 'DiagnosticSignInfo', text = ''})
+sign({name = 'DiagnosticSignHint', text = ''})
+sign({name = 'DiagnosticSignInfo', text = ''})
 
 require('leap').add_default_mappings()
 require('nvim-web-devicons').setup{}
-require('tabline').setup{}
 require('nvim-treesitter.configs').setup{}
 require('treesitter-context').setup{}
 require('telescope').setup{}
@@ -215,23 +211,25 @@ require('tabline').setup{
 local cmp = require('cmp')
 
 cmp.setup{
-  snippet = { expand = function(args) vim.fn['vsnip#anonymous'](args.body) end },
+  snippet = {
+    expand = function(args) vim.fn['vsnip#anonymous'](args.body) end
+  },
   mapping = cmp.mapping.preset.insert({
-    ['<Tab>'] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_next_item()
-      else
-        fallback()
-      end
-    end, { 'i', 's' }),
-    ['<S-Tab>'] = cmp.mapping(function()
-      if cmp.visible() then
-        cmp.select_prev_item()
-      end
-    end, { 'i', 's' }),
+    -- ['<Tab>'] = cmp.mapping(function(fallback)
+    --   if cmp.visible() then
+    --     cmp.select_next_item()
+    --   else
+    --     fallback()
+    --   end
+    -- end, { 'i', 's' }),
+    -- ['<S-Tab>'] = cmp.mapping(function()
+    --   if cmp.visible() then
+    --     cmp.select_prev_item()
+    --   end
+    -- end, { 'i', 's' }),
     ['<C-b>'] = cmp.mapping.scroll_docs(-4),
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
-    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<C-space>'] = cmp.mapping.complete(),
     ['<C-e>'] = cmp.mapping.abort(),
     ['<CR>'] = cmp.mapping.confirm({ select = false })
   }),
