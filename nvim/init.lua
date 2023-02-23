@@ -182,7 +182,6 @@ require('leap').add_default_mappings()
 require('nvim-web-devicons').setup{}
 require('nvim-treesitter.configs').setup{}
 require('treesitter-context').setup{}
-require('telescope').setup{}
 -- require('guihua.maps').setup{}
 -- require('navigator').setup{}
 -- require('lsp_signature').setup{}
@@ -190,6 +189,12 @@ require('fidget').setup{}
 require('indent_blankline').setup{}
 require('hop').setup{}
 require('Comment').setup{}
+
+require('telescope').setup{
+  defaults = {
+    path_display = { 'truncate' }
+  }
+}
 
 require('nvim-tree').setup{
   view = { width = 40 }
