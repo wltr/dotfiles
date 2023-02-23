@@ -192,7 +192,9 @@ require('Comment').setup{}
 
 require('telescope').setup{
   defaults = {
-    path_display = { 'truncate' }
+    path_display = { 'truncate' },
+    layout_strategy = 'vertical',
+    layout_config = { height = 0.95 }
   }
 }
 
