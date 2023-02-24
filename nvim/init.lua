@@ -212,6 +212,7 @@ require('lualine').setup{
 
 require('tabline').setup{
   options = {
+    show_filename_only = true,
     section_separators = {'', ''},
     component_separators = {'', ''}
   }
