@@ -1,15 +1,13 @@
 editor "nvim +%d %s"
 #fontname_signals Monospace 12
 
-leading_zero_removal off
-
 dragzoom_threshold 0
 sst_dbl_action_type insert
 
 use_standard_trace_select no
 highlight_wavewindow yes
 fill_waveform yes
-lz_removal yes
+lz_removal no
 alt_wheel_mode yes
 vcd_preserve_glitches no
 vcd_preserve_glitches_real no
@@ -43,7 +41,7 @@ vlist_spill off
 vlist_prepack off
 vlist_compression 4
 
-hier_max_level 1
+hier_max_level 2
 force_toolbars 0
 #cursor_snap 8
 zoom_pow10_snap on
