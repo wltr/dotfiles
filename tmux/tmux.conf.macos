@@ -13,6 +13,8 @@ bind - split-window -v
 unbind %
 bind \\ split-window -h
 
+bind C-d display-popup
+
 bind -n M-p next-window
 bind -n M-n previous-window
 bind -n M-Tab last-window
