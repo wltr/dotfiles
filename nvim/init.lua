@@ -53,7 +53,7 @@ require('packer').startup(function(use)
   -- use 'ray-x/navigator.lua'
   -- use 'ray-x/lsp_signature.nvim'
 
-  use 'phaazon/hop.nvim'
+  -- use 'phaazon/hop.nvim'
   use 'ggandor/leap.nvim'
   use 'j-hui/fidget.nvim'
   use 'numToStr/Comment.nvim'
@@ -187,7 +187,7 @@ require('treesitter-context').setup{}
 -- require('lsp_signature').setup{}
 require('fidget').setup{}
 require('indent_blankline').setup{}
-require('hop').setup{}
+-- require('hop').setup{}
 require('Comment').setup{}
 
 require('telescope').setup{
@@ -340,9 +340,9 @@ keymap('n', '<leader>fh', require('telescope.builtin').oldfiles)
 keymap('n', '<leader>fr', require('telescope.builtin').git_status)
 keymap('n', '<leader>8', require('telescope.builtin').grep_string)
 
-vim.keymap.set('', 'f', function()
-  require('hop').hint_char2({ direction = require('hop.hint').HintDirection.AFTER_CURSOR })
-end, { remap=true })
-vim.keymap.set('', 'F', function()
-  require('hop').hint_char2({ direction = require('hop.hint').HintDirection.BEFORE_CURSOR })
-end, { remap=true })
+-- vim.keymap.set('', 'f', function()
+--   require('hop').hint_char2({ direction = require('hop.hint').HintDirection.AFTER_CURSOR })
+-- end, { remap=true })
+-- vim.keymap.set('', 'F', function()
+--   require('hop').hint_char2({ direction = require('hop.hint').HintDirection.BEFORE_CURSOR })
+-- end, { remap=true })
