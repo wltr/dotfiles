@@ -13,7 +13,7 @@ bind - split-window -v
 unbind %
 bind \\ split-window -h
 
-bind C-d display-popup -E "tmux new-session -A -s scratch"
+bind -n g display-popup -E "tmux new-session -A -s scratch"
 
 bind -n M-p next-window
 bind -n M-n previous-window
