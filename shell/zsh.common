@@ -30,7 +30,7 @@ export LOGCHECK=60
 export EDITOR=nvim
 export REPORTTIME=30
 export CLICOLOR=1
-export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
+export WORDCHARS='*?_-.[]~&;!#$%^(){}<>'
 
 export PATH=~/bin:$PATH
 
