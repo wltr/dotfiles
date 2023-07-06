@@ -318,7 +318,7 @@ keymap('n', ']d', vim.diagnostic.goto_next)
 keymap('n', '<space>q', vim.diagnostic.setloclist)
 
 keymap('n', '<C-N>', ':NvimTreeToggle<CR>')
-keymap('n', '<C-M-N>', ':NvimTreeFindFileToggle<CR>')
+keymap('n', '<C-M-N>', ':NvimTreeFindFile<CR>')
 
 keymap('n', '<tab>', ':b#<CR>')
 keymap('n', '<C-L>', ':bnext<CR>')
