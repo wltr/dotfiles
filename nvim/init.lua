@@ -72,11 +72,11 @@ require('packer').startup(function(use)
 end)
 
 -- Colors
-vim.cmd('colorscheme PaperColor')
--- require('onedark').setup{
---   style = 'deep'
--- }
--- require('onedark').load()
+-- vim.cmd('colorscheme PaperColor')
+require('onedark').setup{
+  style = 'cool'
+}
+require('onedark').load()
 
 -- Create backup folder for persistent undo
 local backup_dir = HOME..'/.local/share/nvim/backups'
@@ -87,7 +87,7 @@ vim.opt.undofile = true
 -- Options
 vim.opt.termguicolors = true
 vim.opt.encoding = 'utf-8'
-vim.opt.background = 'light'
+vim.opt.background = 'dark'
 vim.opt.cursorline = true
 vim.opt.modelines = 0
 vim.opt.history = 9999
@@ -209,7 +209,7 @@ require('nvim-tree').setup{
 
 require('lualine').setup{
   options = {
-    theme = 'PaperColor',
+    theme = 'onedark',
     section_separators = '',
     component_separators = ''
   }
