@@ -1,4 +1,4 @@
-mine=('wltr-mbp' 'wltr-lnx' 'jwalter-lnx')
+mine=('wltr-mbp' 'wltr-lnx' 'jwalter-lnx', 'hb2-l-dev52')
 
 is_mine() {
   hn=$(hostname -s)
@@ -54,4 +54,4 @@ precmd() {
   print -P '%(?.%F{10}✓.%F{9}✗) %B$(is_mine)%m%f%b:%F{6}%~%f$(git_prompt)%(1j. %F{8}(jobs:%j)%f.)$(has_tmux)'
 }
 
-export PROMPT=$'%(!.%F{9}★.%F{10}») %B%F{0}$USER%F{5}%#%f%b '
+export PROMPT=$'%(!.%F{9}★.%F{10}») %B%F{7}$USER%F{5}%#%f%b '

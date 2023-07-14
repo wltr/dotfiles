@@ -64,7 +64,7 @@ set -g window-status-format "#I:#{?#{==:#{window_panes},1},#W,(#{window_panes} p
 set -g window-status-style fg=default,bg=default
 
 set -g window-status-current-format "#I:#{?#{==:#{window_panes},1},#W,(#{window_panes} panes)}#F"
-set -g window-status-current-style fg=white,bg=black
+set -g window-status-current-style fg=black,bg=white
 
 set -g status-left-length 40
 set -g status-left " #[fg=cyan]#h#[fg=default] | "

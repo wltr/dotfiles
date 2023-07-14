@@ -34,13 +34,13 @@ export WORDCHARS='*?_-.[]~&;!#$%^(){}<>'
 
 export PATH=~/bin:$PATH
 
-export BAT_THEME='Monokai Extended Light'
+export BAT_THEME='Monokai Extended'
 
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
-    --color=fg:#4d4d4c,bg:#eeeeee,hl:#d7005f
-    --color=fg+:#4d4d4c,bg+:#e8e8e8,hl+:#d7005f
-    --color=info:#4271ae,prompt:#8959a8,pointer:#d7005f
-    --color=marker:#4271ae,spinner:#4271ae,header:#4271ae'
+    --color=fg:#a5b0c5,bg:#242b38,hl:#ffffff
+    --color=fg+:#a5b0c5,bg+:#546178,hl+:#ffffff
+    --color=info:#eeeeee,prompt:#ca72e4,pointer:#ef5f6b
+    --color=marker:#eeeeee,spinner:#eeeeee,header:#eeeeee'
 
 alias ls='gls -h --color=auto --group-directories-first'
 alias ll='ls -l'
