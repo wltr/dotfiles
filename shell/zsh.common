@@ -38,7 +38,7 @@ export BAT_THEME='Monokai Extended'
 
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
     --color=fg:#a5b0c5,bg:#242b38,hl:#ffffff
-    --color=fg+:#a5b0c5,bg+:#546178,hl+:#ffffff
+    --color=fg+:#a5b0c5,bg+:#343e4f,hl+:#ffffff
     --color=info:#eeeeee,prompt:#ca72e4,pointer:#ef5f6b
     --color=marker:#eeeeee,spinner:#eeeeee,header:#eeeeee'
 
