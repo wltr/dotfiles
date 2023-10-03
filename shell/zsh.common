@@ -31,6 +31,7 @@ export EDITOR=nvim
 export REPORTTIME=30
 export CLICOLOR=1
 export WORDCHARS='*?_-.[]~&;!#$%^(){}<>'
+export ZLE_REMOVE_SUFFIX_CHARS=""
 
 export PATH=~/bin:$PATH
 
