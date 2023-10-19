@@ -66,6 +66,7 @@ require('packer').startup(function(use)
   -- use 'roxma/vim-paste-easy'
   use 'rhysd/vim-clang-format'
   use 'amal-khailtash/vim-xdc-syntax'
+  use 'Glench/Vim-Jinja2-Syntax'
 
   use 'NLKNguyen/papercolor-theme'
   use 'navarasu/onedark.nvim'
@@ -352,3 +353,10 @@ keymap('n', '<leader>8', require('telescope.builtin').grep_string)
 -- vim.keymap.set('', 'F', function()
 --   require('hop').hint_char2({ direction = require('hop.hint').HintDirection.BEFORE_CURSOR })
 -- end, { remap=true })
+
+vim.filetype.add({
+  extension = {
+    macro = 'jinja',
+    plan = 'jinja'
+  }
+})
