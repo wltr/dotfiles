@@ -285,6 +285,8 @@ require('lspconfig').verible.setup{
   cmd = { 'verible-verilog-ls', '--rules_config_search=true' }
 }
 
+require('lspconfig').jdtls.setup{}
+
 -- EasyAlign
 vim.cmd([[
 let g:easy_align_delimiters = {
