@@ -3,4 +3,7 @@ export UBSAN_OPTIONS=print_stacktrace=1
 export NINJA_STATUS="[%u/%r/%f] [%es] [%o/s] "
 export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
 
-export PATH=/prod/data/bamboo/artifacts/PLT-HB/shared/build-$(/home/jwalter/work/fpga/scripts/get_latest_platform_version.sh)/ub-gcc-lto:$PATH
+PLATFORM_VERSION=$(curl -s https://bamboo/rest/api/latest/result/PLT-HB.json\?buildstate=Successful\&max-results=1 | \
+    jq .results.result\[0\].buildNumber)
+
+export PATH=/prod/data/bamboo/artifacts/PLT-HB/shared/build-$PLATFORM_VERSION/ub-gcc-lto:$PATH
