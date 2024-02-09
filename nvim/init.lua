@@ -274,18 +274,23 @@ cmp.setup.cmdline(':', {
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-require('lspconfig').clangd.setup{
+local lspconfig = require('lspconfig')
+
+lspconfig.clangd.setup{
   on_attach = on_attach,
   capabilities = capabilities
 }
 
-require('lspconfig').verible.setup{
+lspconfig.verible.setup{
   on_attach = on_attach,
   capabilities = capabilities,
   cmd = { 'verible-verilog-ls', '--rules_config_search=true' }
 }
 
-require('lspconfig').jdtls.setup{}
+lspconfig.jdtls.setup{
+  on_attach = on_attach,
+  capabilities = capabilities
+}
 
 -- EasyAlign
 vim.cmd([[
