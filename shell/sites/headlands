@@ -3,9 +3,7 @@ export UBSAN_OPTIONS=print_stacktrace=1
 export NINJA_STATUS="[%u/%r/%f] [%es] [%o/s] "
 export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
 
-export NUM_TEST_CORES=64
-export NUM_BUILD_CORES=2
-export NUM_EXTERNAL_PROJECT_BUILD_CORES=64
+export HT_FPGA_NUM_EXTERNAL_PROJECT_BUILD_CORES=64
 
 PLATFORM_VERSION=$(curl -s https://bamboo/rest/api/latest/result/PLT-HB.json\?buildstate=Successful\&max-results=1 | \
     jq .results.result\[0\].buildNumber)
