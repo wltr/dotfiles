@@ -86,7 +86,7 @@ require('lazy').setup({
   'amal-khailtash/vim-xdc-syntax',
   'Glench/Vim-Jinja2-Syntax',
 
-  'NLKNguyen/papercolor-theme',
+  -- 'NLKNguyen/papercolor-theme',
   'navarasu/onedark.nvim'
 })
 
