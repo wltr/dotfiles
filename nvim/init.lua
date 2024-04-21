@@ -2,6 +2,7 @@ local HOME = os.getenv('HOME')
 
 -- Set leader
 vim.g.mapleader = ','
+vim.g.maplocalleader = '\\'
 
 -- Disable netrw
 vim.g.loaded_netrw = 1
@@ -9,68 +10,85 @@ vim.g.loaded_netrwPlugin = 1
 vim.g.netrw_liststyle = 1
 
 -- Plugins
--- vim.cmd('packadd packer.nvim')
-require('packer').startup(function(use)
-  use 'wbthomason/packer.nvim'
-  use 'neovim/nvim-lspconfig'
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
 
-  -- use 'tpope/vim-sensible'
-  -- use 'tpope/vim-endwise'
-  -- use 'tpope/vim-surround'
-  -- use 'tpope/vim-abolish'
-  -- use 'tpope/vim-repeat'
-  use 'tpope/vim-fugitive'
-  use 'tpope/vim-speeddating'
+require('lazy').setup({
+  'neovim/nvim-lspconfig',
 
-  -- use 'junegunn/gv.vim'
-  -- use 'junegunn/goyo.vim'
-  -- use 'junegunn/limelight.vim'
-  -- use 'junegunn/vim-slash'
-  -- use 'junegunn/vim-peekaboo'
-  use 'junegunn/vim-easy-align'
+  {
+    'folke/todo-comments.nvim',
+    dependencies = {'nvim-lua/plenary.nvim'},
+    opts = {}
+  },
 
-  use 'hrsh7th/cmp-nvim-lsp'
-  use 'hrsh7th/cmp-buffer'
-  use 'hrsh7th/cmp-path'
-  use 'hrsh7th/cmp-cmdline'
-  use 'hrsh7th/nvim-cmp'
-  use 'hrsh7th/cmp-vsnip'
-  use 'hrsh7th/vim-vsnip'
+  -- 'tpope/vim-sensible',
+  -- 'tpope/vim-endwise',
+  -- 'tpope/vim-surround',
+  -- 'tpope/vim-abolish',
+  -- 'tpope/vim-repeat',
+  'tpope/vim-fugitive',
+  'tpope/vim-speeddating',
 
-  use 'nvim-tree/nvim-web-devicons'
-  use 'nvim-tree/nvim-tree.lua'
+  -- 'junegunn/gv.vim',
+  -- 'junegunn/goyo.vim',
+  -- 'junegunn/limelight.vim',
+  -- 'junegunn/vim-slash',
+  -- 'junegunn/vim-peekaboo',
+  'junegunn/vim-easy-align',
 
-  use 'nvim-lualine/lualine.nvim'
-  use 'kdheepak/tabline.nvim'
+  'hrsh7th/cmp-nvim-lsp',
+  'hrsh7th/cmp-buffer',
+  'hrsh7th/cmp-path',
+  'hrsh7th/cmp-cmdline',
+  'hrsh7th/nvim-cmp',
+  'hrsh7th/cmp-vsnip',
+  'hrsh7th/vim-vsnip',
 
-  use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
-  use 'nvim-treesitter/nvim-treesitter-context'
+  'nvim-tree/nvim-web-devicons',
+  'nvim-tree/nvim-tree.lua',
 
-  use 'nvim-lua/plenary.nvim'
-  use 'nvim-telescope/telescope.nvim'
+  'nvim-lualine/lualine.nvim',
+  'kdheepak/tabline.nvim',
 
-  -- use {'ray-x/guihua.lua', run = 'cd lua/fzy && make'}
-  -- use 'ray-x/navigator.lua'
-  -- use 'ray-x/lsp_signature.nvim'
+  {'nvim-treesitter/nvim-treesitter', build = ':TSUpdate'},
+  'nvim-treesitter/nvim-treesitter-context',
 
-  -- use 'phaazon/hop.nvim'
-  use 'ggandor/leap.nvim'
-  use 'j-hui/fidget.nvim'
-  use 'numToStr/Comment.nvim'
-  use 'lukas-reineke/indent-blankline.nvim'
-  -- use 'bogado/file-line'
-  use 'moll/vim-bbye'
-  use 'kshenoy/vim-signature'
-  use 'mhinz/vim-signify'
-  -- use 'embear/vim-localvimrc'
-  -- use 'roxma/vim-paste-easy'
-  use 'rhysd/vim-clang-format'
-  use 'amal-khailtash/vim-xdc-syntax'
-  use 'Glench/Vim-Jinja2-Syntax'
+  'nvim-lua/plenary.nvim',
+  'nvim-telescope/telescope.nvim',
 
-  use 'NLKNguyen/papercolor-theme'
-  use 'navarasu/onedark.nvim'
-end)
+  -- {'ray-x/guihua.lua', cmd = 'cd lua/fzy && make'},
+  -- 'ray-x/navigator.lua',
+  -- 'ray-x/lsp_signature.nvim',
+
+  -- 'phaazon/hop.nvim',
+  'ggandor/leap.nvim',
+  'j-hui/fidget.nvim',
+  'numToStr/Comment.nvim',
+  {'lukas-reineke/indent-blankline.nvim', main = 'ibl', opts = {}},
+  -- 'bogado/file-line',
+  'moll/vim-bbye',
+  'kshenoy/vim-signature',
+  'mhinz/vim-signify',
+  -- 'embear/vim-localvimrc',
+  -- 'roxma/vim-paste-easy',
+  'rhysd/vim-clang-format',
+  'amal-khailtash/vim-xdc-syntax',
+  'Glench/Vim-Jinja2-Syntax',
+
+  'NLKNguyen/papercolor-theme',
+  'navarasu/onedark.nvim'
+})
 
 -- Colors
 -- vim.cmd('colorscheme PaperColor')
@@ -192,7 +210,7 @@ require('treesitter-context').setup{}
 -- require('navigator').setup{}
 -- require('lsp_signature').setup{}
 require('fidget').setup{}
-require('indent_blankline').setup{}
+require('ibl').setup{}
 -- require('hop').setup{}
 require('Comment').setup{}
 
@@ -309,11 +327,11 @@ vim.g.goyo_height = '100%'
 vim.g.goyo_linenr = 1
 
 -- Highlights
-vim.fn.matchadd('Todo', 'TODO:\\?')
-vim.fn.matchadd('Todo', 'FIXME:\\?')
-vim.fn.matchadd('Todo', 'DEBUG:\\?')
-vim.fn.matchadd('Todo', 'NOTES\\?:\\?')
-vim.fn.matchadd('ErrorMsg', '^\\(<\\|=\\|>\\)\\{7\\}\\([^=].\\+\\)\\?$') -- git changes
+-- vim.fn.matchadd('Todo', 'TODO:\\?')
+-- vim.fn.matchadd('Todo', 'FIXME:\\?')
+-- vim.fn.matchadd('Todo', 'DEBUG:\\?')
+-- vim.fn.matchadd('Todo', 'NOTES\\?:\\?')
+-- vim.fn.matchadd('ErrorMsg', '^\\(<\\|=\\|>\\)\\{7\\}\\([^=].\\+\\)\\?$') -- git changes
 
 -- Autocmds
 vim.api.nvim_create_autocmd({'BufWritePre'}, {command = ':%s/\\s\\+$//e'}) -- trim whitespace
