@@ -331,7 +331,7 @@ vim.g.goyo_linenr = 1
 -- vim.fn.matchadd('Todo', 'FIXME:\\?')
 -- vim.fn.matchadd('Todo', 'DEBUG:\\?')
 -- vim.fn.matchadd('Todo', 'NOTES\\?:\\?')
--- vim.fn.matchadd('ErrorMsg', '^\\(<\\|=\\|>\\)\\{7\\}\\([^=].\\+\\)\\?$') -- git changes
+vim.fn.matchadd('ErrorMsg', '^\\(<\\|=\\|>\\)\\{7\\}\\([^=].\\+\\)\\?$') -- git changes
 
 -- Autocmds
 vim.api.nvim_create_autocmd({'BufWritePre'}, {command = ':%s/\\s\\+$//e'}) -- trim whitespace
