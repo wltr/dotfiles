@@ -363,6 +363,7 @@ keymap('t', '<leader>e', '<C-\\><C-n>')
 
 keymap('n', '<C-P>', require('telescope.builtin').git_files)
 keymap('n', '<leader>ff', require('telescope.builtin').find_files)
+keymap('n', '<leader>fd', require('telescope.builtin').lsp_document_symbols)
 keymap('n', '<leader>fg', require('telescope.builtin').live_grep)
 keymap('n', '<leader>fb', require('telescope.builtin').buffers)
 keymap('n', '<leader>fh', require('telescope.builtin').help_tags)
