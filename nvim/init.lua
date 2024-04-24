@@ -36,7 +36,7 @@ require('lazy').setup({
   -- 'tpope/vim-endwise',
   -- 'tpope/vim-surround',
   -- 'tpope/vim-abolish',
-  -- 'tpope/vim-repeat',
+  'tpope/vim-repeat',
   'tpope/vim-fugitive',
   'tpope/vim-speeddating',
 
