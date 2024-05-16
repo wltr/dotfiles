@@ -18,6 +18,7 @@ return {
   'hrsh7th/cmp-path',
   'hrsh7th/cmp-buffer',
   'hrsh7th/cmp-cmdline',
+  'hrsh7th/cmp-nvim-lua',
   'hrsh7th/cmp-nvim-lsp',
   'hrsh7th/cmp-nvim-lsp-signature-help',
 
@@ -29,47 +30,6 @@ return {
     'hrsh7th/nvim-cmp',
     config = function()
       local cmp = require('cmp')
-
-      local function lspkind_comparator(conf)
-        local lsp_types = require('cmp.types').lsp
-        return function(entry1, entry2)
-          if entry1.source.name ~= 'nvim_lsp' then
-            if entry2.source.name == 'nvim_lsp' then
-              return false
-            else
-              return nil
-            end
-          end
-          local kind1 = lsp_types.CompletionItemKind[entry1:get_kind()]
-          local kind2 = lsp_types.CompletionItemKind[entry2:get_kind()]
-          local priority1 = conf.kind_priority[kind1] or 0
-          local priority2 = conf.kind_priority[kind2] or 0
-          if priority1 == priority2 then
-            return nil
-          end
-          return priority2 < priority1
-        end
-      end
-
-      local function no_text_kind(entry1, entry2)
-        if entry1.source.name ~= 'nvim_lsp' then
-          if entry2.source.name == 'nvim_lsp' then
-            return false
-          else
-            return nil
-          end
-        end
-        local lsp_types = require('cmp.types').lsp
-        local kind1 = lsp_types.CompletionItemKind[entry1:get_kind()]
-        local kind2 = lsp_types.CompletionItemKind[entry2:get_kind()]
-        if kind1 == Text and kind2 ~= Text then
-          return false
-        elseif kind2 == Text and kind1 ~= Text then
-          return true
-        else
-          return nil
-        end
-      end
 
       cmp.setup{
         mapping = cmp.mapping.preset.insert({
@@ -99,7 +59,6 @@ return {
         },
         sorting = {
           comparators = {
-            no_text_kind,
             cmp.config.compare.scopes,
             cmp.config.compare.locality,
             cmp.config.compare.offset,
@@ -107,35 +66,6 @@ return {
             cmp.config.compare.score,
             cmp.config.compare.recently_used,
             require("clangd_extensions.cmp_scores"),
-            lspkind_comparator({
-              kind_priority = {
-                Field = 11,
-                Property = 11,
-                Variable = 11,
-                Constant = 10,
-                Enum = 10,
-                EnumMember = 10,
-                Event = 10,
-                Function = 10,
-                Method = 10,
-                Operator = 10,
-                Reference = 10,
-                Struct = 10,
-                Class = 10,
-                File = 8,
-                Folder = 8,
-                Module = 5,
-                Keyword = 2,
-                Constructor = 1,
-                Interface = 1,
-                Color = 0,
-                Snippet = 0,
-                Text = 0,
-                TypeParameter = 0,
-                Unit = 0,
-                Value = 0,
-              }
-            }),
             cmp.config.compare.length,
             cmp.config.compare.order,
           }
@@ -240,6 +170,10 @@ return {
     opts = {
       keywords = {
         HACK = {alt = {'DEBUG'}}
+      },
+      highlight = {
+        keyword = 'bg',
+        pattern = [[.*<(KEYWORDS)\s*(\([A-Z]{2,4}-[0-9]{1,6}\))*\s*:*]]
       }
     }
   },
