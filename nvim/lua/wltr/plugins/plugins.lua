@@ -65,7 +65,7 @@ return {
             cmp.config.compare.exact,
             cmp.config.compare.score,
             cmp.config.compare.recently_used,
-            require("clangd_extensions.cmp_scores"),
+            require('clangd_extensions.cmp_scores'),
             cmp.config.compare.length,
             cmp.config.compare.order,
           }
@@ -220,8 +220,35 @@ return {
   {'nvim-telescope/telescope-fzf-native.nvim', build = 'make'},
   'nvim-telescope/telescope-live-grep-args.nvim',
 
-  {'nvim-treesitter/nvim-treesitter', build = ':TSUpdate', config = true},
-  {'nvim-treesitter/nvim-treesitter-context', config = true},
+  {
+    'nvim-treesitter/nvim-treesitter',
+    build = ':TSUpdate',
+    config = function()
+      local configs = require('nvim-treesitter.configs')
+      configs.setup{
+        ensure_installed = {'c', 'cpp', 'lua', 'vim', 'vimdoc', 'query', 'bash'},
+        highlight = {enable = true}
+      }
+    end
+  },
+
+  -- {
+  --   'nvim-treesitter/nvim-treesitter-context',
+  --   config = function()
+  --     require('treesitter-context').setup{
+  --       enable = true,
+  --       max_lines = 0,
+  --       trim_scope = 'outer',
+  --       patterns = {
+  --         default = {
+  --             'class',
+  --             'function',
+  --             'method'
+  --         }
+  --       }
+  --     }
+  --   end
+  -- },
 
   {'j-hui/fidget.nvim', config = true},
   {'numToStr/Comment.nvim', config = true},
