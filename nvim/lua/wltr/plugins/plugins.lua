@@ -226,7 +226,7 @@ return {
     config = function()
       local configs = require('nvim-treesitter.configs')
       configs.setup{
-        ensure_installed = {'c', 'cpp', 'lua', 'vim', 'vimdoc', 'query', 'bash'},
+        ensure_installed = {'c', 'cpp', 'lua', 'vim', 'vimdoc', 'query', 'bash', 'tcl', 'verilog', 'python'},
         highlight = {enable = true}
       }
     end
