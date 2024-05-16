@@ -238,6 +238,7 @@ return {
 
   {
     'kdheepak/tabline.nvim',
+    dependencies = {'nvim-lualine/lualine.nvim', 'nvim-tree/nvim-web-devicons'},
     opts = {
       options = {
         show_filename_only = true,
@@ -258,10 +259,6 @@ return {
     }
   },
 
-  -- {'ray-x/guihua.lua', cmd = 'cd lua/fzy && make'},
-  -- 'ray-x/navigator.lua',
-  -- 'ray-x/lsp_signature.nvim',
-  --
   {'nvim-telescope/telescope-fzf-native.nvim', build = 'make'},
   'nvim-telescope/telescope-live-grep-args.nvim',
 
