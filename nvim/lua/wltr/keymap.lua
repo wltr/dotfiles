@@ -22,6 +22,9 @@ keymap('n', '<C-W><C-J>', ':exe "resize +5"<CR>')
 keymap('n', '<C-W><C-K>', ':exe "resize -5"<CR>')
 keymap('n', '<C-W><C-L>', ':exe "vertical resize +5"<CR>')
 keymap('n', '<C-W><C-H>', ':exe "vertical resize -5"<CR>')
+keymap('n', '<C-T><tab>', ':tabnext<CR>')
+keymap('n', '<C-T><C-N>', ':tabnew<CR>')
+keymap('n', '<C-T><C-Q>', ':tabclose<CR>')
 
 keymap({'n', 'x'}, 'gea', ':EasyAlign')
 
