@@ -170,7 +170,7 @@ return {
     config = function()
       local configs = require('nvim-treesitter.configs')
       configs.setup{
-        ensure_installed = {'c', 'cpp', 'lua', 'vim', 'vimdoc', 'query', 'bash', 'tcl', 'python'},
+        ensure_installed = {'c', 'cpp', 'lua', 'vim', 'vimdoc', 'query', 'bash', 'tcl', 'python', 'gitcommit', 'verilog'},
         highlight = {
           enable = true,
           disable = not require('wltr.largefile').enable_except_large_or_diff(),
