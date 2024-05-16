@@ -175,6 +175,9 @@ return {
           enable = true,
           disable = not require('wltr.largefile').enable_except_large_or_diff(),
           additional_vim_regex_highlighting = false
+        },
+        indent = {
+          enable = true
         }
       }
     end
