@@ -53,7 +53,7 @@ return {
       capabilities.offsetEncoding = {'utf-16'}
 
       local clang_options
-      if is_ht then
+      if is_ht() then
         clang_options = {clangd_path, '-j=40', '--compile-commands-dir=./build/ub-18.04-clang-17.0.1-generic.debug',
             '--background-index', '--clang-tidy', '--header-insertion=iwyu', '--all-scopes-completion',
             '--completion-style=bundled'}
