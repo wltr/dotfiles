@@ -14,6 +14,10 @@ function M.is_large_buffer(bufnr)
   return wc['bytes'] > M.max_filesize
 end
 
+function M.enable_except_large_or_diff(lang, bufnr)
+  return not M.is_large_buffer(bufnr) and not vim.wo.diff
+end
+
 function disable_features_for_large_files()
   vim.cmd('syntax clear')
   vim.cmd('syntax off')

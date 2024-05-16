@@ -165,6 +165,40 @@ return {
   },
 
   {
+    'nvim-treesitter/nvim-treesitter',
+    build = ':TSUpdate',
+    config = function()
+      local configs = require('nvim-treesitter.configs')
+      configs.setup{
+        ensure_installed = {'c', 'cpp', 'lua', 'vim', 'vimdoc', 'query', 'bash', 'tcl', 'verilog', 'python'},
+        highlight = {
+          enable = true,
+          disable = not require('wltr.largefile').enable_except_large_or_diff,
+          additional_vim_regex_highlighting = false
+        }
+      }
+    end
+  },
+
+  -- {
+  --   'nvim-treesitter/nvim-treesitter-context',
+  --   config = function()
+  --     require('treesitter-context').setup{
+  --       enable = true,
+  --       max_lines = 0,
+  --       trim_scope = 'outer',
+  --       patterns = {
+  --         default = {
+  --             'class',
+  --             'function',
+  --             'method'
+  --         }
+  --       }
+  --     }
+  --   end
+  -- },
+
+  {
     'folke/todo-comments.nvim',
     dependencies = {'nvim-lua/plenary.nvim'},
     opts = {
@@ -213,6 +247,17 @@ return {
     }
   },
 
+  {
+    'lukas-reineke/indent-blankline.nvim',
+    main = 'ibl',
+    opts = {
+      scope = {
+        show_start = false,
+        show_end = false
+      }
+    }
+  },
+
   -- {'ray-x/guihua.lua', cmd = 'cd lua/fzy && make'},
   -- 'ray-x/navigator.lua',
   -- 'ray-x/lsp_signature.nvim',
@@ -220,40 +265,9 @@ return {
   {'nvim-telescope/telescope-fzf-native.nvim', build = 'make'},
   'nvim-telescope/telescope-live-grep-args.nvim',
 
-  {
-    'nvim-treesitter/nvim-treesitter',
-    build = ':TSUpdate',
-    config = function()
-      local configs = require('nvim-treesitter.configs')
-      configs.setup{
-        ensure_installed = {'c', 'cpp', 'lua', 'vim', 'vimdoc', 'query', 'bash', 'tcl', 'verilog', 'python'},
-        highlight = {enable = true}
-      }
-    end
-  },
-
-  -- {
-  --   'nvim-treesitter/nvim-treesitter-context',
-  --   config = function()
-  --     require('treesitter-context').setup{
-  --       enable = true,
-  --       max_lines = 0,
-  --       trim_scope = 'outer',
-  --       patterns = {
-  --         default = {
-  --             'class',
-  --             'function',
-  --             'method'
-  --         }
-  --       }
-  --     }
-  --   end
-  -- },
-
   {'j-hui/fidget.nvim', config = true},
   {'numToStr/Comment.nvim', config = true},
   {'akinsho/git-conflict.nvim', config = true},
-  {'lukas-reineke/indent-blankline.nvim', main = 'ibl', config = true},
 
   {'nvim-lua/plenary.nvim', lazy = true},
   {'nvim-tree/nvim-web-devicons', lazy = true},
