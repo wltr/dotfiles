@@ -14,3 +14,5 @@ sign({name = 'DiagnosticSignInfo', text = ''})
 vim.diagnostic.config({
   virtual_text = { prefix = '●' }
 })
+
+vim.fn.matchadd('ErrorMsg', '^\\(<\\|=\\|>\\)\\{7\\}\\([^=].\\+\\)\\?$') -- git changes
