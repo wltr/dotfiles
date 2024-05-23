@@ -15,8 +15,8 @@ bind \\ split-window -h
 
 bind g display-popup -E "tmux new-session -A -s scratch"
 
-bind -n M-n next-window
-bind -n M-p previous-window
+bind -n M-p next-window
+bind -n M-n previous-window
 bind -n M-Tab last-window
 
 bind -n M-` select-pane -t :.+

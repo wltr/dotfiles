@@ -15,8 +15,8 @@ keymap('n', '<leader>n', ':NvimTreeToggle<CR>')
 keymap('n', '<leader>m', ':NvimTreeFindFile<CR>')
 
 keymap('n', '<S-tab>', ':b#<CR>')
-keymap('n', '<C-n>', ':bnext<CR>')
-keymap('n', '<C-p>', ':bprevious<CR>')
+keymap('n', '<C-p>', ':bnext<CR>')
+keymap('n', '<C-n>', ':bprevious<CR>')
 keymap('n', '<C-q>', ':BDelete this<CR>')
 
 keymap('n', '<C-j>', function() vim.cmd('wincmd j') end)
@@ -29,8 +29,8 @@ keymap('n', '<C-w><C-k>', ':exe "resize -5"<CR>')
 keymap('n', '<C-w><C-l>', ':exe "vertical resize +5"<CR>')
 keymap('n', '<C-w><C-h>', ':exe "vertical resize -5"<CR>')
 
-keymap('n', '<C-t>n', ':tabnext<CR>')
-keymap('n', '<C-t>p', ':tabprevious<CR>')
+keymap('n', '<C-t>p', ':tabnext<CR>')
+keymap('n', '<C-t>n', ':tabprevious<CR>')
 keymap('n', '<C-t>c', ':tabnew<CR>')
 keymap('n', '<C-t>q', ':tabclose<CR>')
 
