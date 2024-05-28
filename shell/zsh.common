@@ -35,7 +35,7 @@ export ZLE_REMOVE_SUFFIX_CHARS=""
 
 export PATH=~/bin:$PATH
 
-export BAT_THEME='Monokai Extended'
+export BAT_THEME='OneHalfDark'
 
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
     --color=fg:#a5b0c5,bg:#242b38,hl:#ffffff
