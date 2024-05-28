@@ -35,9 +35,9 @@ git_prompt() {
 
     output=' '
     if [[ -z $staging ]]; then
-      output+='%F{8}'
+      output+='%F{8} '
     else
-      output+='%F{5}'
+      output+='%F{5} '
     fi
     output+=$branch
     if [[ -n $staging ]]; then
