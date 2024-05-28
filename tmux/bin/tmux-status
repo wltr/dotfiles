@@ -1,13 +1,12 @@
 #!/bin/bash
 
-date=`date +"%Y-%m-%d|%H:%M"`
-uptime=`tmux-uptime`"|"
+date=`date +" %Y-%m-%d  %H:%M"`
+uptime=`tmux-uptime`
 
 battery=`tmux-battery`
 if [ ! -z $battery ]; then
-  battery="|"$battery
+  battery=" 󱊢 "$battery
 fi
 
-memory=`free -g | grep Mem | awk '{print $3"/"$2"G|"}'`
-
-echo "$uptime$memory$date$battery"
+memory=`free -g | grep Mem | awk '{print $3"/"$2"G"}'`
+echo " $uptime 󰍛 $memory $date$battery"

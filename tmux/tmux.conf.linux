@@ -2,8 +2,11 @@ unbind C-b
 set -g prefix C-a
 bind C-a send-prefix
 
+unbind e
+bind e source-file ~/.tmux.conf \; display "Reloaded config."
+
 unbind r
-bind r source-file ~/.tmux.conf \; display "Reloaded config."
+bind r command-prompt -I "rename-window "
 
 bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "xsel -i -b"
 bind -n C-y run "xsel -o -b | tmux load-buffer - ; tmux paste-buffer"
@@ -37,6 +40,7 @@ set -g default-terminal "screen-256color"
 set -g default-shell /usr/bin/zsh
 
 set -g base-index 1
+set -g renumber-windows on
 set -g mode-keys vi
 set -g escape-time 0
 set -g display-time 2000
@@ -61,16 +65,16 @@ set -g status-position bottom
 set -g status-justify left
 set -g status-style fg=default,bg=default,bold
 
-set -g window-status-format "#I:#{?#{==:#{window_panes},1},#W,(#{window_panes} panes)}"
+set -g window-status-format "#I:#{?#{==:#{window_panes},1},#W,#W[#{window_panes}]}#(tmux-flags '#F')"
 set -g window-status-style fg=default,bg=default
 
-set -g window-status-current-format "#I:#{?#{==:#{window_panes},1},#W,(#{window_panes} panes)}#F"
+set -g window-status-current-format "#I:#{?#{==:#{window_panes},1},#W,#W[#{window_panes}]}#(tmux-flags '#F')"
 set -g window-status-current-style fg=black,bg=white
 
 set -g status-left-length 40
-set -g status-left " #[fg=cyan]#h#[fg=default] | "
+set -g status-left " #[fg=cyan]#h#[fg=default]  "
 
 set -g status-right-length 60
-set -g status-right "#[fg=default] | #[fg=yellow]#(tmux-status) "
+set -g status-right "  #[fg=default]#[fg=yellow]#(tmux-status) "
 
-set -g mode-style fg=white,bg=yellow
+set -g mode-style fg=black,bg=red
