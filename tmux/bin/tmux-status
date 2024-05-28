@@ -9,4 +9,4 @@ if [ ! -z $battery ]; then
 fi
 
 memory=`free -g | grep Mem | awk '{print $3"/"$2"G"}'`
-echo " $uptime 󰍛 $memory $date$battery"
+echo " $uptime 󰍛 $memory $date$battery"
