@@ -48,7 +48,7 @@ set -g history-limit 999999
 set -g set-titles on
 set -g set-titles-string "tmux.#I"
 set -g visual-activity off
-set -g monitor-activity off
+set -g monitor-activity on
 set -g allow-rename on
 set -g focus-events on
 
@@ -64,6 +64,8 @@ set -g status-interval 5
 set -g status-position bottom
 set -g status-justify left
 set -g status-style fg=default,bg=default,bold
+
+set -g window-status-activity-style fg=default,bg=default
 
 set -g window-status-format "#{?window_last_flag,#[fg=cyan],}#I#[fg=black]:#{?#{==:#{window_panes},1},#W,#W(#{window_panes})}#[fg=red]#(tmux-flags '#F') "
 set -g window-status-style fg=black,bg=default
