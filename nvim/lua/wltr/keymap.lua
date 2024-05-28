@@ -40,7 +40,7 @@ keymap('n', 'gs', ':ClangdSwitchSourceHeader<CR>')
 
 keymap('t', '<leader>e', '<C-\\><C-n>')
 
-keymap('n', '<leader>ff', require('telescope.builtin').find_files)
+keymap('n', '<leader>fa', require('telescope.builtin').find_files)
 keymap('n', '<leader>fd', require('telescope.builtin').lsp_document_symbols)
 keymap('n', '<leader>fg', require('telescope.builtin').live_grep)
 keymap('n', '<leader>fb', require('telescope.builtin').buffers)
@@ -48,7 +48,7 @@ keymap('n', '<leader>ft', require('telescope.builtin').help_tags)
 keymap('n', '<leader>fm', require('telescope.builtin').marks)
 keymap('n', '<leader>fl', require('telescope.builtin').current_buffer_fuzzy_find)
 keymap('n', '<leader>fh', require('telescope.builtin').oldfiles)
-keymap('n', '<leader>fr', require('telescope.builtin').git_files)
+keymap('n', '<leader>ff', require('telescope.builtin').git_files)
 keymap('n', '<leader>fs', require('telescope.builtin').git_status)
 keymap('n', '<leader>8', require('telescope.builtin').grep_string)
 
