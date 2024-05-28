@@ -1,15 +1,12 @@
 #!/bin/bash
 
 FLAGS="$1"
+FLAGS="${FLAGS//\*/}"
+FLAGS="${FLAGS//\-/}"
+FLAGS="${FLAGS//\#/}"
 FLAGS="${FLAGS//\!/}"
 FLAGS="${FLAGS//\~/}"
-FLAGS="${FLAGS//\#/}"
+FLAGS="${FLAGS//M/}"
 FLAGS="${FLAGS//Z/}"
-FLAGS="${FLAGS//\-/}"
-FLAGS="${FLAGS//\*/}"
-
-if [[ "$1" =~ "-" ]]; then
-    FLAGS="${FLAGS}"
-fi
 
 echo ${FLAGS}
