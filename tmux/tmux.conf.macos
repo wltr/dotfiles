@@ -67,7 +67,7 @@ set -g status-style fg=default,bg=default,bold
 
 set -g window-status-activity-style fg=default,bg=default
 
-set -g window-status-format "#{?window_last_flag,#[fg=cyan],}#I#[fg=black]:#{?#{==:#{window_panes},1},#W,#W(#{window_panes})}#[fg=red]#(tmux-flags '#F') "
+set -g window-status-format "#{?window_last_flag,#[fg=cyan],#{?window_activity_flag,#[fg=black],}}#I#[fg=black]:#{?#{==:#{window_panes},1},#W,#W(#{window_panes})}#[fg=red]#(tmux-flags '#F') "
 set -g window-status-style fg=black,bg=default
 
 set -g window-status-current-format "#I:#{?#{==:#{window_panes},1},#W,#W(#{window_panes})}#[fg=red]#(tmux-flags '#F') "
