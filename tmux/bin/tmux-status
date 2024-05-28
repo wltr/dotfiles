@@ -1,6 +1,6 @@
 #!/bin/bash
 
-date=`date +" %Y-%m-%d  %H:%M"`
+date=`date +" %Y-%m-%d  %H:%M %Z"`
 uptime=`tmux-uptime`
 
 battery=`tmux-battery`
