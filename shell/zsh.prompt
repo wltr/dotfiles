@@ -41,7 +41,7 @@ git_prompt() {
     fi
     output+=$branch
     if [[ -n $staging ]]; then
-      output+='('$added$modified$deleted$renamed$untracked')'
+      output+=''$added$modified$deleted$renamed$untracked''
     fi
     if [[ $stash > 0 ]]; then
       output+=' %F{3} '$stash'%f'
