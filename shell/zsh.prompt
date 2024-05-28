@@ -15,7 +15,7 @@ has_tmux() {
   if [[ -z $TMUX ]]; then
     sessions=$(tmux ls 2> /dev/null | wc -l | tr -d ' ')
     if [[ $sessions > 0 ]]; then
-      print -P ' %F{8} $sessions%f'
+      print -P ' %F{1} $sessions%f'
     fi
   fi
 }
@@ -51,7 +51,7 @@ git_prompt() {
 }
 
 precmd() {
-  print -P '\n%(?.%F{10}✓.%F{9}✗) %B$(is_mine)%m%f%b %F{6}%~%f$(git_prompt)%(1j. %F{8}󱥸 %j%f.)$(has_tmux)'
+  print -P '\n%(?.%F{10}✓.%F{9}✗) %B$(is_mine)%m%f%b %F{6}%~%f$(git_prompt)%(1j. %F{1}󱥸 %j%f.)$(has_tmux)'
 }
 
 export PROMPT=$'%(!.%F{9}★.%F{10}») %B%F{7}$USER%F{5}%#%f%b '
