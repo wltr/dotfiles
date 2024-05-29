@@ -43,7 +43,6 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
     --color=info:#eeeeee,prompt:#ca72e4,pointer:#ef5f6b
     --color=marker:#eeeeee,spinner:#eeeeee,header:#eeeeee'
 
-alias ls='gls -h --color=auto --group-directories-first'
 alias ll='ls -l'
 alias la='ls -Al'
 

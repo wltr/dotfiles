@@ -3,7 +3,7 @@
 hostname=`hostname -s`
 date=`date +" %Y-%m-%d  %H:%M %Z"`
 
-if [[ `uname` == "Darwin" ]]; then
+if [[ `uname -s` == "Darwin" ]]; then
   load=`uptime | sed -e 's/^.*[a-z]: //' | sed -e 's/ /,/g'`
   memory=`top -l 1 -s 0 | grep --color=never PhysMem | sed -E 's/PhysMem: (.*) used.*, (.*) unused./\1,\2/'`
 
