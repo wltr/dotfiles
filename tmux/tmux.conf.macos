@@ -8,8 +8,8 @@ bind e source-file ~/.tmux.conf \; display "Reloaded config."
 unbind r
 bind r command-prompt -I "rename-window "
 
-#bind -t vi-copy y copy-pipe "xsel -i -b"
-#bind -n C-y run "xsel -o -b | tmux load-buffer - ; tmux paste-buffer"
+bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "pbcopy"
+bind -n C-y run "pbpaste | tmux load-buffer - ; tmux paste-buffer"
 
 unbind '"'
 bind - split-window -v
