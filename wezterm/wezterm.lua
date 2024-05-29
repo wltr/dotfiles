@@ -6,6 +6,7 @@ config.font = wezterm.font('FiraCode Nerd Font', {weight = 'Medium'})
 config.font_size = 14
 config.line_height = 1.05
 
+config.audible_bell = 'Disabled'
 config.allow_square_glyphs_to_overflow_width = 'WhenFollowedBySpace'
 
 config.enable_tab_bar = false
