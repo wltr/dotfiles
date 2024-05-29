@@ -29,6 +29,8 @@ local on_attach = function(client, bufnr)
   inlay_hints.set_inlay_hints()
 end
 
+vim.lsp.set_log_level('info')
+
 return {
   {
     'p00f/clangd_extensions.nvim',
