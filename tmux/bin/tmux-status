@@ -19,7 +19,7 @@ fi
 
 if [ ! -z $battery_value ]; then
   if [[ $battery_state == "" ]]; then
-    battery="󱐋"
+    battery=""
   elif [[ $battery_state == "++" ]]; then
     if [[ $battery_value -ge 90 ]]; then
       battery="󱊦"
