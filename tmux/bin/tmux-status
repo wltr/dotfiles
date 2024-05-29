@@ -1,12 +1,47 @@
 #!/bin/bash
 
+hostname=`hostname -s`
 date=`date +" %Y-%m-%d  %H:%M %Z"`
-uptime=`tmux-uptime`
 
-battery=`tmux-battery`
-if [ ! -z $battery ]; then
-  battery=" 󱊢 "$battery
+if [[ `uname` == "Darwin" ]]; then
+  load=`uptime | sed -e 's/^.*[a-z]: //' | sed -e 's/ /,/g'`
+  memory=`top -l 1 -s 0 | grep --color=never PhysMem | sed -E 's/PhysMem: (.*) used.*, (.*) unused./\1,\2/'`
+
+  battery_value=$(pmset -g batt | tail -n 1 | sed -E 's/.*\t([0-9]+)%.*/\1/')
+  battery_state=$(pmset -g batt | tail -n 1 | sed -E -e 's/.*; ([a-z]+);.*/\1/' -e 's/discharging/--/' -e 's/charging/++/' -e '/charged/d')
+else
+  load=`uptime | sed -e 's/^.*[a-z]: //' | sed -e 's/ //g'`
+  memory=`free -g | grep Mem | awk '{print $3"/"$2"G"}'`
+
+  battery_value=$(cat /sys/class/power_supply/BAT0/capacity 2> /dev/null | sed -e 's/$//')
+  battery_state=$(cat /sys/class/power_supply/BAT0/status 2> /dev/null | sed -e '/Unknown/d' -e 's/Charging/++/' -e 's/Discharging/--/' -e '/Full/d')
 fi
 
-memory=`free -g | grep Mem | awk '{print $3"/"$2"G"}'`
-echo " $uptime 󰍛 $memory $date$battery"
+if [ ! -z $battery_value ]; then
+  if [[ $battery_state == "" ]]; then
+    battery="󱐋"
+  elif [[ $battery_state == "++" ]]; then
+    if [[ $battery_value -ge 90 ]]; then
+      battery="󱊦"
+    elif [[ $battery_value -ge 60 ]]; then
+      battery="󱊥"
+    elif [[ $battery_value -ge 10 ]]; then
+      battery="󱊤"
+    else
+      battery="󰢟"
+    fi
+  else
+    if [[ $battery_value -ge 90 ]]; then
+      battery="󱊣"
+    elif [[ $battery_value -ge 60 ]]; then
+      battery="󱊢"
+    elif [[ $battery_value -ge 10 ]]; then
+      battery="󱊡"
+    else
+      battery="󰂎"
+    fi
+  fi
+  battery=" $battery $battery_value%"
+fi
+
+echo "󰍹 $hostname  $load 󰍛 $memory $date$battery"

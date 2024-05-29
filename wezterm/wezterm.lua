@@ -1,10 +1,12 @@
-local wezterm = require 'wezterm'
+local wezterm = require('wezterm')
 local config = wezterm.config_builder()
 
 config.color_scheme = 'OneDarkCool'
-config.font = wezterm.font('FiraCode Nerd Font Mono', {weight = 'Medium'})
+config.font = wezterm.font('FiraCode Nerd Font', {weight = 'Medium'})
 config.font_size = 14
 config.line_height = 1.05
+
+config.allow_square_glyphs_to_overflow_width = 'WhenFollowedBySpace'
 
 config.enable_tab_bar = false
 config.enable_scroll_bar = false
@@ -20,13 +22,12 @@ config.scrollback_lines = 10000
 local onedarkcool_bg = '#242b38'
 local onedarkcool_fg = '#a5b0c5'
 local onedarkcool_black = '#151820'
-local onedarkcool_purple = '#ca72e4'
-local onedarkcool_green = '#97ca72'
-local onedarkcool_orange = '#d99a5e'
-local onedarkcool_blue = '#5ab0f6'
-local onedarkcool_yellow = '#ebc275'
-local onedarkcool_cyan = '#4dbdcb'
 local onedarkcool_red = '#ef5f6b'
+local onedarkcool_green = '#97ca72'
+local onedarkcool_yellow = '#ebc275'
+local onedarkcool_blue = '#5ab0f6'
+local onedarkcool_magenta = '#ca72e4'
+local onedarkcool_cyan = '#4dbdcb'
 local onedarkcool_grey = '#546178'
 local onedarkcool_light_grey = '#7d899f'
 local onedarkcool_white = '#fafafa'
@@ -48,7 +49,7 @@ config.color_schemes = {
       onedarkcool_green,
       onedarkcool_yellow,
       onedarkcool_blue,
-      onedarkcool_purple,
+      onedarkcool_magenta,
       onedarkcool_cyan,
       onedarkcool_fg
     },
@@ -59,7 +60,7 @@ config.color_schemes = {
       onedarkcool_green,
       onedarkcool_yellow,
       onedarkcool_blue,
-      onedarkcool_purple,
+      onedarkcool_magenta,
       onedarkcool_cyan,
       onedarkcool_white
     }
