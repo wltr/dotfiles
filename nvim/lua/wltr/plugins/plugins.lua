@@ -45,6 +45,8 @@ return {
               cmp.select_prev_item()
             end
           end, { 'i', 's' }),
+          ['<C-n>'] = cmp.mapping.select_next_item(),
+          ['<C-p>'] = cmp.mapping.select_prev_item(),
           ['<C-b>'] = cmp.mapping.scroll_docs(-4),
           ['<C-f>'] = cmp.mapping.scroll_docs(4),
           ['<C-space>'] = cmp.mapping.complete(),
@@ -281,6 +283,6 @@ return {
   'kazhala/close-buffers.nvim',
   'kshenoy/vim-signature',
   'mhinz/vim-signify',
-  'rhysd/vim-clang-format',
-  'roxma/vim-paste-easy'
+  'rhysd/vim-clang-format'
+  -- 'roxma/vim-paste-easy'
 }
