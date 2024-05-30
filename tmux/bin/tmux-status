@@ -44,4 +44,4 @@ if [ ! -z $battery_value ]; then
   battery=" $battery $battery_value%"
 fi
 
-echo "󰍹 $hostname  $load 󰍛 $memory $date$battery"
+echo "󰍹 $hostname  $load  $memory $date$battery"
