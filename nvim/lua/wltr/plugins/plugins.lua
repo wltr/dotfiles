@@ -244,13 +244,11 @@ return {
   },
 
   {
-    'kdheepak/tabline.nvim',
-    dependencies = {'nvim-lualine/lualine.nvim', 'nvim-tree/nvim-web-devicons'},
+    'akinsho/bufferline.nvim',
+    dependencies = 'nvim-tree/nvim-web-devicons',
     opts = {
       options = {
-        show_filename_only = true,
-        section_separators = {'', ''},
-        component_separators = {'', ''}
+        always_show_bufferline = true,
       }
     }
   },
