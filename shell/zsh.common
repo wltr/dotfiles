@@ -9,11 +9,17 @@ zstyle ':completion:*' rehash true
 
 HISTFILE=~/.zsh_history
 HISTORY_IGNORE="(ls|[bf]g|exit|reset|clear|history|ls|ll|la|cd|cd ..|cd..|..)"
+HISTDUP=erase
 HISTSIZE=100000
 SAVEHIST=100000
-setopt INC_APPEND_HISTORY
-setopt HIST_IGNORE_ALL_DUPS
+
+setopt APPEND_HISTORY
+setopt SHARE_HISTORY
 setopt HIST_IGNORE_SPACE
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_SAVE_NO_DUPS
+setopt HIST_IGNORE_DUPS
+setopt HIST_FIND_NO_DUPS
 setopt HIST_REDUCE_BLANKS
 setopt HIST_VERIFY
 
@@ -21,7 +27,7 @@ setopt PROMPT_SUBST
 setopt IGNORE_EOF
 setopt RM_STAR_WAIT
 setopt AUTO_CONTINUE
-setopt NOCLOBBER
+setopt NO_CLOBBER
 setopt NO_BG_NICE
 
 watch=notme
