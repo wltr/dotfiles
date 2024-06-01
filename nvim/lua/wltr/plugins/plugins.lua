@@ -1,11 +1,11 @@
 return {
   {
-    'navarasu/onedark.nvim',
+    'catppuccin/nvim',
+    name = 'catppuccin',
     lazy = false,
     priority = 1000,
     config = function()
-      require('onedark').setup{style = 'cool'}
-      require('onedark').load()
+      vim.cmd.colorscheme 'catppuccin-frappe'
     end
   },
 
@@ -236,7 +236,7 @@ return {
     dependencies = {'nvim-tree/nvim-web-devicons'},
     opts = {
       options = {
-        theme = 'onedark',
+        theme = 'catppuccin',
         section_separators = '',
         component_separators = ''
       }

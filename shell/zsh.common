@@ -35,13 +35,12 @@ export ZLE_REMOVE_SUFFIX_CHARS=""
 
 export PATH=~/bin:$PATH
 
-export BAT_THEME='OneHalfDark'
+export BAT_THEME='Catppuccin Frappe'
 
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
-    --color=fg:#a5b0c5,bg:#242b38,hl:#ffffff
-    --color=fg+:#a5b0c5,bg+:#343e4f,hl+:#ffffff
-    --color=info:#eeeeee,prompt:#ca72e4,pointer:#ef5f6b
-    --color=marker:#eeeeee,spinner:#eeeeee,header:#eeeeee'
+    --color=bg+:#414559,bg:#303446,spinner:#f2d5cf,hl:#e78284
+    --color=fg:#c6d0f5,header:#e78284,info:#ca9ee6,pointer:#f2d5cf
+    --color=marker:#f2d5cf,fg+:#c6d0f5,prompt:#ca9ee6,hl+:#e78284'
 
 alias ll='ls -l'
 alias la='ls -Al'
