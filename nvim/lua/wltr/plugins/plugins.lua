@@ -236,7 +236,7 @@ return {
     dependencies = {'nvim-tree/nvim-web-devicons'},
     opts = {
       options = {
-        theme = 'catppuccin',
+        theme = 'catppuccin-frappe',
         section_separators = '',
         component_separators = ''
       }
@@ -284,5 +284,4 @@ return {
   'kshenoy/vim-signature',
   'mhinz/vim-signify',
   'rhysd/vim-clang-format'
-  -- 'roxma/vim-paste-easy'
 }
