@@ -81,16 +81,20 @@ return {
   {
     'akinsho/bufferline.nvim',
     dependencies = 'nvim-tree/nvim-web-devicons',
-    opts = {
-      options = {
-        themable = true,
-        color_icons = true,
-        always_show_bufferline = true,
-        show_buffer_close_icons = false,
-        show_close_icon = false,
-        separator_style = 'thin'
-      }
-    }
+    config = function()
+      local bufferline = require('bufferline')
+      bufferline.setup({
+        options = {
+          style_preset = bufferline.style_preset.no_italic,
+          themable = true,
+          color_icons = true,
+          always_show_bufferline = true,
+          show_buffer_close_icons = false,
+          show_close_icon = false,
+          separator_style = 'thin'
+        }
+      })
+    end
   },
 
   {
