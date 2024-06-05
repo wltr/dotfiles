@@ -56,7 +56,11 @@ return {
 
       local clang_options
       if is_ht() then
-        clang_options = {clangd_path, '-j=40', '--compile-commands-dir=./build/ub-18.04-clang-17.0.1-generic.debug',
+        local compile_commands_dir = './build/'
+        if string.find(vim.fn.getcwd(), 'platform') then
+          compile_commands_dir = compile_commands_dir..'ub-18.04-clang-17.0.1-generic.debug/'
+        end
+        clang_options = {clangd_path, '-j=40', '--compile-commands-dir='..compile_commands_dir,
             '--background-index', '--clang-tidy', '--header-insertion=iwyu', '--all-scopes-completion',
             '--completion-style=bundled'}
       else
