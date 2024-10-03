@@ -1,7 +1,7 @@
 export CTEST_OUTPUT_ON_FAILURE=1
 export UBSAN_OPTIONS=print_stacktrace=1
 export NINJA_STATUS="[%u/%r/%f] [%es] [%o/s] "
-export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
 
 export HT_FPGA_NUM_EXTERNAL_PROJECT_BUILD_CORES=64
 
