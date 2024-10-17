@@ -2,6 +2,7 @@
 
 hostname=`hostname -s`
 date=`date +" %Y-%m-%d  %H:%M %Z"`
+utc=`date -u +"%H:%M %Z"`
 
 if [[ `uname -s` == "Darwin" ]]; then
   load=`uptime | sed -e 's/^.*[a-z]: //' | sed -e 's/ /,/g'`
@@ -44,4 +45,4 @@ if [ ! -z $battery_value ]; then
   battery=" $battery $battery_value%"
 fi
 
-echo "󰍹 $hostname  $load  $memory $date$battery"
+echo "󰍹 $hostname  $load  $memory $date $utc$battery"
