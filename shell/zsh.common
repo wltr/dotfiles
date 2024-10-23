@@ -55,6 +55,7 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
 alias ll='ls -l'
 alias la='ls -Al'
 
+alias g='git'
 alias vi='nvim'
 alias gdb='gdb -q'
 alias diff='colordiff'
