@@ -70,6 +70,8 @@
   cleanall = clean -fxd
   rbi2 = rebase -i HEAD~2
   rbi3 = rebase -i HEAD~3
+  rbi4 = rebase -i HEAD~4
+  rbi5 = rebase -i HEAD~5
 
 [http]
   sslVerify = false
