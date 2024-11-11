@@ -67,7 +67,7 @@ set -g status-style fg=default,bg=default,bold
 
 set -g window-status-activity-style fg=default,bg=default
 
-set -g window-status-format "#{?window_last_flag,#[fg=cyan],#{?window_activity_flag,#[fg=black],}}#I#[fg=black]:#{?#{==:#{window_panes},1},#W,#W(#{window_panes})}#[fg=red]#(~/.dotfiles/tmux/bin/tmux-flags '#F') "
+set -g window-status-format "#{?window_last_flag,#[fg=yellow],#{?window_activity_flag,#[fg=black],}}#I#[fg=black]:#{?#{==:#{window_panes},1},#W,#W(#{window_panes})}#[fg=red]#(~/.dotfiles/tmux/bin/tmux-flags '#F') "
 set -g window-status-style fg=black,bg=default
 
 set -g window-status-current-format "#I:#{?#{==:#{window_panes},1},#W,#W(#{window_panes})}#[fg=red]#(~/.dotfiles/tmux/bin/tmux-flags '#F') "
@@ -77,6 +77,6 @@ set -g status-left-length 1
 set -g status-left " "
 
 set -g status-right-length 80
-set -g status-right "  #[fg=yellow]#(~/.dotfiles/tmux/bin/tmux-status) "
+set -g status-right "  #[fg=cyan]#(~/.dotfiles/tmux/bin/tmux-status) "
 
 set -g mode-style fg=black,bg=red
