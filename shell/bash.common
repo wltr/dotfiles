@@ -45,6 +45,7 @@ alias ll='ls -l'
 alias la='ls -Al'
 
 alias g='git'
+alias v='nvim'
 alias vi='nvim'
 alias gdb='gdb -q'
 alias diff='colordiff'
