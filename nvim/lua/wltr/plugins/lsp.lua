@@ -24,9 +24,10 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
   vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format{async = true} end, bufopts)
 
-  local inlay_hints = require('clangd_extensions.inlay_hints')
-  inlay_hints.setup_autocmd()
-  inlay_hints.set_inlay_hints()
+  -- NOTE: These are annoying. Disable for now.
+  -- local inlay_hints = require('clangd_extensions.inlay_hints')
+  -- inlay_hints.setup_autocmd()
+  -- inlay_hints.set_inlay_hints()
 end
 
 vim.lsp.set_log_level('info')

@@ -110,6 +110,7 @@ return {
 
   {'j-hui/fidget.nvim', config = true},
   {'numToStr/Comment.nvim', config = true},
+  {'numToStr/Navigator.nvim', config = true},
   {'akinsho/git-conflict.nvim', config = true},
 
   {'nvim-lua/plenary.nvim', lazy = true},
