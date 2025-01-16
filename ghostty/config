@@ -1,0 +1,17 @@
+theme = catppuccin-frappe
+font-family = "FiraCode NF"
+font-size = 14
+font-thicken = true
+adjust-cell-height = 1
+window-height = 48
+window-width = 192
+window-padding-x = 4
+window-padding-y = 0
+term = xterm-256color
+bold-is-bright = true
+mouse-hide-while-typing = true
+cursor-style = block
+cursor-style-blink = false
+shell-integration-features = no-cursor
+quit-after-last-window-closed = true
+macos-titlebar-proxy-icon = hidden
