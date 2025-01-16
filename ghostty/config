@@ -1,5 +1,5 @@
 theme = catppuccin-frappe
-font-family = "FiraCode NF"
+font-family = "FiraCode Nerd Font Mono"
 font-size = 14
 font-thicken = true
 adjust-cell-height = 1
