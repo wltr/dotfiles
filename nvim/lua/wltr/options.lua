@@ -37,7 +37,7 @@ vim.opt.linebreak = true
 vim.opt.list = true
 vim.opt.listchars = { tab = '>-', trail = '.', extends = '#', nbsp= '.' }
 vim.opt.modelines = 0
-vim.opt.mps = '<:>'
+vim.opt.mps = '(:),{:},[:],<:>'
 vim.opt.number = true
 vim.opt.numberwidth = 5
 vim.opt.ruler = true
