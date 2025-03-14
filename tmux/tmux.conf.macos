@@ -2,6 +2,8 @@ unbind C-b
 set -g prefix C-Space
 bind C-Space send-prefix
 
+unbind Space
+
 unbind e
 bind e source-file ~/.tmux.conf \; display "Reloaded config."
 

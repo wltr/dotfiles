@@ -33,17 +33,17 @@ end
 vim.lsp.set_log_level('info')
 
 return {
-  {
-    'p00f/clangd_extensions.nvim',
-    ft = {'c', 'cpp'},
-    opts = {
-      inlay_hints = {
-        only_current_line = false,
-        show_parameter_hints = false,
-        other_hints_prefix = '-> ',
-      }
-    }
-  },
+  -- {
+  --   'p00f/clangd_extensions.nvim',
+  --   ft = {'c', 'cpp'},
+  --   opts = {
+  --     inlay_hints = {
+  --       only_current_line = false,
+  --       show_parameter_hints = false,
+  --       other_hints_prefix = '-> ',
+  --     }
+  --   }
+  -- },
 
   {
     'neovim/nvim-lspconfig',
@@ -55,18 +55,13 @@ return {
       capabilities.textDocument.semanticHighlighting = true
       capabilities.offsetEncoding = {'utf-16'}
 
-      local clang_options
-      if is_ht() then
-        local compile_commands_dir = './build/'
-        if string.find(vim.fn.getcwd(), 'platform') then
-          compile_commands_dir = compile_commands_dir..'ub-18.04-clang-17.0.1-generic.quick/'
-        end
-        clang_options = {clangd_path, '-j=40', '--compile-commands-dir='..compile_commands_dir,
-            '--background-index', '--clang-tidy', '--header-insertion=iwyu', '--all-scopes-completion',
-            '--completion-style=bundled'}
-      else
-        clang_options = {'clangd', '--background-index', '--clang-tidy', '--header-insertion=iwyu',
+      local clang_options = {'clangd', '--background-index', '--clang-tidy', '--header-insertion=iwyu',
             '--all-scopes-completion', '--completion-style=bundled'}
+      if is_ht() then
+        table.insert(clang_options, '-j=40')
+        if string.find(vim.fn.getcwd(), 'work/fpga') then
+          table.insert(clang_options, '--compile-commands-dir=./build/')
+        end
       end
 
       lspconfig.clangd.setup{

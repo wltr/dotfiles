@@ -5,6 +5,7 @@ return {
   'hrsh7th/cmp-nvim-lua',
   'hrsh7th/cmp-nvim-lsp',
   'hrsh7th/cmp-nvim-lsp-signature-help',
+  'delphinus/cmp-ctags',
 
   {
     'hrsh7th/nvim-cmp',
@@ -33,25 +34,26 @@ return {
           ['<C-e>'] = cmp.mapping.abort(),
           ['<CR>'] = cmp.mapping.confirm({ select = true })
         }),
-        sources = {
+        sources = cmp.config.sources({
           { name = 'nvim_lsp' },
           { name = 'nvim_lsp_signature_help' },
           { name = 'path' },
-          { name = 'buffer' }
-        },
-        sorting = {
-          comparators = {
-            cmp.config.compare.scopes,
-            cmp.config.compare.locality,
-            cmp.config.compare.offset,
-            cmp.config.compare.exact,
-            cmp.config.compare.score,
-            cmp.config.compare.recently_used,
-            require('clangd_extensions.cmp_scores'),
-            cmp.config.compare.length,
-            cmp.config.compare.order,
-          }
-        }
+          { name = 'buffer' },
+          { name = 'ctags' }
+        }),
+        -- sorting = {
+        --   comparators = {
+        --     cmp.config.compare.scopes,
+        --     cmp.config.compare.locality,
+        --     cmp.config.compare.offset,
+        --     cmp.config.compare.exact,
+        --     cmp.config.compare.score,
+        --     cmp.config.compare.recently_used,
+        --     require('clangd_extensions.cmp_scores'),
+        --     cmp.config.compare.length,
+        --     cmp.config.compare.order,
+        --   }
+        -- }
       }
 
       cmp.setup.cmdline({ '/', '?' }, {
