@@ -34,7 +34,7 @@ keymap('n', '<C-w><C-k>', ':exe "resize -5"<CR>')
 keymap('n', '<C-w><C-l>', ':exe "vertical resize +5"<CR>')
 keymap('n', '<C-w><C-h>', ':exe "vertical resize -5"<CR>')
 
-keymap('n', 'Zo', function() vim.cmd('wincmd = ') end)
+keymap('n', 'Zo', function() vim.cmd('wincmd =') end)
 keymap('n', 'Zz', function()
   vim.cmd('wincmd _')
   vim.cmd('wincmd |')
