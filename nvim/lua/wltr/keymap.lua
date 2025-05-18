@@ -34,6 +34,12 @@ keymap('n', '<C-w><C-k>', ':exe "resize -5"<CR>')
 keymap('n', '<C-w><C-l>', ':exe "vertical resize +5"<CR>')
 keymap('n', '<C-w><C-h>', ':exe "vertical resize -5"<CR>')
 
+keymap('n', 'Zo', function() vim.cmd('wincmd = ') end)
+keymap('n', 'Zz', function()
+  vim.cmd('wincmd _')
+  vim.cmd('wincmd |')
+end)
+
 keymap('n', '<C-t>p', ':tabnext<CR>')
 keymap('n', '<C-t>n', ':tabprevious<CR>')
 keymap('n', '<C-t>c', ':tabnew<CR>')

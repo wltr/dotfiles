@@ -1,4 +1,4 @@
-local clangd_path = '/usr/local/ht-clang-17-0-1/bin/clangd'
+local clangd_path = '/usr/local/ht-clang-20-1-0-1/bin/clangd'
 local function is_ht()
    local f = io.open(clangd_path, 'r')
    if f ~= nil then
@@ -59,8 +59,9 @@ return {
             '--all-scopes-completion', '--completion-style=bundled'}
       if is_ht() then
         table.insert(clang_options, '-j=40')
+        table.insert(clang_options, '--query-driver=/usr/local/ht-gcc-14-2-0/bin/ht-g++-14-2-0')
         if string.find(vim.fn.getcwd(), 'work/fpga') then
-          table.insert(clang_options, '--compile-commands-dir=./build/')
+          table.insert(clang_options, '--compile-commands-dir=./build')
         end
       end
 

@@ -72,6 +72,7 @@
   rbi3 = rebase -i HEAD~3
   rbi4 = rebase -i HEAD~4
   rbi5 = rebase -i HEAD~5
+  rpo = remote prune origin
 
 [http]
   sslVerify = false

@@ -31,11 +31,11 @@ vim.api.nvim_create_autocmd('BufNewFile', {
   command = 'normal! i#! /usr/bin/env python3\n\n'
 })
 
-vim.api.nvim_create_augroup('YankHighlight', {})
-vim.api.nvim_create_autocmd('TextYankPost', {
-  pattern = '*',
-  group = 'YankHighlight',
-  callback = function()
-    require('vim.highlight').on_yank{ higroug = 'IncSearch', timeout = 300, visual = false }
-  end
-})
+-- vim.api.nvim_create_augroup('YankHighlight', {})
+-- vim.api.nvim_create_autocmd('TextYankPost', {
+--   pattern = '*',
+--   group = 'YankHighlight',
+--   callback = function()
+--     require('vim.highlight').on_yank{ higroug = 'IncSearch', timeout = 300, visual = false }
+--   end
+-- })

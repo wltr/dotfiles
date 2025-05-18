@@ -92,4 +92,4 @@ git_prompt() {
 }
 
 # Shell setup
-export PS1='$(is_happy)$(is_mine)\h\[\e[0m\]:\[\e[0;36m\]\w$(git_prompt)$(has_jobs)$(has_tmux)\n$(is_root)\u\[\e[1;35m\]\$\[\e[0m\] '
+export PS1='$(is_happy)$(is_mine)\h\[\e[0m\]:\[\e[0;34m\]\w$(git_prompt)$(has_jobs)$(has_tmux)\n$(is_root)\u\[\e[1;35m\]\$\[\e[0m\] '
